@@ -1,0 +1,24 @@
+source_grounded_only: true
+no_unsupported_claims: true
+legal_advice_disclaimer: "This output is legal information retrieval and source-grounded summarization only. It is not legal advice."
+confidence_level: required
+manual_review_required: required
+quote_limit:
+  max_words_per_source: 80
+retrieved_at_required: true
+source_id_required: true
+refusal_when_no_source_is_found: true
+required_answer_fields:
+  - answer
+  - sources
+  - confidence
+  - manual_review_required
+  - limitations
+  - not_legal_advice
+required_source_fields:
+  - source_id
+  - source_title
+  - source_url
+  - retrieved_at
+  - confidence
+  - manual_review_required

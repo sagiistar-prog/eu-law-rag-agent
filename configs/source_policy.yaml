@@ -1,0 +1,41 @@
+evidence_levels:
+  - id: official_source
+    rank: 1
+    description: "Official laws, regulations, notices, customs guidance, or regulator publications from the competent authority."
+    preferred: true
+  - id: public_institutional_source
+    rank: 2
+    description: "Public material from recognized institutions, courts, agencies, standards bodies, universities, or intergovernmental organizations."
+  - id: user_provided_document
+    rank: 3
+    description: "User supplied material that must be identified as user supplied and not assumed to be authoritative."
+  - id: secondary_public_source
+    rank: 4
+    description: "Public commentary, summaries, articles, or explainers used only for context."
+  - id: ai_inference
+    rank: 5
+    description: "Reasoned synthesis from retrieved evidence. Must be labeled and must not be treated as a source."
+
+rules:
+  no_source_no_answer: true
+  ai_inference_must_be_labeled: true
+  prefer_highest_evidence_level: true
+  manual_review_required_for:
+    - legal_judgment
+    - tariff_classification
+    - customs_decision
+    - product_compliance_decision
+    - import_export_decision
+    - commercial_decision
+  required_source_fields:
+    - source_id
+    - source_title
+    - source_url
+    - retrieved_at
+  required_answer_fields:
+    - answer
+    - sources
+    - confidence
+    - manual_review_required
+    - limitations
+    - not_legal_advice

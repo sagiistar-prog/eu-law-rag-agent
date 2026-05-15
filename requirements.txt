@@ -1,0 +1,2 @@
+# No external runtime dependencies are required for the safe demo.
+# Python 3.10+ is recommended.

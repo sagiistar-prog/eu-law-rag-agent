@@ -1,0 +1,6 @@
+response_language: en
+citation_style: structured_fields
+prefer_official_sources: true
+manual_review_default_for_high_risk_topics: true
+allow_unsourced_answer: false
+safe_demo_only: true
