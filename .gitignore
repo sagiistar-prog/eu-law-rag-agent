@@ -17,3 +17,17 @@ raw/
 *.mkv
 *.wav
 *.mp3
+
+.impeccable/
+
+test-results/
+
+output/
+.cache/
+.venv/
+__pycache__/
+test-results/
+.impeccable/
+
+!knowledge/requirements.txt
+!docs/fonts/OFL.txt

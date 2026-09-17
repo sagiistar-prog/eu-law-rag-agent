@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "status": {
+          "const": "ok"
+        },
+        "mode": {
+          "enum": [
+            "offline_keyword_retrieval",
+            "local_bge_hybrid"
+          ]
+        },
+        "result": {
+          "type": "object",
+          "properties": {
+            "markdown": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500000
+            },
+            "answer_status": {
+              "enum": [
+                "answered",
+                "refused"
+              ]
+            },
+            "sources": {
+              "type": "array"
+            },
+            "confidence": {
+              "enum": [
+                "none",
+                "low",
+                "medium"
+              ]
+            },
+            "manual_review_required": {
+              "const": true
+            },
+            "not_legal_advice": {
+              "const": true
+            }
+          },
+          "required": [
+            "markdown",
+            "answer_status",
+            "sources",
+            "confidence",
+            "manual_review_required",
+            "not_legal_advice"
+          ],
+          "additionalProperties": false
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "schema_version",
+        "status",
+        "mode",
+        "result",
+        "warnings"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "status": {
+          "const": "error"
+        },
+        "error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30000
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30000
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema_version",
+        "status",
+        "error"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

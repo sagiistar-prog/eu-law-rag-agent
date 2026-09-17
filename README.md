@@ -1,4 +1,32 @@
-# EU Law RAG Agent
+# EU Law Evidence Lab
+
+
+[产品案例与指标](docs/product-case.md) | [能力证据](docs/capability-evidence.json) | [验收与边界](docs/validation.md)
+
+## 面试官 30 秒版
+
+用短来源文本演示可追溯检索与无依据拒答。把来源标识、引用预算与拒答作为可执行约束。资料不足时不以模型记忆补足，也不把相关性分数当作法律结论置信度。
+
+当前能力：本地 BGE 英文向量编码、BM25、RRF 混合检索、来源核对和原文摘录。保留关键词基线便于对照。生成综述由插件宿主模型完成，必须引用证据；不把检索得分当法律判断。
+
+[知识库运行与架构](knowledge/README.md) | [实际检索记录](docs/retrieval-smoke.json) | [插件使用与产品取舍](docs/plugin.md) | [输入示例](examples/plugin-input.json) | [输入契约](schemas/input.schema.json) | [维护记录](CHANGELOG.md)
+
+```bash
+python -m pip install -r requirements-plugin.txt
+python scripts/plugin_run.py --input examples/plugin-input.json
+```
+
+## 运行真实向量检索
+
+```sh
+python -m pip install -r knowledge/requirements.txt
+python scripts/plugin_run.py --input examples/hybrid-input.json
+```
+
+首次下载模型后在本机推理。持久化索引与可视化证据工作台见knowledge/README.md。默认英文模型，跨语言检索不在验收范围内。内置资料都是虚构片段，不是实际法规库。
+
+## 兼容的关键词基线工作流
+
 
 EU Law RAG Agent is a portfolio-safe Retrieval-Augmented Generation prototype for source-grounded research over European legal, tariff, product compliance, and public policy materials. It imports short Markdown sources, chunks them, builds a lightweight local keyword index, retrieves evidence, and produces a citation-first summary with confidence and manual-review flags.
 

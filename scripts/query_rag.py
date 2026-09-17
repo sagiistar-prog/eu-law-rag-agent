@@ -81,10 +81,11 @@ def retrieve(query: str, chunks: Iterable[Dict[str, object]], top_k: int = 3) ->
     return sorted(scored, key=lambda item: item[0], reverse=True)[:top_k]
 
 
-def extract_evidence_sentences(query: str, chunks: List[Dict[str, object]]) -> List[str]:
+def extract_evidence_sentences(query: str, chunks: List[Dict[str, object]], max_words_per_source: int = 80) -> List[str]:
     query_terms = set(tokenize(query))
     sentences: List[str] = []
     seen = set()
+    used_words: Dict[str, int] = {}
 
     for chunk in chunks:
         text = str(chunk.get("text", ""))
@@ -94,7 +95,16 @@ def extract_evidence_sentences(query: str, chunks: List[Dict[str, object]]) -> L
                 continue
             sentence_terms = set(tokenize(cleaned))
             if query_terms.intersection(sentence_terms):
-                sentences.append(cleaned)
+                source_id = str(chunk.get("source_id", "unknown"))
+                remaining = max_words_per_source - used_words.get(source_id, 0)
+                if remaining <= 0:
+                    continue
+                words = cleaned.split()
+                excerpt = " ".join(words[:remaining])
+                if len(words) > remaining:
+                    excerpt += " […]"
+                sentences.append(excerpt)
+                used_words[source_id] = used_words.get(source_id, 0) + min(len(words), remaining)
                 seen.add(cleaned)
             if len(sentences) >= 4:
                 return sentences
@@ -154,11 +164,11 @@ def format_refusal(query: str) -> str:
     )
 
 
-def format_answer(query: str, results: List[Tuple[float, Dict[str, object]]]) -> str:
+def format_answer(query: str, results: List[Tuple[float, Dict[str, object]]], max_words_per_source: int = 80) -> str:
     chunks = [chunk for _, chunk in results]
-    manual_review_required = needs_manual_review(query, chunks)
+    manual_review_required = True  # Information retrieval never authorizes legal decisions.
     confidence = confidence_label(results)
-    evidence_sentences = extract_evidence_sentences(query, chunks)
+    evidence_sentences = extract_evidence_sentences(query, chunks, max_words_per_source)
 
     if evidence_sentences:
         summary = " ".join(evidence_sentences)
@@ -208,8 +218,14 @@ def main() -> None:
 
     query = args.query.read_text(encoding="utf-8").strip()
     index = load_index(args.index)
+    # Only supported controls are loaded; invalid limits fail clearly.
+    text = args.rules.read_text(encoding="utf-8")
+    match = re.search(r"^\s*max_words_per_source:\s*(\d+)\s*$", text, re.MULTILINE)
+    if not match or not 1 <= int(match.group(1)) <= 500:
+        raise ValueError("rules require max_words_per_source between 1 and 500")
+    budget = int(match.group(1))
     results = retrieve(query, index.get("chunks", []))
-    output = format_answer(query, results) if results else format_refusal(query)
+    output = format_answer(query, results, budget) if results else format_refusal(query)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(output, encoding="utf-8")

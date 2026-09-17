@@ -1,3 +1,4 @@
+param([switch]$PreCommit)
 $ErrorActionPreference = "Stop"
 
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
@@ -147,6 +148,18 @@ function Check-GitHubState {
     if ($LASTEXITCODE -eq 0) {
         if ($status.Count -eq 0) {
             Add-Pass "Working tree is clean."
+        } elseif ($PreCommit) {
+            & git -C $RepoRoot diff --quiet
+            if ($LASTEXITCODE -ne 0) {
+                Add-Fail "Pre-commit audit requires all tracked edits staged."
+            } else {
+                $untracked = @(& git -C $RepoRoot ls-files --others --exclude-standard)
+                if ($untracked.Count -gt 0) {
+                    Add-Fail "Pre-commit audit requires new publication files staged."
+                } else {
+                    Add-Pass "Auditing fully staged changes before commit. Clean-tree release audit remains required."
+                }
+            }
         } else {
             Add-Fail "Working tree has uncommitted changes."
         }

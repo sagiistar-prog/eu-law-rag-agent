@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "event": {
+      "enum": [
+        "task_started",
+        "input_validated",
+        "result_ready",
+        "source_opened",
+        "result_exported",
+        "task_failed",
+        "feedback_recorded"
+      ]
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Ephemeral random ID, not account ID"
+    },
+    "duration_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "outcome": {
+      "enum": [
+        "success",
+        "insufficient_input",
+        "insufficient_evidence",
+        "error",
+        "accepted",
+        "rejected"
+      ]
+    }
+  },
+  "required": [
+    "event",
+    "session_id"
+  ]
+}

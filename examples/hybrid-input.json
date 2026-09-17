@@ -1,0 +1,15 @@
+{
+  "query": "What does the fictional tariff note require?",
+  "documents": [
+    {
+      "source_id": "fictional-tariff-01",
+      "source_title": "Fictional tariff note",
+      "source_url": "https://example.org/fictional-tariff",
+      "retrieved_at": "2026-09-17",
+      "text": "This fictional tariff note requires manual verification of the product classification. The fictional example does not establish actual tariff rates.",
+      "review_status": "fictional"
+    }
+  ],
+  "max_words_per_source": 80,
+  "retrieval_mode": "hybrid"
+}

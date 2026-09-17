@@ -1,0 +1,10 @@
+{
+  "scope": "portfolio implementation, not customer outcomes",
+  "product_definition": "docs/product-case.md",
+  "interaction": "knowledge/workbench.html",
+  "implementation": "knowledge/pipeline.py",
+  "measurement_contract": "docs/metrics.schema.json",
+  "user_validation": "planned, not conducted",
+  "production_outcomes": "not measured",
+  "upstream_credit": "docs/open-source.md"
+}

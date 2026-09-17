@@ -1,0 +1,20 @@
+[
+  {
+    "query": "Which information is needed for tariff classification?",
+    "relevant_sources": [
+      "classification"
+    ]
+  },
+  {
+    "query": "How are personal records deleted?",
+    "relevant_sources": [
+      "privacy"
+    ]
+  },
+  {
+    "query": "What should an appeal record contain?",
+    "relevant_sources": [
+      "appeal"
+    ]
+  }
+]

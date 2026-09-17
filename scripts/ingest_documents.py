@@ -62,6 +62,10 @@ def ingest(input_dir: Path) -> List[Dict[str, str]]:
 
     for path in markdown_files:
         metadata, body = parse_front_matter(path.read_text(encoding="utf-8"))
+        required = ("source_id", "source_title", "source_url", "retrieved_at")
+        missing = [key for key in required if not metadata.get(key, "").strip()]
+        if missing:
+            raise ValueError(f"{path.name}: missing source metadata: {', '.join(missing)}")
         source_id = metadata.get("source_id") or path.stem
         source_title = metadata.get("source_title") or path.stem.replace("_", " ").title()
         source_url = metadata.get("source_url") or "user-provided://local-demo"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "eu-law-rag-agent"
+  short_description: "Retrieve and synthesize source-grounded legal research evidence using local BGE embeddings, BM25 and"
+  default_prompt: "Use $eu-law-rag-agent to help complete the task with traceable inputs and reviewable outputs."
