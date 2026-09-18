@@ -29,6 +29,8 @@ Preserve the question on model, network or database failure. Report the failure 
 
 The workbench starts with `python knowledge/server.py --language en --index output/<snapshot>/index.json --cache-dir .cache/models --port 8892`. Default storage is local JSON; the optional database contract is documented in the knowledge README.
 
+`--ranking rerank` is an explicit experiment, not the default or a legal-confidence upgrade. Read `docs/reranker-experiment.md` before using it. Preserve Schema 1.2 ranking metadata and contextual span provenance in JSON handoff; do not convert the raw logit into a confidence percentage. Model download/checksum/inference failures must remain failures, without silently changing mode.
+
 `scripts/plugin_run.py` and `schemas/input.schema.json` retain the short-document interface. `examples/plugin-input.json` is an explicit keyword baseline; `examples/hybrid-input.json` executes real BGE but rebuilds for each call. Use the persistent workflow above for repeated research.
 
 Run tests and the repository portfolio audit before publication. A failed audit blocks commit and push. Outputs are legal information for human review, not legal advice.

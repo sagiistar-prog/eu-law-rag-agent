@@ -1,0 +1,16 @@
+{
+  "selected_at": "2026-09-18T13:32:55.784735+00:00",
+  "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+  "revision": "a09144355adeed5f58c8ed011d209bf8ee5a1fec",
+  "minimum_logit": 0.0,
+  "max_logit_gap": 2.0,
+  "context_max_characters": 1600,
+  "candidate_budget": 40,
+  "query_context": "explicit selected instrument, or EU law for all",
+  "selection_data": [
+    "official-cases.json",
+    "known-paraphrase-cases.json"
+  ],
+  "selection_reason": "A nonnegative logit and top-score gap of 2 preserve canonical development hits and avoid known missing-source probes; examine frozen holdout only after this selection.",
+  "holdout_used_for_selection": false
+}

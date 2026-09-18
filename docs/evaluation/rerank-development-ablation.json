@@ -1,0 +1,5536 @@
+{
+  "raw_short": [
+    {
+      "id": "privacy-notice",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "What information must a controller provide when personal data are collected from the data subject?",
+      "relevant_sources": [
+        "gdpr-oj-art-13"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:2800:aeed0dc03227",
+          "score": 8.820043563842773,
+          "cosine": 0.8574611764229854,
+          "keyword": 8.731071445135438
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": 5.838114261627197,
+          "cosine": 0.7440902838428529,
+          "keyword": 2.8013103437537734
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:560:c65efe157b79",
+          "score": 5.66991662979126,
+          "cosine": 0.7693238476263876,
+          "keyword": 3.8595654598309537
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:0:4cccc82b2dac",
+          "score": 5.610638618469238,
+          "cosine": 0.7561027607700506,
+          "keyword": 2.749129603874194
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:1400:fc1f3958b5ef",
+          "score": 5.0004563331604,
+          "cosine": 0.8038340322364923,
+          "keyword": 3.9189759238732336
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:1400:eaf139a892b3",
+          "score": 4.241845607757568,
+          "cosine": 0.7453241737748613,
+          "keyword": 2.148392097265296
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:3640:2496ef9dabae",
+          "score": 3.66898250579834,
+          "cosine": 0.7442061227633293,
+          "keyword": 2.085301940882744
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1680:ab9bacae7a96",
+          "score": 3.0623250007629395,
+          "cosine": 0.7736046971920159,
+          "keyword": 1.5322398160190545
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:280:526f39e2441f",
+          "score": 2.4956202507019043,
+          "cosine": 0.7471548804560514,
+          "keyword": 1.8537918343526085
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:840:a7eb3dd7c661",
+          "score": -0.7850219011306763,
+          "cosine": 0.7009551690806516,
+          "keyword": 3.8926320007035806
+        }
+      ],
+      "elapsed_ms": 1014.17
+    },
+    {
+      "id": "access",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "Which information is included in the right of access by the data subject?",
+      "relevant_sources": [
+        "gdpr-oj-art-15"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1960:b6082b2a82ea",
+          "score": 7.165075778961182,
+          "cosine": 0.6814142959597994,
+          "keyword": 3.8318745759744743
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:560:c65efe157b79",
+          "score": 4.272121906280518,
+          "cosine": 0.7527581274362057,
+          "keyword": 3.1954670683977637
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1680:344f56f89bf8",
+          "score": 4.234068870544434,
+          "cosine": 0.7096960558766428,
+          "keyword": 6.481342505227536
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:0:4cccc82b2dac",
+          "score": 2.8544607162475586,
+          "cosine": 0.7708398779526136,
+          "keyword": 4.22528693822977
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:0:db018a82758a",
+          "score": -1.0056416988372803,
+          "cosine": 0.6899730552567032,
+          "keyword": 4.192472602324088
+        },
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:560:950c1d2861d4",
+          "score": -1.5605177879333496,
+          "cosine": 0.7180986699262879,
+          "keyword": 1.679444272170563
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1400:6035a0fd6f7b",
+          "score": -3.5831897258758545,
+          "cosine": 0.6965106598523096,
+          "keyword": 1.4830061051414245
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:2800:536ab57e3cf1",
+          "score": -4.769255638122559,
+          "cosine": 0.7014897337985365,
+          "keyword": 0.2997137408029646
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1680:6390955c059b",
+          "score": -6.112305641174316,
+          "cosine": 0.582814842477527,
+          "keyword": 3.893368880541084
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:0:623d3b2e95c2",
+          "score": -8.544859886169434,
+          "cosine": 0.6992663646663867,
+          "keyword": 0.19924133135764893
+        }
+      ],
+      "elapsed_ms": 897.92
+    },
+    {
+      "id": "erase",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "What are the grounds and exceptions for erasure of personal data?",
+      "relevant_sources": [
+        "gdpr-oj-art-17"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:280:9e86b2894ecb",
+          "score": 7.100066661834717,
+          "cosine": 0.7310770707109668,
+          "keyword": 4.415630602272064
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1680:344f56f89bf8",
+          "score": 2.2257766723632812,
+          "cosine": 0.6766233481458457,
+          "keyword": 4.084403428541705
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:560:aac74bd4419b",
+          "score": 1.31951904296875,
+          "cosine": 0.7236038950885781,
+          "keyword": 4.667603252755788
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:840:9fab9add8820",
+          "score": -0.06820722669363022,
+          "cosine": 0.7617069291856499,
+          "keyword": 1.2902520242526943
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:840:a7eb3dd7c661",
+          "score": -2.6596240997314453,
+          "cosine": 0.714919178188992,
+          "keyword": 1.3063875780217438
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:3360:004e7b52d39e",
+          "score": -3.2193970680236816,
+          "cosine": 0.6667232360400545,
+          "keyword": 1.4990854182865894
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:1400:fc1f3958b5ef",
+          "score": -3.458756923675537,
+          "cosine": 0.6991669386481418,
+          "keyword": 1.2591478583625697
+        }
+      ],
+      "elapsed_ms": 831.46
+    },
+    {
+      "id": "portability",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "Can personal data be received in a structured commonly used machine-readable format?",
+      "relevant_sources": [
+        "gdpr-oj-art-20"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:0:4cccc82b2dac",
+          "score": 7.484850883483887,
+          "cosine": 0.702773357433881,
+          "keyword": 22.123970286974696
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:3080:6ffc57601114",
+          "score": -1.8257131576538086,
+          "cosine": 0.6656025931526568,
+          "keyword": 7.222697397741221
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1120:582f38af0b6b",
+          "score": -2.791759490966797,
+          "cosine": 0.6484409878347933,
+          "keyword": 1.443833236682937
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1400:6a21063687de",
+          "score": -3.011505126953125,
+          "cosine": 0.6414099898394926,
+          "keyword": 3.995297717555485
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1960:b6082b2a82ea",
+          "score": -3.9170522689819336,
+          "cosine": 0.6367839705811793,
+          "keyword": 7.478654900363792
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:840:a7eb3dd7c661",
+          "score": -4.437051773071289,
+          "cosine": 0.653548919990256,
+          "keyword": 1.3063875780217438
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:3360:004e7b52d39e",
+          "score": -5.124961853027344,
+          "cosine": 0.6275232744687739,
+          "keyword": 1.4990854182865894
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:840:9e7847e705cc",
+          "score": -5.6357622146606445,
+          "cosine": 0.6081745593007114,
+          "keyword": 1.417706841576953
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:1400:fc1f3958b5ef",
+          "score": -6.78917121887207,
+          "cosine": 0.629605386388328,
+          "keyword": 1.2591478583625697
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1120:e535dc1fc5b1",
+          "score": -7.285752773284912,
+          "cosine": 0.5463235198089763,
+          "keyword": 3.2278864422109246
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:2240:f7b083d31383",
+          "score": -8.356793403625488,
+          "cosine": 0.6429590952859033,
+          "keyword": 0.8943784968767444
+        }
+      ],
+      "elapsed_ms": 923.61
+    },
+    {
+      "id": "automated-decisions",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "What does the original text say about decisions based solely on automated processing including profiling?",
+      "relevant_sources": [
+        "gdpr-oj-art-22"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:0:1e7f9f53773b",
+          "score": 6.343250274658203,
+          "cosine": 0.769616868396839,
+          "keyword": 13.782045393645364
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:840:6b58ea1837b0",
+          "score": 3.9175148010253906,
+          "cosine": 0.676871701832183,
+          "keyword": 13.182005719812446
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1120:da0ef23ce0eb",
+          "score": 3.731081008911133,
+          "cosine": 0.7581343186788989,
+          "keyword": 6.4428096510345725
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:2520:41419b94fa7b",
+          "score": 2.7803573608398438,
+          "cosine": 0.7456998111516058,
+          "keyword": 6.336140266670418
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:560:2e030ccbb180",
+          "score": -5.391177654266357,
+          "cosine": 0.6097965779662314,
+          "keyword": 3.0413421847548987
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1120:582f38af0b6b",
+          "score": -7.232483386993408,
+          "cosine": 0.5348754378988022,
+          "keyword": 3.656475820659732
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:560:b541b2f945dc",
+          "score": -8.536445617675781,
+          "cosine": 0.6078342566303375,
+          "keyword": 0.9130867320935758
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:840:03419f3db6a9",
+          "score": -8.89610481262207,
+          "cosine": 0.6025777933667631,
+          "keyword": 0.8159612720293158
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:280:45caa117074b",
+          "score": -9.319293975830078,
+          "cosine": 0.5998293274506094,
+          "keyword": 0.9480284640469304
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:280:9e86b2894ecb",
+          "score": -9.440587997436523,
+          "cosine": 0.5290309021183238,
+          "keyword": 2.739544542161283
+        }
+      ],
+      "elapsed_ms": 1046.43
+    },
+    {
+      "id": "security",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "How should the controller assess an appropriate level of security of processing?",
+      "relevant_sources": [
+        "gdpr-oj-art-32"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:840:03419f3db6a9",
+          "score": 5.349562644958496,
+          "cosine": 0.7859204061006358,
+          "keyword": 10.781656467220738
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:3360:10bf11bb3a10",
+          "score": 4.61044454574585,
+          "cosine": 0.6973641515469173,
+          "keyword": 6.2773596145399475
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1680:ab9bacae7a96",
+          "score": 2.7988030910491943,
+          "cosine": 0.7098330080227089,
+          "keyword": 5.935329885291365
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:280:45caa117074b",
+          "score": 2.1654317378997803,
+          "cosine": 0.7376028781123808,
+          "keyword": 3.7309113669780065
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:0:311bc3c55526",
+          "score": -0.9341789484024048,
+          "cosine": 0.6259028812739132,
+          "keyword": 3.1395603491053845
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:840:a95e8abab1c2",
+          "score": -1.2847203016281128,
+          "cosine": 0.6901886056618798,
+          "keyword": 1.229707437006979
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": -2.6362171173095703,
+          "cosine": 0.6031691354042177,
+          "keyword": 3.2452698048681645
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:2800:aeed0dc03227",
+          "score": -3.35844087600708,
+          "cosine": 0.6738379318526283,
+          "keyword": 1.6514777589022163
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:1120:521e49c2d0a8",
+          "score": -6.433699131011963,
+          "cosine": 0.6419176405584139,
+          "keyword": 2.6015870139550032
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:280:414598c35c97",
+          "score": -6.573925018310547,
+          "cosine": 0.6757054910631715,
+          "keyword": 1.690486967861701
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:1400:eaf139a892b3",
+          "score": -6.7688751220703125,
+          "cosine": 0.6849210738398327,
+          "keyword": 0.5560869759631273
+        }
+      ],
+      "elapsed_ms": 897.81
+    },
+    {
+      "id": "breach",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "Which notification is required to a supervisory authority after a personal data breach?",
+      "relevant_sources": [
+        "gdpr-oj-art-33"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:0:05f4dc03ae5f",
+          "score": 8.878288269042969,
+          "cosine": 0.840855429284618,
+          "keyword": 15.389607831166446
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:840:c66393502710",
+          "score": -0.09637092053890228,
+          "cosine": 0.6725660335617123,
+          "keyword": 5.582230989673492
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:1680:bd62ae12727a",
+          "score": -0.48439937829971313,
+          "cosine": 0.6757223688594572,
+          "keyword": 6.404643696609668
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1960:903b7babe615",
+          "score": -0.966915488243103,
+          "cosine": 0.5692649927231641,
+          "keyword": 4.681273294534407
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:1960:e891cd9ee464",
+          "score": -1.8674249649047852,
+          "cosine": 0.5908275386283206,
+          "keyword": 4.326494095352514
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1680:ab9bacae7a96",
+          "score": -4.64273738861084,
+          "cosine": 0.7052936581032914,
+          "keyword": 0.8793215695305772
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:840:9e7847e705cc",
+          "score": -6.3009352684021,
+          "cosine": 0.7033302231368518,
+          "keyword": 1.417706841576953
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:840:a7eb3dd7c661",
+          "score": -6.987924098968506,
+          "cosine": 0.6632760511049308,
+          "keyword": 1.3063875780217438
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1400:c9a47a12a30b",
+          "score": -7.046052932739258,
+          "cosine": 0.5959228759775873,
+          "keyword": 2.8494461299391007
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:3360:004e7b52d39e",
+          "score": -8.170812606811523,
+          "cosine": 0.6292195593239543,
+          "keyword": 1.4990854182865894
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:840:1acb813ea747",
+          "score": -9.753190040588379,
+          "cosine": 0.5221862289797184,
+          "keyword": 1.9701245604085234
+        }
+      ],
+      "elapsed_ms": 1060.13
+    },
+    {
+      "id": "dpia",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "What must a data protection impact assessment contain?",
+      "relevant_sources": [
+        "gdpr-oj-art-35"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:2240:f7b083d31383",
+          "score": 7.937747001647949,
+          "cosine": 0.7151120455949257,
+          "keyword": 6.362151073308164
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:840:a7eb3dd7c661",
+          "score": -3.801630735397339,
+          "cosine": 0.6635176658266977,
+          "keyword": 0.3109581653552538
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1680:ab9bacae7a96",
+          "score": -6.344027519226074,
+          "cosine": 0.6521647922819614,
+          "keyword": 2.059071079191845
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:840:f617d2604344",
+          "score": -7.148187637329102,
+          "cosine": 0.621851571917562,
+          "keyword": 2.101372043262256
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:280:8706a65f8538",
+          "score": -7.252293586730957,
+          "cosine": 0.6399567065819103,
+          "keyword": 2.259117395017827
+        },
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:560:950c1d2861d4",
+          "score": -8.982711791992188,
+          "cosine": 0.695895640312636,
+          "keyword": 0.36275714795356323
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:840:a95e8abab1c2",
+          "score": -9.333836555480957,
+          "cosine": 0.6213509269104484,
+          "keyword": 2.234885689128988
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1120:da0ef23ce0eb",
+          "score": -10.760143280029297,
+          "cosine": 0.6663221140956496,
+          "keyword": 0.2997137408029646
+        }
+      ],
+      "elapsed_ms": 826.16
+    },
+    {
+      "id": "terms",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "What restrictions should intermediary services disclose in their terms and conditions?",
+      "relevant_sources": [
+        "dsa-oj-art-14"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:0:22802e0d8807",
+          "score": 6.751900672912598,
+          "cosine": 0.8112336980164103,
+          "keyword": 12.308551218701197
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:280:64e3f4d95993",
+          "score": 1.1289207935333252,
+          "cosine": 0.6937664316178922,
+          "keyword": 6.225341792971848
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:560:87872203e459",
+          "score": -2.411334753036499,
+          "cosine": 0.6510328636213988,
+          "keyword": 3.6782457284764765
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:0:5d65e95bd3a5",
+          "score": -4.544878005981445,
+          "cosine": 0.6222129432966383,
+          "keyword": 3.4307898263165613
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:0:d79e986a0638",
+          "score": -7.469911575317383,
+          "cosine": 0.6310422630247029,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:0:9ccd4a7fbab9",
+          "score": -8.27491283416748,
+          "cosine": 0.6001826838383607,
+          "keyword": 1.306052575766635
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:280:7030135df9c2",
+          "score": -8.530492782592773,
+          "cosine": 0.6291994502073512,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:1400:88812e207dcd",
+          "score": -9.983604431152344,
+          "cosine": 0.6305169274485336,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 914.23
+    },
+    {
+      "id": "notice-action",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "How do recipients submit sufficiently precise and adequately substantiated notices of illegal content?",
+      "relevant_sources": [
+        "dsa-oj-art-16"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:280:a4bafd10d2c0",
+          "score": 3.748809337615967,
+          "cosine": 0.7044610325443476,
+          "keyword": 15.360447063875473
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1400:70ec99944d01",
+          "score": 2.646649122238159,
+          "cosine": 0.6258380772034516,
+          "keyword": 11.081379913420784
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:0:2a25ebde5bd2",
+          "score": -3.252997636795044,
+          "cosine": 0.6771684029764073,
+          "keyword": 4.927647150226445
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:1120:f0efee30e333",
+          "score": -6.288418769836426,
+          "cosine": 0.7035466634374431,
+          "keyword": 1.2460508580674015
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:1120:81c59308d869",
+          "score": -9.646770477294922,
+          "cosine": 0.6458797945840612,
+          "keyword": 1.2019092602004295
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:840:6518a740b2c6",
+          "score": -10.516973495483398,
+          "cosine": 0.6388150371265129,
+          "keyword": 1.2019092602004295
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:0:4e0e91fcd2a9",
+          "score": -10.620744705200195,
+          "cosine": 0.5749046627110302,
+          "keyword": 1.6836189076722083
+        }
+      ],
+      "elapsed_ms": 882.28
+    },
+    {
+      "id": "reasons",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "What explanation must a statement of reasons provide when content is restricted?",
+      "relevant_sources": [
+        "dsa-oj-art-17"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:0:2a25ebde5bd2",
+          "score": 4.358108997344971,
+          "cosine": 0.7519893492296057,
+          "keyword": 8.985250868337216
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:560:87872203e459",
+          "score": -1.7970727682113647,
+          "cosine": 0.6549379632243356,
+          "keyword": 1.6150540616052114
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:840:ef52f55278d3",
+          "score": -5.86676549911499,
+          "cosine": 0.6288780656952043,
+          "keyword": 2.640558352426336
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:1400:88812e207dcd",
+          "score": -8.187812805175781,
+          "cosine": 0.6385678182352018,
+          "keyword": 1.6150540616052114
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:0:22802e0d8807",
+          "score": -8.474294662475586,
+          "cosine": 0.5983127948682626,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:560:6d7f201fdcc3",
+          "score": -10.048828125,
+          "cosine": 0.5394297657740366,
+          "keyword": 2.3500872398032198
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:280:7030135df9c2",
+          "score": -10.67837905883789,
+          "cosine": 0.5914021423283985,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:0:d79e986a0638",
+          "score": -10.856893539428711,
+          "cosine": 0.596590305004794,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 781.92
+    },
+    {
+      "id": "complaints",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "How long should access to the internal complaint-handling system be available?",
+      "relevant_sources": [
+        "dsa-oj-art-20"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:0:bc7d40380fd6",
+          "score": 6.5067973136901855,
+          "cosine": 0.7673737822207107,
+          "keyword": 11.680821293148405
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:280:9833d7c963f9",
+          "score": -3.308511257171631,
+          "cosine": 0.6204006521187722,
+          "keyword": 8.65878535127641
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:2800:a1465aed5f86",
+          "score": -4.988348960876465,
+          "cosine": 0.580421097007052,
+          "keyword": 6.536214902308676
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:280:a4bafd10d2c0",
+          "score": -10.93802261352539,
+          "cosine": 0.5393270485643843,
+          "keyword": 2.1251368463642715
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:840:6518a740b2c6",
+          "score": -11.039961814880371,
+          "cosine": 0.49427282779027365,
+          "keyword": 2.087495150009281
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:0:d79e986a0638",
+          "score": -11.258520126342773,
+          "cosine": 0.5221484857431209,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 850.84
+    },
+    {
+      "id": "dark-patterns",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "What does the text say about online interfaces that deceive or manipulate recipients?",
+      "relevant_sources": [
+        "dsa-oj-art-25"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:0:4e0e91fcd2a9",
+          "score": 5.229226589202881,
+          "cosine": 0.7338479402033998,
+          "keyword": 6.478495788322336
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:0:e0e6c30536e1",
+          "score": -0.3669945299625397,
+          "cosine": 0.6328358683642467,
+          "keyword": 6.046149676342569
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:840:6518a740b2c6",
+          "score": -3.2443203926086426,
+          "cosine": 0.6042173752768268,
+          "keyword": 2.7166267829357458
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:280:d8e8ae357d32",
+          "score": -3.310804605484009,
+          "cosine": 0.6015733080583237,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:560:87872203e459",
+          "score": -3.3800830841064453,
+          "cosine": 0.6742521134089242,
+          "keyword": 2.297100493584221
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:1400:bc5d227e8e47",
+          "score": -6.102743148803711,
+          "cosine": 0.5352724835175027,
+          "keyword": 3.160753897328252
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:0:2a25ebde5bd2",
+          "score": -7.753606796264648,
+          "cosine": 0.6044674187287233,
+          "keyword": 1.2460508580674015
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:1960:9d026d111a30",
+          "score": -10.512153625488281,
+          "cosine": 0.5883195107183443,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 833.53
+    },
+    {
+      "id": "ads",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "How should advertisements identify the person on whose behalf the advertisement is presented?",
+      "relevant_sources": [
+        "dsa-oj-art-26"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:280:d00d4bb0b207",
+          "score": 4.210615158081055,
+          "cosine": 0.6557949641403179,
+          "keyword": 13.155390868822524
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:280:d8e8ae357d32",
+          "score": -3.8846054077148438,
+          "cosine": 0.6689718153192016,
+          "keyword": 2.417277945312331
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:560:6d7f201fdcc3",
+          "score": -10.42914867401123,
+          "cosine": 0.553364314246192,
+          "keyword": 2.3500872398032198
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1120:b014bed18067",
+          "score": -10.847475051879883,
+          "cosine": 0.5750053995798379,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:1680:7d210ccbad36",
+          "score": -11.092037200927734,
+          "cosine": 0.5867185698001854,
+          "keyword": 2.785704978603022
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:840:fea6c8d2b893",
+          "score": -11.176379203796387,
+          "cosine": 0.574029815017879,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 661.6
+    },
+    {
+      "id": "recommendations",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "Which main parameters used in recommender systems must be explained?",
+      "relevant_sources": [
+        "dsa-oj-art-27"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:280:09ce0a27a278",
+          "score": 6.714082717895508,
+          "cosine": 0.6882314060873952,
+          "keyword": 7.703868543491824
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:560:76d5388c5fd6",
+          "score": -7.437599182128906,
+          "cosine": 0.5893499776818552,
+          "keyword": 7.420969521036682
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:280:9833d7c963f9",
+          "score": -9.449607849121094,
+          "cosine": 0.526241346638052,
+          "keyword": 2.5434912038024855
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:2520:167e5f934ff4",
+          "score": -10.420190811157227,
+          "cosine": 0.5483345536504959,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:560:bc4d2acf61c3",
+          "score": -10.862176895141602,
+          "cosine": 0.5364673135775893,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1400:70ec99944d01",
+          "score": -10.932038307189941,
+          "cosine": 0.5117998205208535,
+          "keyword": 2.692000100038927
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:3080:f7d357366a7d",
+          "score": -11.210350036621094,
+          "cosine": 0.517800464890148,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:280:d8e8ae357d32",
+          "score": -11.318689346313477,
+          "cosine": 0.5657696680530641,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 608.71
+    },
+    {
+      "id": "children",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "What privacy safety and security protections apply to minors on online platforms?",
+      "relevant_sources": [
+        "dsa-oj-art-28"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:0:d79e986a0638",
+          "score": 8.242376327514648,
+          "cosine": 0.8319833335378295,
+          "keyword": 18.01541207399006
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:560:87872203e459",
+          "score": -4.010566711425781,
+          "cosine": 0.6488030139194706,
+          "keyword": 1.0735184149254997
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:1120:f0efee30e333",
+          "score": -4.999024391174316,
+          "cosine": 0.5665018962908127,
+          "keyword": 2.395790409538532
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:0:4e0e91fcd2a9",
+          "score": -5.4959330558776855,
+          "cosine": 0.6125377396973546,
+          "keyword": 2.9515149257830497
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:840:6518a740b2c6",
+          "score": -5.654845714569092,
+          "cosine": 0.57945221973052,
+          "keyword": 2.7711329696698237
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:840:515299061b85",
+          "score": -6.2375078201293945,
+          "cosine": 0.5971420000244367,
+          "keyword": 4.54640491669913
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:3360:205af64e7959",
+          "score": -10.233474731445312,
+          "cosine": 0.43605286668405036,
+          "keyword": 3.703787395926413
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:1680:7d210ccbad36",
+          "score": -10.64242172241211,
+          "cosine": 0.59389982202059,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 779.16
+    },
+    {
+      "id": "gatekeeper",
+      "category": "DMA",
+      "instrument": "dma",
+      "query": "Which thresholds are used in the designation of gatekeepers?",
+      "relevant_sources": [
+        "dma-oj-art-3"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:1960:bab74ba70f75",
+          "score": 6.0226240158081055,
+          "cosine": 0.6855136535487403,
+          "keyword": 3.220184458102119
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:3640:ba2bd135531d",
+          "score": 5.036826133728027,
+          "cosine": 0.6668227961652001,
+          "keyword": 3.916470634806336
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:0:ab77537bf204",
+          "score": -1.8763277530670166,
+          "cosine": 0.6525622259763222,
+          "keyword": 4.581901350587586
+        },
+        {
+          "source_id": "dma-oj-art-7",
+          "chunk_id": "dma-oj-art-7:0:9fba70bfa271",
+          "score": -2.0509033203125,
+          "cosine": 0.652773969672037,
+          "keyword": 4.581901350587586
+        }
+      ],
+      "elapsed_ms": 863.16
+    },
+    {
+      "id": "interoperability",
+      "category": "DMA",
+      "instrument": "dma",
+      "query": "What basic functionalities of number-independent interpersonal communications services must be interoperable?",
+      "relevant_sources": [
+        "dma-oj-art-7"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dma-oj-art-7",
+          "chunk_id": "dma-oj-art-7:280:e4d9bc6954db",
+          "score": 8.603414535522461,
+          "cosine": 0.8422025059033381,
+          "keyword": 22.78386283161631
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:4760:21fc39eb8d30",
+          "score": -6.650661945343018,
+          "cosine": 0.700905675136983,
+          "keyword": 0.5493041461679588
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:1680:c9481e99f3c5",
+          "score": -10.56829833984375,
+          "cosine": 0.6282099067886014,
+          "keyword": 0.7783117651525419
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:5880:7e8953b15043",
+          "score": -11.424505233764648,
+          "cosine": 0.5293347626368061,
+          "keyword": 3.146634338186173
+        }
+      ],
+      "elapsed_ms": 924.42
+    },
+    {
+      "id": "literacy",
+      "category": "AI Act",
+      "instrument": "ai-act",
+      "query": "What should providers consider for AI literacy of staff?",
+      "relevant_sources": [
+        "ai-act-oj-art-4"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-4",
+          "chunk_id": "ai-act-oj-art-4:0:45d46a68f9b4",
+          "score": 6.571953773498535,
+          "cosine": 0.7626405851284034,
+          "keyword": 12.016139283793931
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:3640:f4211f52d4dd",
+          "score": -1.668865442276001,
+          "cosine": 0.6666589125480236,
+          "keyword": 3.680922228614354
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:0:fe32c909cbc7",
+          "score": -3.266303062438965,
+          "cosine": 0.658521184302394,
+          "keyword": 3.8580279871673175
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2520:0580249d6069",
+          "score": -5.285871982574463,
+          "cosine": 0.6331356371006194,
+          "keyword": 2.607846473603762
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:280:3b5f107f16ed",
+          "score": -6.521516799926758,
+          "cosine": 0.6043446856842514,
+          "keyword": 0.3873063292194929
+        },
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:840:094dfee80e7a",
+          "score": -6.59456729888916,
+          "cosine": 0.5824991817894165,
+          "keyword": 0.5540453460158126
+        }
+      ],
+      "elapsed_ms": 915.68
+    },
+    {
+      "id": "risk-management",
+      "category": "AI Act",
+      "instrument": "ai-act",
+      "query": "How is a risk management system established for high-risk AI systems?",
+      "relevant_sources": [
+        "ai-act-oj-art-9"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:0:67b7246eaf7e",
+          "score": 8.69874382019043,
+          "cosine": 0.8534741833116813,
+          "keyword": 10.907263336840243
+        },
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:0:7068b8c6d6e6",
+          "score": 4.229574203491211,
+          "cosine": 0.7385507036198483,
+          "keyword": 2.823227378147709
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:1960:f040ef7b4e04",
+          "score": 3.9748916625976562,
+          "cosine": 0.7619512080824019,
+          "keyword": 2.3176574379488053
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:0:0636b958331d",
+          "score": 3.946953296661377,
+          "cosine": 0.7249209687313524,
+          "keyword": 3.2608305143595455
+        }
+      ],
+      "elapsed_ms": 858.67
+    },
+    {
+      "id": "oversight",
+      "category": "AI Act",
+      "instrument": "ai-act",
+      "query": "What measures enable natural persons to oversee high-risk AI systems?",
+      "relevant_sources": [
+        "ai-act-oj-art-14"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:0:7068b8c6d6e6",
+          "score": 5.629762649536133,
+          "cosine": 0.8078029220723465,
+          "keyword": 6.09605772201307
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2520:0580249d6069",
+          "score": 3.1826677322387695,
+          "cosine": 0.7901138932800772,
+          "keyword": 6.3796198811530616
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:2800:a9b8dff52f7b",
+          "score": 2.6378626823425293,
+          "cosine": 0.7436313067605761,
+          "keyword": 5.386761017189568
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:2520:845b87dd7f8a",
+          "score": 1.8137726783752441,
+          "cosine": 0.6978404648939299,
+          "keyword": 5.419166399713779
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:3360:007022aaa2c3",
+          "score": -1.0777256488800049,
+          "cosine": 0.5738227349485273,
+          "keyword": 4.279633794650413
+        },
+        {
+          "source_id": "ai-act-oj-art-4",
+          "chunk_id": "ai-act-oj-art-4:0:45d46a68f9b4",
+          "score": -2.481165647506714,
+          "cosine": 0.6680699379029649,
+          "keyword": 4.928432140885231
+        }
+      ],
+      "elapsed_ms": 864.88
+    },
+    {
+      "id": "synthetic-content",
+      "category": "AI Act",
+      "instrument": "ai-act",
+      "query": "What disclosure requirements concern deep fakes and artificially generated content?",
+      "relevant_sources": [
+        "ai-act-oj-art-50"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:2240:e2051167b528",
+          "score": 6.379795074462891,
+          "cosine": 0.7438916316421174,
+          "keyword": 12.286091981110705
+        },
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:2800:ec161b7a2a9e",
+          "score": -10.925444602966309,
+          "cosine": 0.6221546256024739,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:280:3b5f107f16ed",
+          "score": -11.052789688110352,
+          "cosine": 0.6394932498858521,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:1120:c9693f976107",
+          "score": -11.203664779663086,
+          "cosine": 0.5857451731381955,
+          "keyword": 3.344195197266515
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:280:62269210d9ff",
+          "score": -11.23076343536377,
+          "cosine": 0.605251432719461,
+          "keyword": 3.2410806661400557
+        }
+      ],
+      "elapsed_ms": 652.36
+    },
+    {
+      "id": "global-breach",
+      "category": "Across instruments",
+      "query": "Notification of a personal data breach to the supervisory authority",
+      "relevant_sources": [
+        "gdpr-oj-art-33"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:0:05f4dc03ae5f",
+          "score": 10.229588508605957,
+          "cosine": 0.8536597576760449,
+          "keyword": 22.85320309684048
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:840:c66393502710",
+          "score": 2.077956199645996,
+          "cosine": 0.712780473584677,
+          "keyword": 10.17490907177511
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1960:903b7babe615",
+          "score": 0.41027897596359253,
+          "cosine": 0.5723070068958959,
+          "keyword": 7.413274331599391
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:1120:38380a770efc",
+          "score": 0.30859917402267456,
+          "cosine": 0.6869105897193161,
+          "keyword": 8.35887262016689
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:1960:e891cd9ee464",
+          "score": 0.19158419966697693,
+          "cosine": 0.6210669677067199,
+          "keyword": 6.420276985937573
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1680:ab9bacae7a96",
+          "score": -2.967489719390869,
+          "cosine": 0.6903840056518327,
+          "keyword": 2.459574880503997
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:840:9e7847e705cc",
+          "score": -4.809128761291504,
+          "cosine": 0.7259515107781492,
+          "keyword": 3.960483943221207
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:3640:c461703ab00c",
+          "score": -5.224122047424316,
+          "cosine": 0.6198182045630722,
+          "keyword": 4.450130252119706
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:3640:2496ef9dabae",
+          "score": -5.356130599975586,
+          "cosine": 0.6485270350765064,
+          "keyword": 4.149045519082364
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:7560:e848051480fe",
+          "score": -6.723837852478027,
+          "cosine": 0.6682052135254103,
+          "keyword": 3.792237513799652
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1400:c9a47a12a30b",
+          "score": -7.770964622497559,
+          "cosine": 0.5991535524701661,
+          "keyword": 5.387926680015571
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:2800:0a4b6a1f04d9",
+          "score": -8.348005294799805,
+          "cosine": 0.6711617008866783,
+          "keyword": 5.714401866871944
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:1680:389fcbcd6b89",
+          "score": -9.001411437988281,
+          "cosine": 0.6775187828270665,
+          "keyword": 2.2347399773257313
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:280:d8e8ae357d32",
+          "score": -9.340303421020508,
+          "cosine": 0.674837373313091,
+          "keyword": 2.3417731784738374
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:280:45caa117074b",
+          "score": -10.106109619140625,
+          "cosine": 0.6650627335975807,
+          "keyword": 1.4208434076181704
+        }
+      ],
+      "elapsed_ms": 994.68
+    },
+    {
+      "id": "global-dark-patterns",
+      "category": "Across instruments",
+      "query": "Designing online interfaces to deceive manipulate or impair free informed decisions",
+      "relevant_sources": [
+        "dsa-oj-art-25"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:0:4e0e91fcd2a9",
+          "score": 5.100818157196045,
+          "cosine": 0.7092385292636861,
+          "keyword": 8.036446579000193
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:280:2b18278a6805",
+          "score": -6.865346908569336,
+          "cosine": 0.5455200273812374,
+          "keyword": 9.534777426679428
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:1120:2c14a97d7d99",
+          "score": -8.522123336791992,
+          "cosine": 0.6276624142779523,
+          "keyword": 4.159603633029097
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:0:e0e6c30536e1",
+          "score": -9.244970321655273,
+          "cosine": 0.5877666086070519,
+          "keyword": 8.14316315672128
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:2800:17a8ff2354f9",
+          "score": -9.816147804260254,
+          "cosine": 0.6858255385369428,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-7",
+          "chunk_id": "dma-oj-art-7:560:b512740d995d",
+          "score": -10.361753463745117,
+          "cosine": 0.5779851341868301,
+          "keyword": 7.0431104523258625
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:840:14a37957756f",
+          "score": -10.512971878051758,
+          "cosine": 0.634643462067596,
+          "keyword": 3.5189810630859775
+        },
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:0:1e7f9f53773b",
+          "score": -10.785090446472168,
+          "cosine": 0.6093995290278248,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:8120:c61f4c5f3599",
+          "score": -10.919673919677734,
+          "cosine": 0.5937019004234667,
+          "keyword": 4.502109541322833
+        },
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:1680:6895ae0e068f",
+          "score": -10.923724174499512,
+          "cosine": 0.6179527419132076,
+          "keyword": 3.166710620187714
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:2240:1a86bee65c43",
+          "score": -10.99489688873291,
+          "cosine": 0.5123063445966327,
+          "keyword": 5.008244466679084
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:1680:c9481e99f3c5",
+          "score": -11.08131217956543,
+          "cosine": 0.5897341503265011,
+          "keyword": 6.472860717348091
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1120:da0ef23ce0eb",
+          "score": -11.114036560058594,
+          "cosine": 0.6249596554038641,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:2520:41419b94fa7b",
+          "score": -11.163874626159668,
+          "cosine": 0.6300345287515001,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:0:0636b958331d",
+          "score": -11.320807456970215,
+          "cosine": 0.6115680101941864,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:1680:96c132c0c6ee",
+          "score": -11.354869842529297,
+          "cosine": 0.6131347136967539,
+          "keyword": 2.8262091238615508
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:560:de7a79329434",
+          "score": -11.397321701049805,
+          "cosine": 0.6111181596681373,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 1173.04
+    },
+    {
+      "id": "tariff",
+      "category": "Missing source",
+      "query": "What is the import duty for roasted coffee from Brazil?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:1960:887893a48c7d",
+          "score": -11.278436660766602,
+          "cosine": 0.4904387299428914,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-7",
+          "chunk_id": "dma-oj-art-7:3920:eb374b7a64e8",
+          "score": -11.294038772583008,
+          "cosine": 0.49339222532489607,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:8680:5732c6a29edb",
+          "score": -11.324163436889648,
+          "cosine": 0.4935193772223715,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:2520:c596a96e5078",
+          "score": -11.324233055114746,
+          "cosine": 0.49475922901829755,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:280:7030135df9c2",
+          "score": -11.34268569946289,
+          "cosine": 0.5211213129783495,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1120:b014bed18067",
+          "score": -11.349682807922363,
+          "cosine": 0.5100117552077852,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": -11.350381851196289,
+          "cosine": 0.5020858145045866,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:1400:32df0b1dd64c",
+          "score": -11.352704048156738,
+          "cosine": 0.5042428496701759,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:1680:7d210ccbad36",
+          "score": -11.353425979614258,
+          "cosine": 0.49859032113193935,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2800:9795ee8991da",
+          "score": -11.367842674255371,
+          "cosine": 0.4897576641726707,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:0:2a25ebde5bd2",
+          "score": -11.377403259277344,
+          "cosine": 0.51910601099622,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:3080:7bfdec25a11f",
+          "score": -11.389076232910156,
+          "cosine": 0.48916912714508626,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:1960:b8be7b81aecd",
+          "score": -11.4015474319458,
+          "cosine": 0.4891421797934157,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 628.89
+    },
+    {
+      "id": "weather",
+      "category": "Missing source",
+      "query": "What is the weather forecast for Paris next weekend?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:1960:9e5c27b4cb82",
+          "score": -11.135671615600586,
+          "cosine": 0.41710359021323795,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:1120:3b258d42d4d9",
+          "score": -11.203503608703613,
+          "cosine": 0.39660718686811547,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:2240:9503b3b73b9a",
+          "score": -11.21102523803711,
+          "cosine": 0.399099020857966,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:8400:ccf14f903a37",
+          "score": -11.2212553024292,
+          "cosine": 0.3968026262225809,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-7",
+          "chunk_id": "dma-oj-art-7:2240:a916ee3953a4",
+          "score": -11.223995208740234,
+          "cosine": 0.39806906698991895,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2520:0580249d6069",
+          "score": -11.228302001953125,
+          "cosine": 0.4029163114891934,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:3080:f7d357366a7d",
+          "score": -11.242801666259766,
+          "cosine": 0.4156473060636263,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1400:6a21063687de",
+          "score": -11.258513450622559,
+          "cosine": 0.4006750797584674,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:840:f617d2604344",
+          "score": -11.27884292602539,
+          "cosine": 0.4276322512207814,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:4200:6c02fb5b5395",
+          "score": -11.28378677368164,
+          "cosine": 0.41562822658556453,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 662.93
+    },
+    {
+      "id": "visa",
+      "category": "Missing source",
+      "query": "What visa documents are needed for a holiday in Japan?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:2240:6bee350e7785",
+          "score": -11.233442306518555,
+          "cosine": 0.4793040712779711,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": -11.234766960144043,
+          "cosine": 0.4793592326359678,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:2240:9503b3b73b9a",
+          "score": -11.238184928894043,
+          "cosine": 0.5019119565848111,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:560:fda3cd0ff700",
+          "score": -11.245244979858398,
+          "cosine": 0.5070868387788385,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:280:64e3f4d95993",
+          "score": -11.248758316040039,
+          "cosine": 0.5009610284373021,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:0:d79e986a0638",
+          "score": -11.26408576965332,
+          "cosine": 0.48755427231380666,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:560:3204eb3261fd",
+          "score": -11.26431941986084,
+          "cosine": 0.4997180453798045,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:1120:9815b5fbb3a4",
+          "score": -11.272794723510742,
+          "cosine": 0.5207377188802872,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:8400:ccf14f903a37",
+          "score": -11.273225784301758,
+          "cosine": 0.4958057406020951,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1400:c9a47a12a30b",
+          "score": -11.288363456726074,
+          "cosine": 0.4869984427351899,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:0:22802e0d8807",
+          "score": -11.299439430236816,
+          "cosine": 0.5283980534379895,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:3080:fd46d4443171",
+          "score": -11.315032005310059,
+          "cosine": 0.4921342961786119,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 644.48
+    },
+    {
+      "id": "recipe",
+      "category": "Missing source",
+      "query": "How do I bake a chocolate cake with walnuts?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:2520:3294570dc5c5",
+          "score": -11.15750503540039,
+          "cosine": 0.37068437810187665,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:1680:60a965e65dff",
+          "score": -11.17102336883545,
+          "cosine": 0.38484976523474973,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:1400:f79c1a8f33ce",
+          "score": -11.175463676452637,
+          "cosine": 0.36396134394650004,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:2520:16d5bea10dd1",
+          "score": -11.200393676757812,
+          "cosine": 0.3761441617910059,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:2800:d7b397c17f3b",
+          "score": -11.21677303314209,
+          "cosine": 0.3773015531831564,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:1680:dd8aa03a2e94",
+          "score": -11.227054595947266,
+          "cosine": 0.3859192406840827,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:3080:9c0f275faa0c",
+          "score": -11.232538223266602,
+          "cosine": 0.36896900028276386,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:840:1acb813ea747",
+          "score": -11.238466262817383,
+          "cosine": 0.36576881064443484,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1120:b014bed18067",
+          "score": -11.24954605102539,
+          "cosine": 0.3707633681464211,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1400:c9a47a12a30b",
+          "score": -11.252532005310059,
+          "cosine": 0.36983188283391294,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:4480:a3bb5fcc3afd",
+          "score": -11.285449028015137,
+          "cosine": 0.364965719100817,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:1400:e72fbbb41043",
+          "score": -11.316121101379395,
+          "cosine": 0.36958828083240997,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 642.1
+    },
+    {
+      "id": "stock",
+      "category": "Missing source",
+      "query": "Predict the share price of Apple tomorrow",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:1960:9e5c27b4cb82",
+          "score": -11.306324005126953,
+          "cosine": 0.5098559458853645,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:5600:7a5f5425e85f",
+          "score": -11.338863372802734,
+          "cosine": 0.5487476732316169,
+          "keyword": 4.731711932674157
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:840:6ad26e0bc260",
+          "score": -11.361577033996582,
+          "cosine": 0.5119766051974878,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:560:f1ecff7ff95e",
+          "score": -11.373313903808594,
+          "cosine": 0.512651215347096,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:840:094dfee80e7a",
+          "score": -11.378055572509766,
+          "cosine": 0.5275199256616855,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:560:2a74f3b4a885",
+          "score": -11.406227111816406,
+          "cosine": 0.5282433889216992,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:2800:0a4b6a1f04d9",
+          "score": -11.410829544067383,
+          "cosine": 0.5068129021701171,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:840:14a37957756f",
+          "score": -11.416143417358398,
+          "cosine": 0.5546261570794914,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 692.26
+    },
+    {
+      "id": "rail",
+      "category": "Missing source",
+      "query": "Which train departs Berlin for Munich at noon?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:2240:53a3665fe415",
+          "score": -11.144125938415527,
+          "cosine": 0.37079135932922364,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:0:0636b958331d",
+          "score": -11.159538269042969,
+          "cosine": 0.36699791354067046,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:1960:887893a48c7d",
+          "score": -11.159712791442871,
+          "cosine": 0.3781232407177915,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:3360:205af64e7959",
+          "score": -11.164976119995117,
+          "cosine": 0.3542312555919666,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:1120:c9693f976107",
+          "score": -11.167455673217773,
+          "cosine": 0.35762246936646697,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:3080:b3be4596a39b",
+          "score": -11.18186092376709,
+          "cosine": 0.35015715874985043,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:1120:7e8aa7436698",
+          "score": -11.207029342651367,
+          "cosine": 0.3686404283062904,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:840:6ad26e0bc260",
+          "score": -11.208166122436523,
+          "cosine": 0.3467044281443004,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-7",
+          "chunk_id": "dma-oj-art-7:3920:eb374b7a64e8",
+          "score": -11.210894584655762,
+          "cosine": 0.3582044195161969,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:2800:f82908ddb72b",
+          "score": -11.237286567687988,
+          "cosine": 0.3566158971160823,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2800:9795ee8991da",
+          "score": -11.247873306274414,
+          "cosine": 0.3672018036117731,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 666.11
+    },
+    {
+      "id": "known-probe-0",
+      "instrument": "gdpr",
+      "query": "Can people move a copy of their information to another provider?",
+      "relevant_sources": [
+        "gdpr-oj-art-20"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": -5.759212970733643,
+          "cosine": 0.6834026485873106,
+          "keyword": 3.1966625946482448
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1120:77932bccfee4",
+          "score": -6.0566229820251465,
+          "cosine": 0.5801109384628361,
+          "keyword": 4.676917399769785
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:0:4cccc82b2dac",
+          "score": -8.251729011535645,
+          "cosine": 0.6138285541201497,
+          "keyword": 2.900007221696549
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:1400:fc1f3958b5ef",
+          "score": -8.654056549072266,
+          "cosine": 0.5978677466303629,
+          "keyword": 2.006909819022187
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:1400:eaf139a892b3",
+          "score": -9.938302993774414,
+          "cosine": 0.608514935744067,
+          "keyword": 3.1966625946482448
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:2800:09ae39d74ba5",
+          "score": -10.263935089111328,
+          "cosine": 0.5632503897318629,
+          "keyword": 1.959668010641482
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:560:b541b2f945dc",
+          "score": -10.408432006835938,
+          "cosine": 0.535594943007843,
+          "keyword": 2.900007221696549
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:1120:9815b5fbb3a4",
+          "score": -10.57029914855957,
+          "cosine": 0.5735850707576751,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:0:f121f240337d",
+          "score": -11.0883207321167,
+          "cosine": 0.5953111393220789,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:280:526f39e2441f",
+          "score": -11.191919326782227,
+          "cosine": 0.5769703793730804,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 972.76
+    },
+    {
+      "id": "known-probe-1",
+      "instrument": "dsa",
+      "query": "How can someone appeal a platform decision to take down their post?",
+      "relevant_sources": [
+        "dsa-oj-art-20"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:280:2b18278a6805",
+          "score": -5.975795269012451,
+          "cosine": 0.5492886369041486,
+          "keyword": 4.389922165066207
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:1120:f0efee30e333",
+          "score": -9.797944068908691,
+          "cosine": 0.5629896165175952,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:560:b08f7827a1f5",
+          "score": -10.34770393371582,
+          "cosine": 0.5919983933520473,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:0:4e0e91fcd2a9",
+          "score": -10.953447341918945,
+          "cosine": 0.5607516444050974,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:840:6518a740b2c6",
+          "score": -11.026968002319336,
+          "cosine": 0.6219296303312174,
+          "keyword": 2.2278568955096083
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:1120:b4254d23c386",
+          "score": -11.077305793762207,
+          "cosine": 0.5822652909856535,
+          "keyword": 1.3623927098919415
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:2520:167e5f934ff4",
+          "score": -11.304485321044922,
+          "cosine": 0.5296129624276403,
+          "keyword": 4.479208542236403
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:280:9833d7c963f9",
+          "score": -11.405572891235352,
+          "cosine": 0.475435313610746,
+          "keyword": 1.2912581415266657
+        }
+      ],
+      "elapsed_ms": 865.71
+    },
+    {
+      "id": "known-probe-2",
+      "instrument": "ai-act",
+      "query": "How should an operator override a machine recommendation?",
+      "relevant_sources": [
+        "ai-act-oj-art-14"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:1960:773849391e3c",
+          "score": -9.305780410766602,
+          "cosine": 0.5989631978549592,
+          "keyword": 3.509544300697558
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:840:9268066196a1",
+          "score": -11.238727569580078,
+          "cosine": 0.580905471322733,
+          "keyword": 3.344195197266515
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:1960:9e5c27b4cb82",
+          "score": -11.401663780212402,
+          "cosine": 0.6127812325102083,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:1680:96c132c0c6ee",
+          "score": -11.424484252929688,
+          "cosine": 0.6121032162780528,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 623.76
+    },
+    {
+      "id": "known-probe-3",
+      "instrument": "all",
+      "query": "What import tax do I pay on electric bicycles?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:840:9e7847e705cc",
+          "score": -11.413575172424316,
+          "cosine": 0.4900321230723728,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:280:7030135df9c2",
+          "score": -11.437112808227539,
+          "cosine": 0.5073113644875641,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:2240:82216abfb4fc",
+          "score": -11.442729949951172,
+          "cosine": 0.5230784644395958,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1680:88912bb64b38",
+          "score": -11.444225311279297,
+          "cosine": 0.5064707663203429,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:5040:a61ef4a65a9c",
+          "score": -11.444352149963379,
+          "cosine": 0.4833234074172945,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:280:64e3f4d95993",
+          "score": -11.445037841796875,
+          "cosine": 0.4723479266245282,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1120:b014bed18067",
+          "score": -11.451292991638184,
+          "cosine": 0.4980818489490695,
+          "keyword": 0
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:560:f1ecff7ff95e",
+          "score": -11.452088356018066,
+          "cosine": 0.5016089460591286,
+          "keyword": 0
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:0:22802e0d8807",
+          "score": -11.452884674072266,
+          "cosine": 0.4784593573769329,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:280:f483877c43ec",
+          "score": -11.455046653747559,
+          "cosine": 0.4763500510837455,
+          "keyword": 0
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2800:9795ee8991da",
+          "score": -11.458847045898438,
+          "cosine": 0.4783078410862266,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:840:8b23059e8386",
+          "score": -11.469011306762695,
+          "cosine": 0.4730559737604941,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 647.1
+    },
+    {
+      "id": "known-probe-4",
+      "instrument": "gdpr",
+      "query": "What retention deadline applies to employee attendance records?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:280:9e86b2894ecb",
+          "score": -9.911767959594727,
+          "cosine": 0.6176519050199406,
+          "keyword": 3.1966625946482448
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:280:9eea426ebfff",
+          "score": -10.351707458496094,
+          "cosine": 0.6069684538573064,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:1120:3b258d42d4d9",
+          "score": -10.67640495300293,
+          "cosine": 0.5775602191626615,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:2520:a9a7919070a2",
+          "score": -10.999959945678711,
+          "cosine": 0.5923476622396059,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:840:a7eb3dd7c661",
+          "score": -11.247532844543457,
+          "cosine": 0.6069103640429131,
+          "keyword": 3.3666984372229805
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:560:aac74bd4419b",
+          "score": -11.268720626831055,
+          "cosine": 0.5774236869457822,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:3920:01182a9de393",
+          "score": -11.3253173828125,
+          "cosine": 0.5912373879713124,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:280:f483877c43ec",
+          "score": -11.354347229003906,
+          "cosine": 0.5669583418005326,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1400:6a21063687de",
+          "score": -11.39277458190918,
+          "cosine": 0.5764694654510818,
+          "keyword": 0
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1120:582f38af0b6b",
+          "score": -11.393402099609375,
+          "cosine": 0.5925740037191245,
+          "keyword": 0
+        }
+      ],
+      "elapsed_ms": 716.06
+    }
+  ],
+  "neighbor_context": [
+    {
+      "id": "privacy-notice",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "What information must a controller provide when personal data are collected from the data subject?",
+      "relevant_sources": [
+        "gdpr-oj-art-13"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:0:20f5c7b09451",
+          "score": 9.025418281555176,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:840:c66393502710",
+          "score": 6.3626604080200195,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:0:4cccc82b2dac",
+          "score": 5.782226085662842,
+          "context_start": 0,
+          "context_end": 1242
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:560:c65efe157b79",
+          "score": 5.746110916137695,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:280:9e86b2894ecb",
+          "score": 5.356797218322754,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:2800:5b488b0b0128",
+          "score": 3.833117961883545,
+          "context_start": 2160,
+          "context_end": 3760
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1680:ab9bacae7a96",
+          "score": 3.51859712600708,
+          "context_start": 440,
+          "context_end": 2040
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:1400:fc1f3958b5ef",
+          "score": 2.683330774307251,
+          "context_start": 215,
+          "context_end": 1815
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:840:a7eb3dd7c661",
+          "score": 1.4043505191802979,
+          "context_start": 0,
+          "context_end": 1517
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:280:526f39e2441f",
+          "score": 0.8145447969436646,
+          "context_start": 0,
+          "context_end": 1600
+        }
+      ],
+      "elapsed_ms": 3040.88
+    },
+    {
+      "id": "access",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "Which information is included in the right of access by the data subject?",
+      "relevant_sources": [
+        "gdpr-oj-art-15"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:0:ffac05a20237",
+          "score": 6.479852676391602,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:3080:fd46d4443171",
+          "score": 3.1930809020996094,
+          "context_start": 1654,
+          "context_end": 3254
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:560:c65efe157b79",
+          "score": 2.360441207885742,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:0:4cccc82b2dac",
+          "score": 1.1232060194015503,
+          "context_start": 0,
+          "context_end": 1242
+        },
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:560:950c1d2861d4",
+          "score": -0.6522080302238464,
+          "context_start": 0,
+          "context_end": 1360
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:0:db018a82758a",
+          "score": -0.7395829558372498,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:2800:536ab57e3cf1",
+          "score": -4.8252272605896,
+          "context_start": 2160,
+          "context_end": 3760
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:0:623d3b2e95c2",
+          "score": -5.648886680603027,
+          "context_start": 0,
+          "context_end": 1517
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1400:6035a0fd6f7b",
+          "score": -6.453372001647949,
+          "context_start": 440,
+          "context_end": 2040
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1680:6390955c059b",
+          "score": -8.259725570678711,
+          "context_start": 247,
+          "context_end": 1847
+        }
+      ],
+      "elapsed_ms": 2225.75
+    },
+    {
+      "id": "erase",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "What are the grounds and exceptions for erasure of personal data?",
+      "relevant_sources": [
+        "gdpr-oj-art-17"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:840:9e7847e705cc",
+          "score": 6.1254072189331055,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:2240:22ab0cf9afd9",
+          "score": 1.5756101608276367,
+          "context_start": 1600,
+          "context_end": 3200
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": 1.4748284816741943,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1120:582f38af0b6b",
+          "score": -1.7803752422332764,
+          "context_start": 440,
+          "context_end": 2040
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:1400:fc1f3958b5ef",
+          "score": -3.5001041889190674,
+          "context_start": 215,
+          "context_end": 1815
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:3360:004e7b52d39e",
+          "score": -4.920079231262207,
+          "context_start": 2551,
+          "context_end": 4151
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:840:a7eb3dd7c661",
+          "score": -7.102906227111816,
+          "context_start": 0,
+          "context_end": 1517
+        }
+      ],
+      "elapsed_ms": 2584.19
+    },
+    {
+      "id": "portability",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "Can personal data be received in a structured commonly used machine-readable format?",
+      "relevant_sources": [
+        "gdpr-oj-art-20"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:0:4cccc82b2dac",
+          "score": 6.946503639221191,
+          "context_start": 0,
+          "context_end": 1242
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1960:b6082b2a82ea",
+          "score": -1.4569278955459595,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1400:6a21063687de",
+          "score": -2.851231098175049,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:0:f121f240337d",
+          "score": -3.653615951538086,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:1400:eaf139a892b3",
+          "score": -4.997121810913086,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:3360:004e7b52d39e",
+          "score": -6.550389289855957,
+          "context_start": 2551,
+          "context_end": 4151
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1400:c9a47a12a30b",
+          "score": -7.017809867858887,
+          "context_start": 247,
+          "context_end": 1847
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:1400:fc1f3958b5ef",
+          "score": -7.109495162963867,
+          "context_start": 215,
+          "context_end": 1815
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:3080:6ffc57601114",
+          "score": -7.749281883239746,
+          "context_start": 2022,
+          "context_end": 3622
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:840:a7eb3dd7c661",
+          "score": -9.068351745605469,
+          "context_start": 0,
+          "context_end": 1517
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:2240:f7b083d31383",
+          "score": -10.149147987365723,
+          "context_start": 1600,
+          "context_end": 3200
+        }
+      ],
+      "elapsed_ms": 2771.6
+    },
+    {
+      "id": "automated-decisions",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "What does the original text say about decisions based solely on automated processing including profiling?",
+      "relevant_sources": [
+        "gdpr-oj-art-22"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:0:1e7f9f53773b",
+          "score": 5.66309118270874,
+          "context_start": 0,
+          "context_end": 1360
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:1400:f79c1a8f33ce",
+          "score": 2.183697462081909,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1680:88912bb64b38",
+          "score": -2.026505470275879,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1680:344f56f89bf8",
+          "score": -2.6449270248413086,
+          "context_start": 1040,
+          "context_end": 2640
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:560:2e030ccbb180",
+          "score": -6.869152069091797,
+          "context_start": 0,
+          "context_end": 1242
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1120:582f38af0b6b",
+          "score": -7.311298370361328,
+          "context_start": 440,
+          "context_end": 2040
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:2520:a9a7919070a2",
+          "score": -8.202325820922852,
+          "context_start": 1880,
+          "context_end": 3480
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:840:03419f3db6a9",
+          "score": -8.906111717224121,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:280:45caa117074b",
+          "score": -9.612495422363281,
+          "context_start": 0,
+          "context_end": 1517
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:280:9e86b2894ecb",
+          "score": -9.623698234558105,
+          "context_start": 0,
+          "context_end": 1600
+        }
+      ],
+      "elapsed_ms": 3232.92
+    },
+    {
+      "id": "security",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "How should the controller assess an appropriate level of security of processing?",
+      "relevant_sources": [
+        "gdpr-oj-art-32"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1400:c9a47a12a30b",
+          "score": 7.388000011444092,
+          "context_start": 247,
+          "context_end": 1847
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:4200:5a82eaf1b834",
+          "score": 3.674400806427002,
+          "context_start": 2857,
+          "context_end": 4457
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:280:45caa117074b",
+          "score": 1.1244081258773804,
+          "context_start": 0,
+          "context_end": 1517
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:0:311bc3c55526",
+          "score": -1.2414801120758057,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1680:ab9bacae7a96",
+          "score": -2.29853892326355,
+          "context_start": 440,
+          "context_end": 2040
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:3920:70c68d14c76a",
+          "score": -2.8523616790771484,
+          "context_start": 2551,
+          "context_end": 4151
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1120:77932bccfee4",
+          "score": -3.9349052906036377,
+          "context_start": 480,
+          "context_end": 2080
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:1400:eaf139a892b3",
+          "score": -5.66452693939209,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": -6.414249420166016,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:280:414598c35c97",
+          "score": -7.103168487548828,
+          "context_start": 0,
+          "context_end": 1242
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:1120:521e49c2d0a8",
+          "score": -7.939697742462158,
+          "context_start": 215,
+          "context_end": 1815
+        }
+      ],
+      "elapsed_ms": 2915.35
+    },
+    {
+      "id": "breach",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "Which notification is required to a supervisory authority after a personal data breach?",
+      "relevant_sources": [
+        "gdpr-oj-art-33"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:0:05f4dc03ae5f",
+          "score": 8.343521118164062,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:1680:bd62ae12727a",
+          "score": -0.0794805958867073,
+          "context_start": 1040,
+          "context_end": 2640
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:2800:aeed0dc03227",
+          "score": -0.9663008451461792,
+          "context_start": 1654,
+          "context_end": 3254
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": -1.6729110479354858,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:1960:e891cd9ee464",
+          "score": -4.958784103393555,
+          "context_start": 1320,
+          "context_end": 2920
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:840:9e7847e705cc",
+          "score": -5.969622611999512,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1400:c9a47a12a30b",
+          "score": -6.401545524597168,
+          "context_start": 247,
+          "context_end": 1847
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1680:ab9bacae7a96",
+          "score": -6.640257358551025,
+          "context_start": 440,
+          "context_end": 2040
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:560:b541b2f945dc",
+          "score": -7.0473480224609375,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:840:1acb813ea747",
+          "score": -7.814550399780273,
+          "context_start": 0,
+          "context_end": 1242
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:840:a7eb3dd7c661",
+          "score": -8.72465991973877,
+          "context_start": 0,
+          "context_end": 1517
+        }
+      ],
+      "elapsed_ms": 3248.27
+    },
+    {
+      "id": "dpia",
+      "category": "GDPR",
+      "instrument": "gdpr",
+      "query": "What must a data protection impact assessment contain?",
+      "relevant_sources": [
+        "gdpr-oj-art-35"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:2800:536ab57e3cf1",
+          "score": 7.12660026550293,
+          "context_start": 2160,
+          "context_end": 3760
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:560:81c0063156fd",
+          "score": -5.3034162521362305,
+          "context_start": 0,
+          "context_end": 1517
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:1120:521e49c2d0a8",
+          "score": -7.997048377990723,
+          "context_start": 215,
+          "context_end": 1815
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1680:ab9bacae7a96",
+          "score": -8.100083351135254,
+          "context_start": 440,
+          "context_end": 2040
+        },
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:560:950c1d2861d4",
+          "score": -8.90815258026123,
+          "context_start": 0,
+          "context_end": 1360
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:280:8706a65f8538",
+          "score": -9.589433670043945,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:840:a95e8abab1c2",
+          "score": -10.148900985717773,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1120:da0ef23ce0eb",
+          "score": -10.621026992797852,
+          "context_start": 480,
+          "context_end": 2080
+        }
+      ],
+      "elapsed_ms": 2258.09
+    },
+    {
+      "id": "terms",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "What restrictions should intermediary services disclose in their terms and conditions?",
+      "relevant_sources": [
+        "dsa-oj-art-14"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:0:22802e0d8807",
+          "score": 6.582606315612793,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:280:64e3f4d95993",
+          "score": 1.2080069780349731,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1120:b014bed18067",
+          "score": -2.8334438800811768,
+          "context_start": 480,
+          "context_end": 2080
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:0:5d65e95bd3a5",
+          "score": -4.367472171783447,
+          "context_start": 0,
+          "context_end": 1218
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:280:7030135df9c2",
+          "score": -8.107892036437988,
+          "context_start": 0,
+          "context_end": 972
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:560:3204eb3261fd",
+          "score": -8.243185043334961,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:0:d79e986a0638",
+          "score": -8.852407455444336,
+          "context_start": 0,
+          "context_end": 904
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:1400:88812e207dcd",
+          "score": -9.941411018371582,
+          "context_start": 282,
+          "context_end": 1882
+        }
+      ],
+      "elapsed_ms": 2326.78
+    },
+    {
+      "id": "notice-action",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "How do recipients submit sufficiently precise and adequately substantiated notices of illegal content?",
+      "relevant_sources": [
+        "dsa-oj-art-16"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:1120:316b8740f3d5",
+          "score": 6.601162910461426,
+          "context_start": 480,
+          "context_end": 2080
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:840:6ad26e0bc260",
+          "score": 3.7058305740356445,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:2800:a1465aed5f86",
+          "score": -1.2497167587280273,
+          "context_start": 1829,
+          "context_end": 3429
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:840:242a8cd7f3c6",
+          "score": -4.854951858520508,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:1400:bc5d227e8e47",
+          "score": -7.963292121887207,
+          "context_start": 513,
+          "context_end": 2113
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:0:4e0e91fcd2a9",
+          "score": -9.468894958496094,
+          "context_start": 0,
+          "context_end": 972
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:840:6518a740b2c6",
+          "score": -10.210067749023438,
+          "context_start": 0,
+          "context_end": 1218
+        }
+      ],
+      "elapsed_ms": 2350.26
+    },
+    {
+      "id": "reasons",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "What explanation must a statement of reasons provide when content is restricted?",
+      "relevant_sources": [
+        "dsa-oj-art-17"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:0:2a25ebde5bd2",
+          "score": 5.024941444396973,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:1400:6b89f977699c",
+          "score": 0.5865353345870972,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:840:6ad26e0bc260",
+          "score": -4.658570289611816,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:0:22802e0d8807",
+          "score": -5.16300106048584,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:1400:88812e207dcd",
+          "score": -7.76652717590332,
+          "context_start": 282,
+          "context_end": 1882
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:560:6d7f201fdcc3",
+          "score": -8.712388038635254,
+          "context_start": 0,
+          "context_end": 1218
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:0:d79e986a0638",
+          "score": -10.297502517700195,
+          "context_start": 0,
+          "context_end": 904
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:280:7030135df9c2",
+          "score": -10.421430587768555,
+          "context_start": 0,
+          "context_end": 972
+        }
+      ],
+      "elapsed_ms": 2429.58
+    },
+    {
+      "id": "complaints",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "How long should access to the internal complaint-handling system be available?",
+      "relevant_sources": [
+        "dsa-oj-art-20"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:0:bc7d40380fd6",
+          "score": 5.685031890869141,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:1120:81c59308d869",
+          "score": -0.052247513085603714,
+          "context_start": 480,
+          "context_end": 2080
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:2800:a1465aed5f86",
+          "score": -10.114400863647461,
+          "context_start": 1829,
+          "context_end": 3429
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:280:a4bafd10d2c0",
+          "score": -11.044961929321289,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:0:5d65e95bd3a5",
+          "score": -11.1536865234375,
+          "context_start": 0,
+          "context_end": 1218
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:560:b08f7827a1f5",
+          "score": -11.184959411621094,
+          "context_start": 0,
+          "context_end": 904
+        }
+      ],
+      "elapsed_ms": 1931.45
+    },
+    {
+      "id": "dark-patterns",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "What does the text say about online interfaces that deceive or manipulate recipients?",
+      "relevant_sources": [
+        "dsa-oj-art-25"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:0:4e0e91fcd2a9",
+          "score": 5.69422721862793,
+          "context_start": 0,
+          "context_end": 972
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:0:e0e6c30536e1",
+          "score": -0.6470369100570679,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:840:6518a740b2c6",
+          "score": -3.538100481033325,
+          "context_start": 0,
+          "context_end": 1218
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:560:87872203e459",
+          "score": -3.7586610317230225,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:840:14a37957756f",
+          "score": -5.04538106918335,
+          "context_start": 0,
+          "context_end": 904
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:1680:72d6b1287ec8",
+          "score": -6.639644622802734,
+          "context_start": 513,
+          "context_end": 2113
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:280:64e3f4d95993",
+          "score": -8.720735549926758,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:0:9ccd4a7fbab9",
+          "score": -10.549312591552734,
+          "context_start": 0,
+          "context_end": 1600
+        }
+      ],
+      "elapsed_ms": 2019.84
+    },
+    {
+      "id": "ads",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "How should advertisements identify the person on whose behalf the advertisement is presented?",
+      "relevant_sources": [
+        "dsa-oj-art-26"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:560:76d5388c5fd6",
+          "score": 6.501762866973877,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:280:d8e8ae357d32",
+          "score": -7.0101213455200195,
+          "context_start": 0,
+          "context_end": 904
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:560:6d7f201fdcc3",
+          "score": -10.874641418457031,
+          "context_start": 0,
+          "context_end": 1218
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:1680:7d210ccbad36",
+          "score": -10.909416198730469,
+          "context_start": 1040,
+          "context_end": 2640
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1120:b014bed18067",
+          "score": -10.922709465026855,
+          "context_start": 480,
+          "context_end": 2080
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:1680:8d233c2b44c3",
+          "score": -10.932238578796387,
+          "context_start": 1040,
+          "context_end": 2640
+        }
+      ],
+      "elapsed_ms": 1549.29
+    },
+    {
+      "id": "recommendations",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "Which main parameters used in recommender systems must be explained?",
+      "relevant_sources": [
+        "dsa-oj-art-27"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:0:5d65e95bd3a5",
+          "score": 7.646700382232666,
+          "context_start": 0,
+          "context_end": 1218
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:1680:079b162100ac",
+          "score": -6.913083553314209,
+          "context_start": 282,
+          "context_end": 1882
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:1680:72d6b1287ec8",
+          "score": -8.641340255737305,
+          "context_start": 513,
+          "context_end": 2113
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:3080:f7d357366a7d",
+          "score": -10.334243774414062,
+          "context_start": 1829,
+          "context_end": 3429
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1400:70ec99944d01",
+          "score": -10.673416137695312,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:560:3204eb3261fd",
+          "score": -10.674539566040039,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:560:bc4d2acf61c3",
+          "score": -10.886320114135742,
+          "context_start": 0,
+          "context_end": 972
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:840:14a37957756f",
+          "score": -11.21331787109375,
+          "context_start": 0,
+          "context_end": 904
+        }
+      ],
+      "elapsed_ms": 1557.76
+    },
+    {
+      "id": "children",
+      "category": "DSA",
+      "instrument": "dsa",
+      "query": "What privacy safety and security protections apply to minors on online platforms?",
+      "relevant_sources": [
+        "dsa-oj-art-28"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:0:d79e986a0638",
+          "score": 7.903968334197998,
+          "context_start": 0,
+          "context_end": 904
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:1680:72d6b1287ec8",
+          "score": -2.4260921478271484,
+          "context_start": 513,
+          "context_end": 2113
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:0:bc7d40380fd6",
+          "score": -4.9561614990234375,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:0:4e0e91fcd2a9",
+          "score": -5.766632556915283,
+          "context_start": 0,
+          "context_end": 972
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:840:242a8cd7f3c6",
+          "score": -5.935024261474609,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:840:6518a740b2c6",
+          "score": -8.013428688049316,
+          "context_start": 0,
+          "context_end": 1218
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:0:2a25ebde5bd2",
+          "score": -10.96342658996582,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:0:9ccd4a7fbab9",
+          "score": -11.002949714660645,
+          "context_start": 0,
+          "context_end": 1600
+        }
+      ],
+      "elapsed_ms": 1949.33
+    },
+    {
+      "id": "gatekeeper",
+      "category": "DMA",
+      "instrument": "dma",
+      "query": "Which thresholds are used in the designation of gatekeepers?",
+      "relevant_sources": [
+        "dma-oj-art-3"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:2520:c596a96e5078",
+          "score": 5.068854331970215,
+          "context_start": 1880,
+          "context_end": 3480
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:2800:bedbd3c1e7dd",
+          "score": 2.322845935821533,
+          "context_start": 2160,
+          "context_end": 3760
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:5320:586fa8bb5108",
+          "score": -0.5007625222206116,
+          "context_start": 4680,
+          "context_end": 6280
+        },
+        {
+          "source_id": "dma-oj-art-7",
+          "chunk_id": "dma-oj-art-7:0:9fba70bfa271",
+          "score": -0.9017162322998047,
+          "context_start": 0,
+          "context_end": 1600
+        }
+      ],
+      "elapsed_ms": 3198.94
+    },
+    {
+      "id": "interoperability",
+      "category": "DMA",
+      "instrument": "dma",
+      "query": "What basic functionalities of number-independent interpersonal communications services must be interoperable?",
+      "relevant_sources": [
+        "dma-oj-art-7"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dma-oj-art-7",
+          "chunk_id": "dma-oj-art-7:280:e4d9bc6954db",
+          "score": 7.801512718200684,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:5880:3b11910cb5e5",
+          "score": -5.57174015045166,
+          "context_start": 5240,
+          "context_end": 6840
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:1400:32df0b1dd64c",
+          "score": -10.23324203491211,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:5880:7e8953b15043",
+          "score": -11.202917098999023,
+          "context_start": 5240,
+          "context_end": 6840
+        }
+      ],
+      "elapsed_ms": 2895.38
+    },
+    {
+      "id": "literacy",
+      "category": "AI Act",
+      "instrument": "ai-act",
+      "query": "What should providers consider for AI literacy of staff?",
+      "relevant_sources": [
+        "ai-act-oj-art-4"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-4",
+          "chunk_id": "ai-act-oj-art-4:0:45d46a68f9b4",
+          "score": 6.971147537231445,
+          "context_start": 0,
+          "context_end": 467
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:0:fe32c909cbc7",
+          "score": -3.222409725189209,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:2800:a9b8dff52f7b",
+          "score": -4.821702480316162,
+          "context_start": 2160,
+          "context_end": 3760
+        },
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:1400:079f3196ee21",
+          "score": -6.381473064422607,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2520:0580249d6069",
+          "score": -7.144245624542236,
+          "context_start": 1880,
+          "context_end": 3480
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:0:0636b958331d",
+          "score": -7.418423652648926,
+          "context_start": 0,
+          "context_end": 1600
+        }
+      ],
+      "elapsed_ms": 2833.56
+    },
+    {
+      "id": "risk-management",
+      "category": "AI Act",
+      "instrument": "ai-act",
+      "query": "How is a risk management system established for high-risk AI systems?",
+      "relevant_sources": [
+        "ai-act-oj-art-9"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:0:67b7246eaf7e",
+          "score": 9.156732559204102,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:1680:6895ae0e068f",
+          "score": 5.342918395996094,
+          "context_start": 1040,
+          "context_end": 2640
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:0:0636b958331d",
+          "score": 4.776853084564209,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:280:62269210d9ff",
+          "score": 3.526041030883789,
+          "context_start": 0,
+          "context_end": 1600
+        }
+      ],
+      "elapsed_ms": 2687.11
+    },
+    {
+      "id": "oversight",
+      "category": "AI Act",
+      "instrument": "ai-act",
+      "query": "What measures enable natural persons to oversee high-risk AI systems?",
+      "relevant_sources": [
+        "ai-act-oj-art-14"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:0:7068b8c6d6e6",
+          "score": 7.128495216369629,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2520:0580249d6069",
+          "score": 3.3675739765167236,
+          "context_start": 1880,
+          "context_end": 3480
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:1960:70757e793229",
+          "score": 3.013306140899658,
+          "context_start": 1320,
+          "context_end": 2920
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:2520:24265cfcb3a9",
+          "score": 2.145686149597168,
+          "context_start": 1880,
+          "context_end": 3480
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:0:fe32c909cbc7",
+          "score": -1.018422245979309,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "ai-act-oj-art-4",
+          "chunk_id": "ai-act-oj-art-4:0:45d46a68f9b4",
+          "score": -2.13043212890625,
+          "context_start": 0,
+          "context_end": 467
+        }
+      ],
+      "elapsed_ms": 2966.83
+    },
+    {
+      "id": "synthetic-content",
+      "category": "AI Act",
+      "instrument": "ai-act",
+      "query": "What disclosure requirements concern deep fakes and artificially generated content?",
+      "relevant_sources": [
+        "ai-act-oj-art-50"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:2800:17a8ff2354f9",
+          "score": 4.438135147094727,
+          "context_start": 2160,
+          "context_end": 3760
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:4200:21449d8f020b",
+          "score": -10.363382339477539,
+          "context_start": 2916,
+          "context_end": 4516
+        },
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:2800:ec161b7a2a9e",
+          "score": -10.7040376663208,
+          "context_start": 1569,
+          "context_end": 3169
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:0:0636b958331d",
+          "score": -10.920181274414062,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:1120:c9693f976107",
+          "score": -11.082048416137695,
+          "context_start": 480,
+          "context_end": 2080
+        }
+      ],
+      "elapsed_ms": 2402.3
+    },
+    {
+      "id": "global-breach",
+      "category": "Across instruments",
+      "query": "Notification of a personal data breach to the supervisory authority",
+      "relevant_sources": [
+        "gdpr-oj-art-33"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:0:05f4dc03ae5f",
+          "score": 10.26236343383789,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:1680:bd62ae12727a",
+          "score": 1.5817761421203613,
+          "context_start": 1040,
+          "context_end": 2640
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": 0.6156711578369141,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:2240:22ab0cf9afd9",
+          "score": 0.1031777635216713,
+          "context_start": 1600,
+          "context_end": 3200
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:1960:e891cd9ee464",
+          "score": -2.79274320602417,
+          "context_start": 1320,
+          "context_end": 2920
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:1400:eaf139a892b3",
+          "score": -3.734767436981201,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:3640:c461703ab00c",
+          "score": -5.154121398925781,
+          "context_start": 2916,
+          "context_end": 4516
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1400:c9a47a12a30b",
+          "score": -5.71685791015625,
+          "context_start": 247,
+          "context_end": 1847
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1680:ab9bacae7a96",
+          "score": -5.9797868728637695,
+          "context_start": 440,
+          "context_end": 2040
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:280:45caa117074b",
+          "score": -7.780609607696533,
+          "context_start": 0,
+          "context_end": 1517
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:2800:0a4b6a1f04d9",
+          "score": -7.862220287322998,
+          "context_start": 1258,
+          "context_end": 2858
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:3360:004e7b52d39e",
+          "score": -8.381912231445312,
+          "context_start": 2551,
+          "context_end": 4151
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:7560:e848051480fe",
+          "score": -8.561555862426758,
+          "context_start": 6920,
+          "context_end": 8520
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:280:d8e8ae357d32",
+          "score": -9.663143157958984,
+          "context_start": 0,
+          "context_end": 904
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:1680:389fcbcd6b89",
+          "score": -10.450540542602539,
+          "context_start": 1040,
+          "context_end": 2640
+        }
+      ],
+      "elapsed_ms": 3222.01
+    },
+    {
+      "id": "global-dark-patterns",
+      "category": "Across instruments",
+      "query": "Designing online interfaces to deceive manipulate or impair free informed decisions",
+      "relevant_sources": [
+        "dsa-oj-art-25"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:0:4e0e91fcd2a9",
+          "score": 7.915647506713867,
+          "context_start": 0,
+          "context_end": 972
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:560:87872203e459",
+          "score": -4.9104180335998535,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:2800:17a8ff2354f9",
+          "score": -8.718948364257812,
+          "context_start": 2160,
+          "context_end": 3760
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:840:14a37957756f",
+          "score": -9.035235404968262,
+          "context_start": 0,
+          "context_end": 904
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:0:e0e6c30536e1",
+          "score": -9.41331672668457,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:1120:2c14a97d7d99",
+          "score": -10.263236045837402,
+          "context_start": 0,
+          "context_end": 1218
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:8120:c61f4c5f3599",
+          "score": -10.493803024291992,
+          "context_start": 7480,
+          "context_end": 9080
+        },
+        {
+          "source_id": "dma-oj-art-7",
+          "chunk_id": "dma-oj-art-7:560:b512740d995d",
+          "score": -10.584358215332031,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:1680:c9481e99f3c5",
+          "score": -10.70189094543457,
+          "context_start": 1040,
+          "context_end": 2640
+        },
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:0:1e7f9f53773b",
+          "score": -10.828994750976562,
+          "context_start": 0,
+          "context_end": 1360
+        },
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:1680:6895ae0e068f",
+          "score": -11.01357650756836,
+          "context_start": 1040,
+          "context_end": 2640
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:2240:1a86bee65c43",
+          "score": -11.023472785949707,
+          "context_start": 1025,
+          "context_end": 2625
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:0:0636b958331d",
+          "score": -11.070226669311523,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": -11.08816909790039,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:560:de7a79329434",
+          "score": -11.18596363067627,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:1680:96c132c0c6ee",
+          "score": -11.193535804748535,
+          "context_start": 1040,
+          "context_end": 2640
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:2520:41419b94fa7b",
+          "score": -11.281622886657715,
+          "context_start": 1654,
+          "context_end": 3254
+        }
+      ],
+      "elapsed_ms": 3808.02
+    },
+    {
+      "id": "tariff",
+      "category": "Missing source",
+      "query": "What is the import duty for roasted coffee from Brazil?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:1400:2a228f2e7c51",
+          "score": -11.189109802246094,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:2520:c596a96e5078",
+          "score": -11.193926811218262,
+          "context_start": 1880,
+          "context_end": 3480
+        },
+        {
+          "source_id": "dma-oj-art-7",
+          "chunk_id": "dma-oj-art-7:3920:eb374b7a64e8",
+          "score": -11.214072227478027,
+          "context_start": 2818,
+          "context_end": 4418
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1120:b014bed18067",
+          "score": -11.224316596984863,
+          "context_start": 480,
+          "context_end": 2080
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:3080:7bfdec25a11f",
+          "score": -11.232144355773926,
+          "context_start": 1553,
+          "context_end": 3153
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2800:9795ee8991da",
+          "score": -11.232519149780273,
+          "context_start": 2160,
+          "context_end": 3760
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:8680:5732c6a29edb",
+          "score": -11.237264633178711,
+          "context_start": 7509,
+          "context_end": 9109
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:0:9ccd4a7fbab9",
+          "score": -11.25412654876709,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:0:2a25ebde5bd2",
+          "score": -11.260252952575684,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": -11.274198532104492,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:1400:32df0b1dd64c",
+          "score": -11.279779434204102,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:280:7030135df9c2",
+          "score": -11.2893648147583,
+          "context_start": 0,
+          "context_end": 972
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:1960:b8be7b81aecd",
+          "score": -11.309428215026855,
+          "context_start": 513,
+          "context_end": 2113
+        }
+      ],
+      "elapsed_ms": 2427.79
+    },
+    {
+      "id": "weather",
+      "category": "Missing source",
+      "query": "What is the weather forecast for Paris next weekend?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:1680:ccfdc1965673",
+          "score": -10.997833251953125,
+          "context_start": 1040,
+          "context_end": 2640
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:840:f617d2604344",
+          "score": -11.031397819519043,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:2240:9503b3b73b9a",
+          "score": -11.080343246459961,
+          "context_start": 1187,
+          "context_end": 2787
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:8400:ccf14f903a37",
+          "score": -11.092623710632324,
+          "context_start": 7509,
+          "context_end": 9109
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:1120:b4254d23c386",
+          "score": -11.101686477661133,
+          "context_start": 480,
+          "context_end": 2080
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2520:0580249d6069",
+          "score": -11.103189468383789,
+          "context_start": 1880,
+          "context_end": 3480
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:1120:3b258d42d4d9",
+          "score": -11.104642868041992,
+          "context_start": 480,
+          "context_end": 2080
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:3080:fd46d4443171",
+          "score": -11.104734420776367,
+          "context_start": 1654,
+          "context_end": 3254
+        },
+        {
+          "source_id": "dma-oj-art-7",
+          "chunk_id": "dma-oj-art-7:2240:a916ee3953a4",
+          "score": -11.108451843261719,
+          "context_start": 1600,
+          "context_end": 3200
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:4200:6c02fb5b5395",
+          "score": -11.123271942138672,
+          "context_start": 3560,
+          "context_end": 5160
+        }
+      ],
+      "elapsed_ms": 2503.6
+    },
+    {
+      "id": "visa",
+      "category": "Missing source",
+      "query": "What visa documents are needed for a holiday in Japan?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:2240:6bee350e7785",
+          "score": -11.09945011138916,
+          "context_start": 1600,
+          "context_end": 3200
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:560:fda3cd0ff700",
+          "score": -11.107536315917969,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:2240:9503b3b73b9a",
+          "score": -11.138655662536621,
+          "context_start": 1187,
+          "context_end": 2787
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1400:c9a47a12a30b",
+          "score": -11.139703750610352,
+          "context_start": 247,
+          "context_end": 1847
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:8400:ccf14f903a37",
+          "score": -11.153594970703125,
+          "context_start": 7509,
+          "context_end": 9109
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:840:fea6c8d2b893",
+          "score": -11.160913467407227,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:0:22802e0d8807",
+          "score": -11.164278030395508,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:3080:fd46d4443171",
+          "score": -11.165111541748047,
+          "context_start": 1654,
+          "context_end": 3254
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:560:3204eb3261fd",
+          "score": -11.166254043579102,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:1120:9815b5fbb3a4",
+          "score": -11.171052932739258,
+          "context_start": 0,
+          "context_end": 1517
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": -11.178021430969238,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:0:d79e986a0638",
+          "score": -11.19761848449707,
+          "context_start": 0,
+          "context_end": 904
+        }
+      ],
+      "elapsed_ms": 2211.68
+    },
+    {
+      "id": "recipe",
+      "category": "Missing source",
+      "query": "How do I bake a chocolate cake with walnuts?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:3080:9c0f275faa0c",
+          "score": -11.000395774841309,
+          "context_start": 2440,
+          "context_end": 4040
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:840:1acb813ea747",
+          "score": -11.048468589782715,
+          "context_start": 0,
+          "context_end": 1242
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:2520:c596a96e5078",
+          "score": -11.053481101989746,
+          "context_start": 1880,
+          "context_end": 3480
+        },
+        {
+          "source_id": "gdpr-oj-art-32",
+          "chunk_id": "gdpr-oj-art-32:1400:c9a47a12a30b",
+          "score": -11.057965278625488,
+          "context_start": 247,
+          "context_end": 1847
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:1400:f79c1a8f33ce",
+          "score": -11.062238693237305,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:3360:f978846356cd",
+          "score": -11.075061798095703,
+          "context_start": 2022,
+          "context_end": 3622
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1120:b014bed18067",
+          "score": -11.076044082641602,
+          "context_start": 480,
+          "context_end": 2080
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:1680:60a965e65dff",
+          "score": -11.078285217285156,
+          "context_start": 1025,
+          "context_end": 2625
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:4480:a3bb5fcc3afd",
+          "score": -11.07960319519043,
+          "context_start": 2916,
+          "context_end": 4516
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:1680:dd8aa03a2e94",
+          "score": -11.09121322631836,
+          "context_start": 1040,
+          "context_end": 2640
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:1400:e72fbbb41043",
+          "score": -11.092497825622559,
+          "context_start": 0,
+          "context_end": 1517
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:2520:16d5bea10dd1",
+          "score": -11.095210075378418,
+          "context_start": 1880,
+          "context_end": 3480
+        }
+      ],
+      "elapsed_ms": 2442.11
+    },
+    {
+      "id": "stock",
+      "category": "Missing source",
+      "query": "Predict the share price of Apple tomorrow",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:1960:9e5c27b4cb82",
+          "score": -11.20374870300293,
+          "context_start": 1320,
+          "context_end": 2920
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:5600:7a5f5425e85f",
+          "score": -11.246318817138672,
+          "context_start": 4361,
+          "context_end": 5961
+        },
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:840:094dfee80e7a",
+          "score": -11.255956649780273,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:8120:c61f4c5f3599",
+          "score": -11.286757469177246,
+          "context_start": 7480,
+          "context_end": 9080
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:3920:1ee29f2c3209",
+          "score": -11.299538612365723,
+          "context_start": 3280,
+          "context_end": 4880
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:840:6ad26e0bc260",
+          "score": -11.3189697265625,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:840:14a37957756f",
+          "score": -11.319975852966309,
+          "context_start": 0,
+          "context_end": 904
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:2800:0a4b6a1f04d9",
+          "score": -11.344789505004883,
+          "context_start": 1258,
+          "context_end": 2858
+        }
+      ],
+      "elapsed_ms": 2730.53
+    },
+    {
+      "id": "rail",
+      "category": "Missing source",
+      "query": "Which train departs Berlin for Munich at noon?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:1120:c9693f976107",
+          "score": -11.064188003540039,
+          "context_start": 480,
+          "context_end": 2080
+        },
+        {
+          "source_id": "ai-act-oj-art-13",
+          "chunk_id": "ai-act-oj-art-13:0:0636b958331d",
+          "score": -11.105155944824219,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:3640:2bd056270ffe",
+          "score": -11.132315635681152,
+          "context_start": 3000,
+          "context_end": 4600
+        },
+        {
+          "source_id": "dma-oj-art-7",
+          "chunk_id": "dma-oj-art-7:3920:eb374b7a64e8",
+          "score": -11.148858070373535,
+          "context_start": 2818,
+          "context_end": 4418
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:840:6ad26e0bc260",
+          "score": -11.150100708007812,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:7840:e5e6e988aa38",
+          "score": -11.150310516357422,
+          "context_start": 6706,
+          "context_end": 8306
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2800:9795ee8991da",
+          "score": -11.162800788879395,
+          "context_start": 2160,
+          "context_end": 3760
+        },
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:2240:53a3665fe415",
+          "score": -11.164125442504883,
+          "context_start": 1569,
+          "context_end": 3169
+        },
+        {
+          "source_id": "dma-oj-art-6",
+          "chunk_id": "dma-oj-art-6:2800:f82908ddb72b",
+          "score": -11.167104721069336,
+          "context_start": 2160,
+          "context_end": 3760
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:560:15e1aff5f6ba",
+          "score": -11.193127632141113,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:1400:32df0b1dd64c",
+          "score": -11.21678638458252,
+          "context_start": 760,
+          "context_end": 2360
+        }
+      ],
+      "elapsed_ms": 2513.67
+    },
+    {
+      "id": "known-probe-0",
+      "instrument": "gdpr",
+      "query": "Can people move a copy of their information to another provider?",
+      "relevant_sources": [
+        "gdpr-oj-art-20"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1400:6a21063687de",
+          "score": -5.355981826782227,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": -6.9599199295043945,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:560:2e030ccbb180",
+          "score": -8.776418685913086,
+          "context_start": 0,
+          "context_end": 1242
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:1400:eaf139a892b3",
+          "score": -9.532642364501953,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:2800:09ae39d74ba5",
+          "score": -10.367798805236816,
+          "context_start": 2022,
+          "context_end": 3622
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:840:a95e8abab1c2",
+          "score": -10.62024211883545,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:1400:fc1f3958b5ef",
+          "score": -10.676953315734863,
+          "context_start": 215,
+          "context_end": 1815
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:0:f121f240337d",
+          "score": -10.917013168334961,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:280:526f39e2441f",
+          "score": -11.132920265197754,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:1120:9815b5fbb3a4",
+          "score": -11.178768157958984,
+          "context_start": 0,
+          "context_end": 1517
+        }
+      ],
+      "elapsed_ms": 2668.09
+    },
+    {
+      "id": "known-probe-1",
+      "instrument": "dsa",
+      "query": "How can someone appeal a platform decision to take down their post?",
+      "relevant_sources": [
+        "dsa-oj-art-20"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:840:6ad26e0bc260",
+          "score": -5.4731645584106445,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:0:4e0e91fcd2a9",
+          "score": -9.827230453491211,
+          "context_start": 0,
+          "context_end": 972
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:0:d79e986a0638",
+          "score": -10.195296287536621,
+          "context_start": 0,
+          "context_end": 904
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:840:242a8cd7f3c6",
+          "score": -10.351184844970703,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:2240:c920f6ac31cd",
+          "score": -10.700807571411133,
+          "context_start": 1600,
+          "context_end": 3200
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:840:6518a740b2c6",
+          "score": -11.150712966918945,
+          "context_start": 0,
+          "context_end": 1218
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:2520:167e5f934ff4",
+          "score": -11.288383483886719,
+          "context_start": 1258,
+          "context_end": 2858
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:280:9833d7c963f9",
+          "score": -11.319276809692383,
+          "context_start": 0,
+          "context_end": 1600
+        }
+      ],
+      "elapsed_ms": 2449.11
+    },
+    {
+      "id": "known-probe-2",
+      "instrument": "ai-act",
+      "query": "How should an operator override a machine recommendation?",
+      "relevant_sources": [
+        "ai-act-oj-art-14"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:2240:53a3665fe415",
+          "score": -7.2140703201293945,
+          "context_start": 1569,
+          "context_end": 3169
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:1400:2a228f2e7c51",
+          "score": -10.912444114685059,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:1960:f040ef7b4e04",
+          "score": -11.233562469482422,
+          "context_start": 1320,
+          "context_end": 2920
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:1960:9e5c27b4cb82",
+          "score": -11.257197380065918,
+          "context_start": 1320,
+          "context_end": 2920
+        }
+      ],
+      "elapsed_ms": 2231.2
+    },
+    {
+      "id": "known-probe-3",
+      "instrument": "all",
+      "query": "What import tax do I pay on electric bicycles?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:5880:2020624cd917",
+          "score": -11.304269790649414,
+          "context_start": 4361,
+          "context_end": 5961
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:0:22802e0d8807",
+          "score": -11.331869125366211,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1120:b014bed18067",
+          "score": -11.336784362792969,
+          "context_start": 480,
+          "context_end": 2080
+        },
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:280:f483877c43ec",
+          "score": -11.345508575439453,
+          "context_start": 0,
+          "context_end": 1360
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:840:9e7847e705cc",
+          "score": -11.348069190979004,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2800:9795ee8991da",
+          "score": -11.360525131225586,
+          "context_start": 2160,
+          "context_end": 3760
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:280:64e3f4d95993",
+          "score": -11.369723320007324,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:2240:82216abfb4fc",
+          "score": -11.370012283325195,
+          "context_start": 1600,
+          "context_end": 3200
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:280:7030135df9c2",
+          "score": -11.379335403442383,
+          "context_start": 0,
+          "context_end": 972
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:840:8b23059e8386",
+          "score": -11.384796142578125,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1680:88912bb64b38",
+          "score": -11.390875816345215,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:5600:f83bfb4b91c3",
+          "score": -11.393411636352539,
+          "context_start": 4960,
+          "context_end": 6560
+        }
+      ],
+      "elapsed_ms": 2026.18
+    },
+    {
+      "id": "known-probe-4",
+      "instrument": "gdpr",
+      "query": "What retention deadline applies to employee attendance records?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:840:f617d2604344",
+          "score": -10.722505569458008,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:840:9e7847e705cc",
+          "score": -10.866300582885742,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:1400:922442adabe9",
+          "score": -11.07874870300293,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1400:6a21063687de",
+          "score": -11.137351989746094,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:0:923f66682169",
+          "score": -11.198863983154297,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:560:aac74bd4419b",
+          "score": -11.206830978393555,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:1120:582f38af0b6b",
+          "score": -11.261310577392578,
+          "context_start": 440,
+          "context_end": 2040
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:840:a7eb3dd7c661",
+          "score": -11.378057479858398,
+          "context_start": 0,
+          "context_end": 1517
+        },
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:1120:67a665221222",
+          "score": -11.379328727722168,
+          "context_start": 0,
+          "context_end": 1360
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:3920:01182a9de393",
+          "score": -11.380767822265625,
+          "context_start": 2857,
+          "context_end": 4457
+        }
+      ],
+      "elapsed_ms": 2053.77
+    }
+  ],
+  "scoped_context": [
+    {
+      "id": "known-probe-0",
+      "instrument": "gdpr",
+      "query": "Can people move a copy of their information to another provider?",
+      "relevant_sources": [
+        "gdpr-oj-art-20"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1400:6a21063687de",
+          "score": -4.488853931427002,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1400:ddf65a877a85",
+          "score": -5.6097731590271,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:1120:9815b5fbb3a4",
+          "score": -5.623198986053467,
+          "context_start": 0,
+          "context_end": 1517
+        },
+        {
+          "source_id": "gdpr-oj-art-20",
+          "chunk_id": "gdpr-oj-art-20:560:2e030ccbb180",
+          "score": -6.508440017700195,
+          "context_start": 0,
+          "context_end": 1242
+        },
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:280:526f39e2441f",
+          "score": -7.19729471206665,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:1400:fc1f3958b5ef",
+          "score": -7.404959201812744,
+          "context_start": 215,
+          "context_end": 1815
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:1400:eaf139a892b3",
+          "score": -7.489241123199463,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:560:b541b2f945dc",
+          "score": -7.717585563659668,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:0:f121f240337d",
+          "score": -7.922626495361328,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:2800:09ae39d74ba5",
+          "score": -8.483063697814941,
+          "context_start": 2022,
+          "context_end": 3622
+        }
+      ],
+      "elapsed_ms": 2564.89
+    },
+    {
+      "id": "known-probe-1",
+      "instrument": "dsa",
+      "query": "How can someone appeal a platform decision to take down their post?",
+      "relevant_sources": [
+        "dsa-oj-art-20"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:840:6ad26e0bc260",
+          "score": 1.4124141931533813,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:0:4e0e91fcd2a9",
+          "score": -0.8025431632995605,
+          "context_start": 0,
+          "context_end": 972
+        },
+        {
+          "source_id": "dsa-oj-art-28",
+          "chunk_id": "dsa-oj-art-28:0:d79e986a0638",
+          "score": -1.7037684917449951,
+          "context_start": 0,
+          "context_end": 904
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:2240:c920f6ac31cd",
+          "score": -1.871881365776062,
+          "context_start": 1600,
+          "context_end": 3200
+        },
+        {
+          "source_id": "dsa-oj-art-26",
+          "chunk_id": "dsa-oj-art-26:840:242a8cd7f3c6",
+          "score": -2.1870594024658203,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dsa-oj-art-27",
+          "chunk_id": "dsa-oj-art-27:840:6518a740b2c6",
+          "score": -3.5029845237731934,
+          "context_start": 0,
+          "context_end": 1218
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:280:9833d7c963f9",
+          "score": -4.065484046936035,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dsa-oj-art-16",
+          "chunk_id": "dsa-oj-art-16:2520:167e5f934ff4",
+          "score": -4.2555999755859375,
+          "context_start": 1258,
+          "context_end": 2858
+        }
+      ],
+      "elapsed_ms": 2283.04
+    },
+    {
+      "id": "known-probe-2",
+      "instrument": "ai-act",
+      "query": "How should an operator override a machine recommendation?",
+      "relevant_sources": [
+        "ai-act-oj-art-14"
+      ],
+      "expect_evidence": true,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-14",
+          "chunk_id": "ai-act-oj-art-14:2240:53a3665fe415",
+          "score": 0.41081878542900085,
+          "context_start": 1569,
+          "context_end": 3169
+        },
+        {
+          "source_id": "ai-act-oj-art-50",
+          "chunk_id": "ai-act-oj-art-50:1400:2a228f2e7c51",
+          "score": -3.4025604724884033,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:1680:96c132c0c6ee",
+          "score": -5.1971540451049805,
+          "context_start": 1040,
+          "context_end": 2640
+        },
+        {
+          "source_id": "ai-act-oj-art-9",
+          "chunk_id": "ai-act-oj-art-9:3360:cac0f69bd4f3",
+          "score": -6.720481872558594,
+          "context_start": 2586,
+          "context_end": 4186
+        }
+      ],
+      "elapsed_ms": 2182.86
+    },
+    {
+      "id": "known-probe-3",
+      "instrument": "all",
+      "query": "What import tax do I pay on electric bicycles?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "ai-act-oj-art-10",
+          "chunk_id": "ai-act-oj-art-10:2800:9795ee8991da",
+          "score": -11.151268005371094,
+          "context_start": 2160,
+          "context_end": 3760
+        },
+        {
+          "source_id": "dsa-oj-art-25",
+          "chunk_id": "dsa-oj-art-25:280:7030135df9c2",
+          "score": -11.201590538024902,
+          "context_start": 0,
+          "context_end": 972
+        },
+        {
+          "source_id": "dma-oj-art-3",
+          "chunk_id": "dma-oj-art-3:560:f1ecff7ff95e",
+          "score": -11.224453926086426,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "dma-oj-art-5",
+          "chunk_id": "dma-oj-art-5:4480:e5a3e11dec35",
+          "score": -11.263962745666504,
+          "context_start": 3840,
+          "context_end": 5440
+        },
+        {
+          "source_id": "dsa-oj-art-20",
+          "chunk_id": "dsa-oj-art-20:1120:b014bed18067",
+          "score": -11.283710479736328,
+          "context_start": 480,
+          "context_end": 2080
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:840:9e7847e705cc",
+          "score": -11.294783592224121,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "dsa-oj-art-14",
+          "chunk_id": "dsa-oj-art-14:0:22802e0d8807",
+          "score": -11.304102897644043,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:280:f483877c43ec",
+          "score": -11.305405616760254,
+          "context_start": 0,
+          "context_end": 1360
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:2240:82216abfb4fc",
+          "score": -11.310559272766113,
+          "context_start": 1600,
+          "context_end": 3200
+        },
+        {
+          "source_id": "dsa-oj-art-17",
+          "chunk_id": "dsa-oj-art-17:280:64e3f4d95993",
+          "score": -11.320249557495117,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:1680:88912bb64b38",
+          "score": -11.337987899780273,
+          "context_start": 547,
+          "context_end": 2147
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:840:8b23059e8386",
+          "score": -11.348503112792969,
+          "context_start": 200,
+          "context_end": 1800
+        }
+      ],
+      "elapsed_ms": 2062.48
+    },
+    {
+      "id": "known-probe-4",
+      "instrument": "gdpr",
+      "query": "What retention deadline applies to employee attendance records?",
+      "relevant_sources": [],
+      "expect_evidence": false,
+      "ranking": [
+        {
+          "source_id": "gdpr-oj-art-35",
+          "chunk_id": "gdpr-oj-art-35:3920:01182a9de393",
+          "score": -8.08127212524414,
+          "context_start": 2857,
+          "context_end": 4457
+        },
+        {
+          "source_id": "gdpr-oj-art-33",
+          "chunk_id": "gdpr-oj-art-33:840:f617d2604344",
+          "score": -8.135087966918945,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "gdpr-oj-art-25",
+          "chunk_id": "gdpr-oj-art-25:840:a7eb3dd7c661",
+          "score": -8.195552825927734,
+          "context_start": 0,
+          "context_end": 1517
+        },
+        {
+          "source_id": "gdpr-oj-art-6",
+          "chunk_id": "gdpr-oj-art-6:1680:dd8aa03a2e94",
+          "score": -8.378719329833984,
+          "context_start": 1040,
+          "context_end": 2640
+        },
+        {
+          "source_id": "gdpr-oj-art-12",
+          "chunk_id": "gdpr-oj-art-12:1400:922442adabe9",
+          "score": -10.023845672607422,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-5",
+          "chunk_id": "gdpr-oj-art-5:280:5737d749eb83",
+          "score": -10.19328784942627,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-17",
+          "chunk_id": "gdpr-oj-art-17:840:9e7847e705cc",
+          "score": -10.236878395080566,
+          "context_start": 200,
+          "context_end": 1800
+        },
+        {
+          "source_id": "gdpr-oj-art-13",
+          "chunk_id": "gdpr-oj-art-13:1400:6a21063687de",
+          "score": -10.256681442260742,
+          "context_start": 760,
+          "context_end": 2360
+        },
+        {
+          "source_id": "gdpr-oj-art-15",
+          "chunk_id": "gdpr-oj-art-15:560:aac74bd4419b",
+          "score": -10.448568344116211,
+          "context_start": 0,
+          "context_end": 1600
+        },
+        {
+          "source_id": "gdpr-oj-art-22",
+          "chunk_id": "gdpr-oj-art-22:1120:67a665221222",
+          "score": -10.94703483581543,
+          "context_start": 0,
+          "context_end": 1360
+        }
+      ],
+      "elapsed_ms": 2138.05
+    }
+  ]
+}

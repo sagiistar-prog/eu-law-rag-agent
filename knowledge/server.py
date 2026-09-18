@@ -9,7 +9,7 @@ from pipeline import Encoder, TokenLimitExceeded
 from research import research, coverage, markdown
 from jsonschema import Draft202012Validator, ValidationError
 
-def serve(index,encoder,port,database_url=None):
+def serve(index,encoder,port,database_url=None,reranker=None):
     manifest=index['manifest']
     request_validator=Draft202012Validator(json.loads((Path(__file__).resolve().parents[1]/'schemas/research-input.schema.json').read_text(encoding='utf-8')))
     if (manifest['model_id'],manifest['dimension'],manifest['query_prefix']) != (encoder.model_id,encoder.dimension,encoder.prefix):
@@ -43,7 +43,8 @@ def serve(index,encoder,port,database_url=None):
                     except Exception:return self.reply(503,{'status':'unavailable'})
                 return self.reply(200,{'status':'ready','model':encoder.model_id,'chunks':len(index['chunks']),
                     'storage':'postgres-pgvector' if database_url else 'local-json',
-                    'sources':len({c['source_id'] for c in index['chunks']})})
+                    'sources':len({c['source_id'] for c in index['chunks']}),
+                    'ranking':reranker.manifest if reranker else {'method':'hybrid'}})
             assets={'/':('workbench.html','text/html'),'/workbench.js':('workbench.js','text/javascript')}
             if self.path not in assets:return self.reply(404,{'error':'Not found'})
             filename,mime=assets[self.path];data=(Path(__file__).parent/filename).read_bytes()
@@ -69,8 +70,8 @@ def serve(index,encoder,port,database_url=None):
                     from pg_store import retrieve
                     def retriever(q,instrument):
                         with psycopg.connect(database_url) as active:
-                            return retrieve(active,index['manifest']['corpus_sha256'],q,encoder,12,instrument)
-                result=research(index,query,encoder,data.get('instrument','all'),retriever)
+                            return retrieve(active,index['manifest']['corpus_sha256'],q,encoder,40 if reranker else 12,instrument)
+                result=research(index,query,encoder,data.get('instrument','all'),retriever,reranker)
                 result['storage']='postgres-pgvector' if database_url else 'local-json'
                 result['markdown']=markdown(result)
                 self.reply(200,result)
@@ -84,5 +85,9 @@ def serve(index,encoder,port,database_url=None):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--index',type=Path,required=True)
     p.add_argument('--language',choices=['zh','en'],default='en');p.add_argument('--port',type=int,default=8782)
-    p.add_argument('--cache-dir',type=Path);a=p.parse_args()
-    serve(json.loads(a.index.read_text(encoding='utf-8')),Encoder(a.language,str(a.cache_dir) if a.cache_dir else None),a.port,os.getenv('KB_DATABASE_URL'))
+    p.add_argument('--cache-dir',type=Path)
+    p.add_argument('--ranking',choices=['hybrid','rerank'],default='hybrid');a=p.parse_args()
+    from reranker import Reranker
+    cache=str(a.cache_dir) if a.cache_dir else None
+    ranker=Reranker(cache) if a.ranking=='rerank' else None
+    serve(json.loads(a.index.read_text(encoding='utf-8')),Encoder(a.language,cache),a.port,os.getenv('KB_DATABASE_URL'),ranker)

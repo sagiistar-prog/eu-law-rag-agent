@@ -70,6 +70,19 @@ npm run test:browser
 
 HTTP 验收要求 8892 的真实 PostgreSQL 服务；浏览器测试也要求数据库模式。默认无数据库用户不需要运行这些数据库专用检查。网页和 API 共用 loopback 服务，Host/Origin 校验、请求长度限制和 CSP 限制页面能力；这不是多租户生产部署。
 
+## 可选重排实验
+
+默认 `--ranking hybrid` 保持上述流程。显式添加 `--ranking rerank` 会使用固定 revision 的 `Xenova/ms-marco-MiniLM-L-6-v2`，首次需要额外下载约 91 MB ONNX 权重。五个模型制品在启动时校验 SHA256，不校验通过就不启动。
+
+最多 40 个候选进入重排，使用用户所选法规名称和原文邻近上下文。问题与标题、原文合计最多 512 token，实际 tokenizer 检查；上下文最多 1600 字符并保留原文字符位置、原始匹配块与内容哈希。评分是未校准 logit，不是置信度。新 JSON 结果 Schema 为 1.2，附 ranking 元数据；默认仍为 1.1。
+
+```sh
+python knowledge/research.py --index output/official-v1/index.json --request examples/research-request.json --output output/review-rerank-v1 --cache-dir .cache/models --ranking rerank
+python knowledge/server.py --language en --index output/official-v1/index.json --cache-dir .cache/models --port 8893 --ranking rerank
+```
+
+实验尚未达到默认采用门槛，延迟明显增加；完整配对报告、失败题、冻结策略和复现命令见[重排实验](../docs/reranker-experiment.md)。故障不自动降级为其他检索模式。要验收实验数据库服务，可用 `accept_official.py --base http://127.0.0.1:8893`；浏览器测试设置 `EU_LAW_BASE_URL` 为该地址、`EU_LAW_EXPECT_RANKING=hybrid-cross-encoder`。
+
 ## 评测与维护
 
 ```sh

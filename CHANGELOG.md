@@ -1,5 +1,12 @@
 # Maintenance log
 
+## 0.3.1 — 2026-09-18
+
+- Added an explicit opt-in, checksum-pinned MiniLM cross-encoder experiment with bounded source context and token checks.
+- Retained hybrid retrieval as the default: the frozen paraphrase set reached 10/16 target evidence hits, below the predeclared 12/16 adoption gate, with a substantial latency cost.
+- Preserved paired development/holdout reports, failed cases and a machine-readable adoption decision. No threshold changes after inspecting the holdout.
+- Added real PostgreSQL and browser acceptance for both modes, JSON export verification and reproducible CI experiment artifacts.
+
 ## 0.3.0 — 2026-09-18
 
 - Added official Cellar ingestion for 30 selected original-publication articles, provenance checks and extraction coverage.

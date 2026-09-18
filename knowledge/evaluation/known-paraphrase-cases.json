@@ -1,0 +1,43 @@
+[
+  {
+    "id": "known-probe-0",
+    "instrument": "gdpr",
+    "query": "Can people move a copy of their information to another provider?",
+    "relevant_sources": [
+      "gdpr-oj-art-20"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "known-probe-1",
+    "instrument": "dsa",
+    "query": "How can someone appeal a platform decision to take down their post?",
+    "relevant_sources": [
+      "dsa-oj-art-20"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "known-probe-2",
+    "instrument": "ai-act",
+    "query": "How should an operator override a machine recommendation?",
+    "relevant_sources": [
+      "ai-act-oj-art-14"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "known-probe-3",
+    "instrument": "all",
+    "query": "What import tax do I pay on electric bicycles?",
+    "relevant_sources": [],
+    "expect_evidence": false
+  },
+  {
+    "id": "known-probe-4",
+    "instrument": "gdpr",
+    "query": "What retention deadline applies to employee attendance records?",
+    "relevant_sources": [],
+    "expect_evidence": false
+  }
+]

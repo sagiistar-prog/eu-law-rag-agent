@@ -1,0 +1,30 @@
+{
+  "scope": "predeclared engineering adoption decision; not legal certification",
+  "gates": {
+    "canonical_target_hits": true,
+    "canonical_no_false_evidence": true,
+    "known_paraphrases": true,
+    "known_no_false_evidence": true,
+    "holdout_target_hits": false,
+    "holdout_false_evidence": true
+  },
+  "ready_for_default": false,
+  "default_mode": "hybrid",
+  "candidate_mode": "explicit opt-in rerank",
+  "holdout_cases_sha256": "f64af861461131d534116d82601b5ca542bffce39d52e3899d18784977b49125",
+  "corpus_sha256": "e619518fe1569053cfe02c16f65011c1abba4eed35894b3a869ba71896d26535",
+  "ranking": {
+    "method": "hybrid-cross-encoder",
+    "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+    "revision": "a09144355adeed5f58c8ed011d209bf8ee5a1fec",
+    "model_sha256": "c623d0bcb99f4622beb413eaef00cfbe5db20df9f1dd982da4b4f26022881870",
+    "tokenizer_sha256": "9114256b104cca80e04367526f03f46aa3c443c2ed174904142a73bbf13b9fbb",
+    "max_pair_tokens": 512,
+    "max_candidates": 40,
+    "score_kind": "uncalibrated_logit",
+    "query_context": "selected-instrument-v1",
+    "passage_context": "neighbor-window-1600-v1",
+    "minimum_logit": 0.0,
+    "max_logit_gap": 2.0
+  }
+}

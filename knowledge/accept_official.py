@@ -7,8 +7,8 @@ from research import validate_result
 
 
 def accept(base, cases):
-    if base not in ('http://127.0.0.1:8892','http://localhost:8892'):
-        raise ValueError('Acceptance targets the isolated local service on port 8892')
+    if base not in ('http://127.0.0.1:8892','http://localhost:8892','http://127.0.0.1:8893','http://localhost:8893'):
+        raise ValueError('Acceptance targets an isolated local service on port 8892 or 8893')
     with urllib.request.urlopen(base+'/health') as response:health=json.load(response)
     if health['storage']!='postgres-pgvector':raise ValueError('Actual PostgreSQL service required')
     with urllib.request.urlopen(base+'/coverage') as response:coverage=json.load(response)

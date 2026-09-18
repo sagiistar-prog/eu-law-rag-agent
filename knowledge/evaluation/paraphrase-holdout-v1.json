@@ -1,0 +1,202 @@
+[
+  {
+    "id": "portable-photos",
+    "instrument": "gdpr",
+    "query": "If I switch photo storage apps, can I take my personal information in a reusable file?",
+    "relevant_sources": [
+      "gdpr-oj-art-20"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "computer-rejection",
+    "instrument": "gdpr",
+    "query": "Can a person challenge a decision about them made by a computer with no human involvement?",
+    "relevant_sources": [
+      "gdpr-oj-art-22"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "leaked-addresses",
+    "instrument": "gdpr",
+    "query": "A customer address list was leaked. What does the text say about reporting the incident to the regulator?",
+    "relevant_sources": [
+      "gdpr-oj-art-33"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "signup-explanation",
+    "instrument": "gdpr",
+    "query": "What should we tell someone at signup about why we collect their information and who receives it?",
+    "relevant_sources": [
+      "gdpr-oj-art-13"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "design-safeguards",
+    "instrument": "gdpr",
+    "query": "Should privacy safeguards be considered while choosing how a new service will process personal information?",
+    "relevant_sources": [
+      "gdpr-oj-art-25"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "court-erasure",
+    "instrument": "gdpr",
+    "query": "Can erasure be refused when keeping the information is necessary to defend a court claim?",
+    "relevant_sources": [
+      "gdpr-oj-art-17"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "hidden-listing",
+    "instrument": "dsa",
+    "query": "My listing disappeared. What should the platform explain about the restriction and the rule it used?",
+    "relevant_sources": [
+      "dsa-oj-art-17"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "flag-post",
+    "instrument": "dsa",
+    "query": "How can a visitor flag a specific post they believe is unlawful?",
+    "relevant_sources": [
+      "dsa-oj-art-16"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "feed-explanation",
+    "instrument": "dsa",
+    "query": "Must a service explain why its feed suggests particular posts and how a user can change that?",
+    "relevant_sources": [
+      "dsa-oj-art-27"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "child-profiling",
+    "instrument": "dsa",
+    "query": "Can a platform use profiling to show targeted adverts when it knows the recipient is a child?",
+    "relevant_sources": [
+      "dsa-oj-art-28"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "complaint-review",
+    "instrument": "dsa",
+    "query": "What does the text say about having a qualified person review a complaint about a moderation decision?",
+    "relevant_sources": [
+      "dsa-oj-art-20"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "large-platform-selection",
+    "instrument": "dma",
+    "query": "How are very large platforms selected for designation as gatekeepers?",
+    "relevant_sources": [
+      "dma-oj-art-3"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "staff-understanding",
+    "instrument": "ai-act",
+    "query": "What should an organisation consider so staff using an AI system have enough understanding to operate it?",
+    "relevant_sources": [
+      "ai-act-oj-art-4"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "stop-unsafe-output",
+    "instrument": "ai-act",
+    "query": "What controls should let a person disregard an unsafe AI recommendation or stop a system?",
+    "relevant_sources": [
+      "ai-act-oj-art-14"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "training-data-quality",
+    "instrument": "ai-act",
+    "query": "What quality considerations apply to data used to train and test a high-risk AI system?",
+    "relevant_sources": [
+      "ai-act-oj-art-10"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "fake-video-label",
+    "instrument": "ai-act",
+    "query": "How should an artificially altered video that looks authentic be disclosed?",
+    "relevant_sources": [
+      "ai-act-oj-art-50"
+    ],
+    "expect_evidence": true
+  },
+  {
+    "id": "payroll-duration",
+    "instrument": "gdpr",
+    "query": "Exactly how many years must a business store employee payroll records?",
+    "relevant_sources": [],
+    "expect_evidence": false
+  },
+  {
+    "id": "tax-percentage",
+    "instrument": "all",
+    "query": "What percentage VAT rate applies to downloadable games in France?",
+    "relevant_sources": [],
+    "expect_evidence": false
+  },
+  {
+    "id": "appeal-court-address",
+    "instrument": "dsa",
+    "query": "What is the street address of the court where I should sue a social media platform?",
+    "relevant_sources": [],
+    "expect_evidence": false
+  },
+  {
+    "id": "french-consent-age",
+    "instrument": "gdpr",
+    "query": "What is the minimum digital consent age set by French national law?",
+    "relevant_sources": [],
+    "expect_evidence": false
+  },
+  {
+    "id": "gdpr-fine-formula",
+    "instrument": "gdpr",
+    "query": "What is the maximum administrative fine as a percentage of global turnover?",
+    "relevant_sources": [],
+    "expect_evidence": false
+  },
+  {
+    "id": "ai-deployment-date",
+    "instrument": "ai-act",
+    "query": "On what calendar date does Article 14 begin to apply?",
+    "relevant_sources": [],
+    "expect_evidence": false
+  },
+  {
+    "id": "schengen-work",
+    "instrument": "all",
+    "query": "Can a Schengen tourist visa holder work in Germany?",
+    "relevant_sources": [],
+    "expect_evidence": false
+  },
+  {
+    "id": "retail-return",
+    "instrument": "all",
+    "query": "How many days do I have to return shoes bought in a physical shop?",
+    "relevant_sources": [],
+    "expect_evidence": false
+  }
+]

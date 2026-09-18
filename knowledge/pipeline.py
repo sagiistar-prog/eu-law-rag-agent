@@ -163,11 +163,13 @@ def search(index,query,encoder,top_k=5,mode='hybrid'):
         'keyword_score':lexical.get(i,0),'cosine_similarity':semantic[i],
         'retrieval_method':mode,'requires_review':True} for i,score in candidates[:top_k]]
 
-def evidence_answer(query,hits,max_words=80):
+def evidence_answer(query,hits,max_words=80,match_gate=None):
     # A nearest vector always exists. Do not convert that fact into an answer.
     def supported_hit(hit):
-        if hit['keyword_score'] <= 0 or hit['review_status'] not in ('reviewed','fictional','source_verified'):
+        if hit['review_status'] not in ('reviewed','fictional','source_verified'):
             return False
+        if match_gate is not None:return match_gate(hit)
+        if hit['keyword_score'] <= 0:return False
         if hit['review_status'] != 'source_verified':return True
         terms=set(tokens(query));overlap=terms & set(tokens(hit['text']))
         # Public-source excerpts need two distinct content terms for a longer query.
@@ -180,7 +182,8 @@ def evidence_answer(query,hits,max_words=80):
     for h in supported:
         remaining=max_words-used.get(h['source_id'],0)
         if remaining<=0: continue
-        words=h['text'].split(); excerpt=' '.join(words[:remaining])
+        words=h['text'].split()
+        excerpt=h['text'] if len(words)<=remaining else ' '.join(words[:remaining])
         used[h['source_id']]=used.get(h['source_id'],0)+min(len(words),remaining)
         evidence.append({**h,'text':excerpt,'truncated':len(words)>remaining})
     return {'query':query,'answer_status':'evidence_found' if evidence else 'insufficient_evidence',

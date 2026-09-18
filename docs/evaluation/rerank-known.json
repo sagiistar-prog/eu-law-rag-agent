@@ -1,0 +1,431 @@
+{
+  "scope": "author-labeled paired article retrieval; not legal correctness or customer effects",
+  "created_at": "2026-09-18T13:33:10.541090+00:00",
+  "corpus_sha256": "e619518fe1569053cfe02c16f65011c1abba4eed35894b3a869ba71896d26535",
+  "ranking": {
+    "method": "hybrid-cross-encoder",
+    "model": "Xenova/ms-marco-MiniLM-L-6-v2",
+    "revision": "a09144355adeed5f58c8ed011d209bf8ee5a1fec",
+    "model_sha256": "c623d0bcb99f4622beb413eaef00cfbe5db20df9f1dd982da4b4f26022881870",
+    "tokenizer_sha256": "9114256b104cca80e04367526f03f46aa3c443c2ed174904142a73bbf13b9fbb",
+    "max_pair_tokens": 512,
+    "max_candidates": 40,
+    "score_kind": "uncalibrated_logit",
+    "query_context": "selected-instrument-v1",
+    "passage_context": "neighbor-window-1600-v1",
+    "minimum_logit": 0.0,
+    "max_logit_gap": 2.0
+  },
+  "latency_scope": "warm loaded models; local CPU; no HTTP/database; baseline runs first",
+  "modes": {
+    "hybrid": {
+      "summary": {
+        "cases": 5,
+        "positive_cases": 3,
+        "negative_cases": 2,
+        "target_top1": 2,
+        "target_top5": 3,
+        "target_evidence_hits": 0,
+        "false_evidence_cases": 0,
+        "mean_positive_source_precision": 0.0,
+        "latency_p50_ms": 45.967,
+        "latency_p95_ms": 221.733
+      },
+      "cases": [
+        {
+          "id": "known-probe-0",
+          "query": "Can people move a copy of their information to another provider?",
+          "expected": [
+            "gdpr-oj-art-20"
+          ],
+          "candidates": [
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-20",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-33"
+          ],
+          "candidate_top1": "gdpr-oj-art-15",
+          "evidence": [],
+          "scores": [
+            {
+              "source_id": "gdpr-oj-art-15",
+              "rerank_score": null
+            },
+            {
+              "source_id": "gdpr-oj-art-17",
+              "rerank_score": null
+            },
+            {
+              "source_id": "gdpr-oj-art-20",
+              "rerank_score": null
+            },
+            {
+              "source_id": "gdpr-oj-art-13",
+              "rerank_score": null
+            },
+            {
+              "source_id": "gdpr-oj-art-33",
+              "rerank_score": null
+            }
+          ],
+          "elapsed_ms": 221.733
+        },
+        {
+          "id": "known-probe-1",
+          "query": "How can someone appeal a platform decision to take down their post?",
+          "expected": [
+            "dsa-oj-art-20"
+          ],
+          "candidates": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-27",
+            "dsa-oj-art-17",
+            "dsa-oj-art-28",
+            "dsa-oj-art-16"
+          ],
+          "candidate_top1": "dsa-oj-art-20",
+          "evidence": [],
+          "scores": [
+            {
+              "source_id": "dsa-oj-art-20",
+              "rerank_score": null
+            },
+            {
+              "source_id": "dsa-oj-art-27",
+              "rerank_score": null
+            },
+            {
+              "source_id": "dsa-oj-art-17",
+              "rerank_score": null
+            },
+            {
+              "source_id": "dsa-oj-art-28",
+              "rerank_score": null
+            },
+            {
+              "source_id": "dsa-oj-art-16",
+              "rerank_score": null
+            }
+          ],
+          "elapsed_ms": 39.864
+        },
+        {
+          "id": "known-probe-2",
+          "query": "How should an operator override a machine recommendation?",
+          "expected": [
+            "ai-act-oj-art-14"
+          ],
+          "candidates": [
+            "ai-act-oj-art-14",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-10"
+          ],
+          "candidate_top1": "ai-act-oj-art-14",
+          "evidence": [],
+          "scores": [
+            {
+              "source_id": "ai-act-oj-art-14",
+              "rerank_score": null
+            },
+            {
+              "source_id": "ai-act-oj-art-50",
+              "rerank_score": null
+            },
+            {
+              "source_id": "ai-act-oj-art-9",
+              "rerank_score": null
+            },
+            {
+              "source_id": "ai-act-oj-art-10",
+              "rerank_score": null
+            }
+          ],
+          "elapsed_ms": 39.608
+        },
+        {
+          "id": "known-probe-3",
+          "query": "What import tax do I pay on electric bicycles?",
+          "expected": [],
+          "candidates": [
+            "gdpr-oj-art-12",
+            "dma-oj-art-5",
+            "dsa-oj-art-25",
+            "gdpr-oj-art-15",
+            "dma-oj-art-3"
+          ],
+          "candidate_top1": "gdpr-oj-art-12",
+          "evidence": [],
+          "scores": [
+            {
+              "source_id": "gdpr-oj-art-12",
+              "rerank_score": null
+            },
+            {
+              "source_id": "dma-oj-art-5",
+              "rerank_score": null
+            },
+            {
+              "source_id": "dsa-oj-art-25",
+              "rerank_score": null
+            },
+            {
+              "source_id": "gdpr-oj-art-15",
+              "rerank_score": null
+            },
+            {
+              "source_id": "dma-oj-art-3",
+              "rerank_score": null
+            }
+          ],
+          "elapsed_ms": 97.58
+        },
+        {
+          "id": "known-probe-4",
+          "query": "What retention deadline applies to employee attendance records?",
+          "expected": [],
+          "candidates": [
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-25",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-6",
+            "gdpr-oj-art-22"
+          ],
+          "candidate_top1": "gdpr-oj-art-17",
+          "evidence": [],
+          "scores": [
+            {
+              "source_id": "gdpr-oj-art-17",
+              "rerank_score": null
+            },
+            {
+              "source_id": "gdpr-oj-art-25",
+              "rerank_score": null
+            },
+            {
+              "source_id": "gdpr-oj-art-33",
+              "rerank_score": null
+            },
+            {
+              "source_id": "gdpr-oj-art-6",
+              "rerank_score": null
+            },
+            {
+              "source_id": "gdpr-oj-art-22",
+              "rerank_score": null
+            }
+          ],
+          "elapsed_ms": 45.967
+        }
+      ]
+    },
+    "rerank": {
+      "summary": {
+        "cases": 5,
+        "positive_cases": 3,
+        "negative_cases": 2,
+        "target_top1": 2,
+        "target_top5": 3,
+        "target_evidence_hits": 2,
+        "false_evidence_cases": 0,
+        "mean_positive_source_precision": 0.6666666666666666,
+        "latency_p50_ms": 2337.732,
+        "latency_p95_ms": 2692.151
+      },
+      "cases": [
+        {
+          "id": "known-probe-0",
+          "query": "Can people move a copy of their information to another provider?",
+          "expected": [
+            "gdpr-oj-art-20"
+          ],
+          "candidates": [
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-25",
+            "gdpr-oj-art-20",
+            "gdpr-oj-art-35"
+          ],
+          "candidate_top1": "gdpr-oj-art-13",
+          "evidence": [],
+          "scores": [
+            {
+              "source_id": "gdpr-oj-art-13",
+              "rerank_score": -4.488853931427002
+            },
+            {
+              "source_id": "gdpr-oj-art-15",
+              "rerank_score": -5.6097731590271
+            },
+            {
+              "source_id": "gdpr-oj-art-25",
+              "rerank_score": -5.623198986053467
+            },
+            {
+              "source_id": "gdpr-oj-art-20",
+              "rerank_score": -6.508440017700195
+            },
+            {
+              "source_id": "gdpr-oj-art-35",
+              "rerank_score": -7.19729471206665
+            }
+          ],
+          "elapsed_ms": 2692.151
+        },
+        {
+          "id": "known-probe-1",
+          "query": "How can someone appeal a platform decision to take down their post?",
+          "expected": [
+            "dsa-oj-art-20"
+          ],
+          "candidates": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-25",
+            "dsa-oj-art-28",
+            "dsa-oj-art-17",
+            "dsa-oj-art-26"
+          ],
+          "candidate_top1": "dsa-oj-art-20",
+          "evidence": [
+            "dsa-oj-art-20"
+          ],
+          "scores": [
+            {
+              "source_id": "dsa-oj-art-20",
+              "rerank_score": 1.4124141931533813
+            },
+            {
+              "source_id": "dsa-oj-art-25",
+              "rerank_score": -0.8025431632995605
+            },
+            {
+              "source_id": "dsa-oj-art-28",
+              "rerank_score": -1.7037684917449951
+            },
+            {
+              "source_id": "dsa-oj-art-17",
+              "rerank_score": -1.871881365776062
+            },
+            {
+              "source_id": "dsa-oj-art-26",
+              "rerank_score": -2.1870594024658203
+            }
+          ],
+          "elapsed_ms": 2398.801
+        },
+        {
+          "id": "known-probe-2",
+          "query": "How should an operator override a machine recommendation?",
+          "expected": [
+            "ai-act-oj-art-14"
+          ],
+          "candidates": [
+            "ai-act-oj-art-14",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-10",
+            "ai-act-oj-art-9"
+          ],
+          "candidate_top1": "ai-act-oj-art-14",
+          "evidence": [
+            "ai-act-oj-art-14"
+          ],
+          "scores": [
+            {
+              "source_id": "ai-act-oj-art-14",
+              "rerank_score": 0.41081878542900085
+            },
+            {
+              "source_id": "ai-act-oj-art-50",
+              "rerank_score": -3.4025604724884033
+            },
+            {
+              "source_id": "ai-act-oj-art-10",
+              "rerank_score": -5.1971540451049805
+            },
+            {
+              "source_id": "ai-act-oj-art-9",
+              "rerank_score": -6.720481872558594
+            }
+          ],
+          "elapsed_ms": 2337.732
+        },
+        {
+          "id": "known-probe-3",
+          "query": "What import tax do I pay on electric bicycles?",
+          "expected": [],
+          "candidates": [
+            "ai-act-oj-art-10",
+            "dsa-oj-art-25",
+            "dma-oj-art-3",
+            "dma-oj-art-5",
+            "dsa-oj-art-20"
+          ],
+          "candidate_top1": "ai-act-oj-art-10",
+          "evidence": [],
+          "scores": [
+            {
+              "source_id": "ai-act-oj-art-10",
+              "rerank_score": -11.151268005371094
+            },
+            {
+              "source_id": "dsa-oj-art-25",
+              "rerank_score": -11.201590538024902
+            },
+            {
+              "source_id": "dma-oj-art-3",
+              "rerank_score": -11.224453926086426
+            },
+            {
+              "source_id": "dma-oj-art-5",
+              "rerank_score": -11.263962745666504
+            },
+            {
+              "source_id": "dsa-oj-art-20",
+              "rerank_score": -11.283710479736328
+            }
+          ],
+          "elapsed_ms": 2206.498
+        },
+        {
+          "id": "known-probe-4",
+          "query": "What retention deadline applies to employee attendance records?",
+          "expected": [],
+          "candidates": [
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-25",
+            "gdpr-oj-art-6",
+            "gdpr-oj-art-12"
+          ],
+          "candidate_top1": "gdpr-oj-art-35",
+          "evidence": [],
+          "scores": [
+            {
+              "source_id": "gdpr-oj-art-35",
+              "rerank_score": -8.08127212524414
+            },
+            {
+              "source_id": "gdpr-oj-art-33",
+              "rerank_score": -8.135087966918945
+            },
+            {
+              "source_id": "gdpr-oj-art-25",
+              "rerank_score": -8.195552825927734
+            },
+            {
+              "source_id": "gdpr-oj-art-6",
+              "rerank_score": -8.378719329833984
+            },
+            {
+              "source_id": "gdpr-oj-art-12",
+              "rerank_score": -10.023845672607422
+            }
+          ],
+          "elapsed_ms": 2183.193
+        }
+      ]
+    }
+  },
+  "cases_sha256": "705e1e013471b3a43f5ae43b5b8d0388dee725c4b873167cf8fcbd3c8eb8c321"
+}

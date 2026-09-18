@@ -1,0 +1,2 @@
+# Preserve the byte-level freeze across Windows and Linux checkouts.
+knowledge/evaluation/paraphrase-holdout-v1.json -text

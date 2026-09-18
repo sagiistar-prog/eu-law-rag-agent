@@ -48,4 +48,8 @@ python scripts/plugin_run.py --input examples/plugin-input.json
 
 [架构与运行手册](knowledge/README.md) | [本轮验收与失败记录](docs/official-source-acceptance.md) | [产品判断与指标](docs/product-case.md) | [开源取舍](docs/open-source.md) | [维护记录](CHANGELOG.md)
 
+## 可选重排实验
+
+`--ranking rerank` 使用固定版本的 MiniLM 对候选片段重排，需要额外下载约 91 MB 权重。默认仍为 `hybrid`：实验在冻结的改写问题中命中 10/16，未达到预设 12/16，且本机热模型中位耗时由约 50 ms 增至 2.67 s。它适合复现实验，不代表更可靠的默认产品。具体取舍、失败题和命令见 [重排实验](docs/reranker-experiment.md)。
+
 本项目不提供法律意见。技术回归与真实用户价值分开记录；目前没有律师标注或真实团队效果数据。

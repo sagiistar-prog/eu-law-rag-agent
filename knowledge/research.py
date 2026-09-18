@@ -44,10 +44,14 @@ def query_policy(query, index):
     return None, None
 
 
-def research(index, query, encoder, instrument='all', retriever=None):
+def research(index, query, encoder, instrument='all', retriever=None, reranker=None):
     selected = select_index(index, instrument)
     reason, message = query_policy(query, selected)
-    hits = [] if reason else (retriever(query, instrument) if retriever else search(selected, query, encoder, top_k=12))
+    hits = [] if reason else (retriever(query, instrument) if retriever else search(selected, query, encoder, top_k=40 if reranker else 12))
+    if reranker and hits:
+        from reranker import contexts, scoped_query
+        model_query=scoped_query(query,instrument)
+        hits=reranker.rank(model_query,contexts(index,hits,model_query,reranker))
     # Show distinct articles first, not five near-duplicate windows of one provision.
     distinct, seen = [], set()
     for hit in hits:
@@ -55,11 +59,18 @@ def research(index, query, encoder, instrument='all', retriever=None):
             distinct.append(hit); seen.add(hit['source_id'])
         if len(distinct) == 5:
             break
-    result = evidence_answer(query, distinct)
+    if reranker:
+        from reranker import MIN_LOGIT, MAX_LOGIT_GAP
+        best=distinct[0]['rerank_score'] if distinct else MIN_LOGIT
+        result=evidence_answer(query,distinct,max_words=512,
+            match_gate=lambda h:h['rerank_score']>=max(MIN_LOGIT,best-MAX_LOGIT_GAP))
+        result['ranking']=reranker.manifest
+    else:
+        result = evidence_answer(query, distinct)
     emitted={hit['source_id'] for hit in result['evidence']}
     if reason:
         result.update(answer_status='insufficient_evidence', reason=reason, next_step=message)
-    result.update(schema_version='1.1', instrument=instrument,
+    result.update(schema_version='1.2' if reranker else '1.1', instrument=instrument,
         corpus_sha256=index['manifest']['corpus_sha256'],
         created_at=datetime.now(timezone.utc).isoformat(),
         version_scope='原始公报摘录，未核验修订及当前适用性。' if any(c.get('document_version') == 'original_oj' for c in selected['chunks']) else '调用者提供的资料。',
@@ -101,6 +112,7 @@ if __name__ == '__main__':
     parser.add_argument('--instrument', default='all')
     parser.add_argument('--cache-dir', type=Path)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--ranking',choices=['hybrid','rerank'],default='hybrid')
     args = parser.parse_args()
     if args.request:
         from jsonschema import Draft202012Validator
@@ -116,7 +128,10 @@ if __name__ == '__main__':
         raise ValueError('Existing review is preserved; choose a new directory')
     if not args.index.resolve().is_relative_to(ROOT):raise ValueError('Index must be inside the repository')
     index = json.loads(args.index.read_text(encoding='utf-8'))
-    result = research(index, args.query, Encoder('en', str(args.cache_dir) if args.cache_dir else None), args.instrument)
+    from reranker import Reranker
+    cache=str(args.cache_dir) if args.cache_dir else None
+    ranker=Reranker(cache) if args.ranking=='rerank' else None
+    result = research(index, args.query, Encoder('en',cache), args.instrument,reranker=ranker)
     destination.mkdir(parents=True, exist_ok=False)
     (destination / 'evidence.json').write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding='utf-8')
     (destination / 'review.md').write_text(markdown(result), encoding='utf-8')

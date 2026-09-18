@@ -1,0 +1,10 @@
+{
+  "scope": "Author-written frozen holdout; no independent legal labeling. Frozen before reranker scoring, not used for threshold selection.",
+  "cases": 24,
+  "positive": 16,
+  "negative": 8,
+  "sha256": "f64af861461131d534116d82601b5ca542bffce39d52e3899d18784977b49125",
+  "baseline_commit": "2de6eb8fa77747c4c44b324e786965f10dec791c",
+  "target": "Improve colloquial article retrieval while reporting false-evidence tradeoffs.",
+  "frozen_at": "2026-09-18T12:57:09.930216+00:00"
+}

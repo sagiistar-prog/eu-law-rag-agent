@@ -8,7 +8,7 @@ on:
 jobs:
   official:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     services:
       db:
         image: pgvector/pgvector:0.8.1-pg16@sha256:33198da2828a14c30348d2ccb4750833d5ed9a44c88d840a0e523d7417120337
@@ -49,6 +49,27 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run test:browser
+      - name: Compare development and frozen holdout retrieval
+        run: |
+          python knowledge/evaluate_review.py --index output/official-ci/index.json --cases knowledge/evaluation/official-cases.json --cache-dir .cache/models --output output/official-ci/rerank-canonical.json
+          python knowledge/evaluate_review.py --index output/official-ci/index.json --cases knowledge/evaluation/known-paraphrase-cases.json --cache-dir .cache/models --output output/official-ci/rerank-known.json
+          python knowledge/evaluate_review.py --index output/official-ci/index.json --cases knowledge/evaluation/paraphrase-holdout-v1.json --frozen-manifest knowledge/evaluation/paraphrase-holdout-v1.manifest.json --cache-dir .cache/models --output output/official-ci/rerank-holdout.json
+      - name: Record adoption decision without enabling the experiment
+        run: python knowledge/assess_reranker.py --canonical output/official-ci/rerank-canonical.json --known output/official-ci/rerank-known.json --holdout output/official-ci/rerank-holdout.json --output output/official-ci/rerank-adoption.json
+      - name: Start explicit experimental service
+        run: |
+          python knowledge/server.py --language en --index output/official-ci/index.json --cache-dir .cache/models --port 8893 --ranking rerank > /tmp/eu-rerank.log 2>&1 &
+          for i in $(seq 1 60); do
+            if curl --fail --silent http://127.0.0.1:8893/health; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/eu-rerank.log
+          exit 1
+      - run: python knowledge/accept_official.py --base http://127.0.0.1:8893 --output output/official-ci/rerank-http-postgres.json
+      - run: npm run test:browser
+        env:
+          EU_LAW_BASE_URL: http://127.0.0.1:8893
+          EU_LAW_EXPECT_RANKING: hybrid-cross-encoder
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -57,4 +78,5 @@ jobs:
             output/official-ci/coverage.json
             output/official-ci/evaluation.json
             output/official-ci/http-postgres.json
+            output/official-ci/rerank-*.json
             output/browser-*/report.json

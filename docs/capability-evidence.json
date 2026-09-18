@@ -13,5 +13,8 @@
   "source_review": "knowledge/research.py",
   "research_contract": "schemas/evidence-review.schema.json",
   "official_acceptance": "docs/official-source-acceptance.md",
-  "official_ci": ".github/workflows/official-review.yml"
+  "official_ci": ".github/workflows/official-review.yml",
+  "reranker_experiment": "docs/reranker-experiment.md",
+  "reranker_adoption": "docs/evaluation/rerank-adoption.json",
+  "reranker_protocol": "knowledge/evaluation/reranker-protocol.md"
 }
