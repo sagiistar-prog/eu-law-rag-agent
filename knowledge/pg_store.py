@@ -2,6 +2,7 @@
 import json
 import math
 from pipeline import tokens, fuse
+from chunking import retrieval_text
 
 def install(conn):
     conn.execute('CREATE EXTENSION IF NOT EXISTS vector')
@@ -22,7 +23,7 @@ def ingest(conn,index):
             if not all(math.isfinite(x) for x in v) or not any(v):raise ValueError('Invalid vector')
             conn.execute('''INSERT INTO evidence_kb.chunks VALUES (%s,%s,%s,%s,to_tsvector('simple',%s),%s::vector)
                 ON CONFLICT(corpus_id,model_id,chunk_id) DO UPDATE SET metadata=excluded.metadata,terms=excluded.terms,embedding=excluded.embedding''',
-                (corpus,m['model_id'],c['chunk_id'],Jsonb(c),' '.join(tokens(c['text'])),json.dumps(v)))
+                (corpus,m['model_id'],c['chunk_id'],Jsonb(c),' '.join(tokens(retrieval_text(c,m.get('document_context','none')))),json.dumps(v)))
     return corpus
 
 def retrieve(conn,corpus_id,query,encoder,top_k=5,instrument='all'):

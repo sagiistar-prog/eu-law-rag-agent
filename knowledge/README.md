@@ -68,7 +68,7 @@ npx playwright install chromium
 npm run test:browser
 ```
 
-HTTP 验收要求 8892 的真实 PostgreSQL 服务；浏览器测试也要求数据库模式。默认无数据库用户不需要运行这些数据库专用检查。网页和 API 共用 loopback 服务，Host/Origin 校验、请求长度限制和 CSP 限制页面能力；这不是多租户生产部署。
+HTTP 验收要求 8892 的真实 PostgreSQL 服务；浏览器测试默认也要求数据库模式。文件模式可设置 `EU_LAW_EXPECT_STORAGE=local-json`，非默认端口设置 `EU_LAW_BASE_URL`，报告会保留实际存储类型，不能将文件验收当作数据库验收。网页和 API 共用 loopback 服务，Host/Origin 校验、请求长度限制和 CSP 限制页面能力；这不是多租户生产部署。
 
 ## 可选重排实验
 
@@ -84,6 +84,10 @@ python knowledge/server.py --language en --index output/official-v1/index.json -
 实验尚未达到默认采用门槛，延迟明显增加；完整配对报告、失败题、冻结策略和复现命令见[重排实验](../docs/reranker-experiment.md)。故障不自动降级为其他检索模式。要验收实验数据库服务，可用 `accept_official.py --base http://127.0.0.1:8893`；浏览器测试设置 `EU_LAW_BASE_URL` 为该地址、`EU_LAW_EXPECT_RANKING=hybrid-cross-encoder`。
 
 ## 评测与维护
+
+字符分块 v2 修复首部空白裁剪后的位置，片段正文与默认排名不变。返回片段的 `char_start` 与 `char_end` 是清洗后来源的 Unicode 码点半开区间，不是字节或 JavaScript UTF-16 偏移；`content_sha256` 始终对应实际返回文字。超过来源词数预算时保留精确前缀，不重排空白，原片段记录在 `excerpt_of`。正文匹配不到来源或哈希不一致时拒绝生成核对单。旧 v1 索引仅支持可由原窗口证明的空白偏移修正。
+
+`--chunker paragraphs` 和 `--document-context source-section` 是未达默认门槛的实验。前者最多 1200 字符、重叠最多 160；后者只进入向量/BM25/PostgreSQL 全文编码，不写入引用正文。所有文本仍经过真实 512 token 检查。更换策略写新索引，保留旧快照。协议、结果和复现命令见[分块实验](../docs/indexing-experiment.md)。
 
 ```sh
 python knowledge/evaluate.py --language en --index output/official-v1/index.json --cases knowledge/evaluation/official-cases.json --output output/official-v1/evaluation.json --cache-dir .cache/models --top-k 5 --min-hit-rate 1 --max-false-evidence-rate 0

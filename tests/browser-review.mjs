@@ -5,6 +5,7 @@ import fs from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 const base=process.env.EU_LAW_BASE_URL||'http://127.0.0.1:8892';
 const expectedRanking=process.env.EU_LAW_EXPECT_RANKING||'hybrid';
+const expectedStorage=process.env.EU_LAW_EXPECT_STORAGE||'postgres-pgvector';
 const output=`output/browser-${Date.now()}`;await fs.mkdir(output,{recursive:true});
 const browser=await chromium.launch({headless:true,...(process.env.BROWSER_CHANNEL?{channel:process.env.BROWSER_CHANNEL}:{})});
 const reports=[];
@@ -18,7 +19,7 @@ try {
   await page.locator('#query').fill('What information must a controller provide when personal data are collected from the data subject?');
   const responsePromise=page.waitForResponse(r=>r.url().endsWith('/search')&&r.request().method()==='POST');
   await page.locator('#query').press('Enter');const response=await responsePromise;assert.equal(response.status(),200);
-  const result=await response.json();assert.equal(result.storage,'postgres-pgvector');
+  const result=await response.json();assert.equal(result.storage,expectedStorage);
   assert.equal(result.ranking?.method||'hybrid',expectedRanking);
   assert(result.evidence.some(h=>h.source_id==='gdpr-oj-art-13'));
   assert(result.evidence.every(h=>h.instrument_id==='gdpr'));
@@ -34,9 +35,16 @@ try {
   const jsonPromise=page.waitForEvent('download');await page.locator('#export-json').click();
   const jsonDownload=await jsonPromise;const jsonTarget=`${output}/review-${width}.json`;await jsonDownload.saveAs(jsonTarget);
   const exported=JSON.parse(await fs.readFile(jsonTarget,'utf8'));assert.equal(exported.corpus_sha256,result.corpus_sha256);
+  assert(exported.evidence.length>0);
+  for(const hit of exported.evidence){
+    assert.equal(createHash('sha256').update(hit.text).digest('hex'),hit.content_sha256);
+    const source=await (await page.request.get(`${base}/sources/${encodeURIComponent(hit.source_id)}`)).json();
+    assert.equal(Array.from(source.text).slice(hit.char_start,hit.char_end).join(''),hit.text);
+  }
+  assert.equal(await page.locator('#result .excerpt-note').count(),exported.evidence.filter(h=>h.truncated).length);
   if(expectedRanking==='hybrid-cross-encoder'){
     assert.equal(exported.ranking.score_kind,'uncalibrated_logit');
-    assert(exported.evidence.every(hit=>hit.matched_chunk_id&&typeof hit.context_char_end==='number'));
+    assert(exported.evidence.every(hit=>hit.matched_chunk_id&&typeof (hit.context_char_end??hit.excerpt_of?.context_char_end)==='number'));
     assert(exported.evidence.every(hit=>createHash('sha256').update(hit.text).digest('hex')===hit.content_sha256));
   }
   await page.screenshot({path:`${output}/desktop-${width}.png`,fullPage:true});

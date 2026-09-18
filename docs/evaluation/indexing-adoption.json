@@ -1,0 +1,42 @@
+{
+  "scope": "Observed author-labeled regression, not independent validation or legal accuracy",
+  "baseline": "index",
+  "default_changed": false,
+  "candidates": {
+    "context": {
+      "gates": {
+        "canonical_target_hits": false,
+        "paraphrase_target_hits": false,
+        "official-cases_false_evidence": true,
+        "official-cases_precision": true,
+        "official-cases_latency": true,
+        "known-paraphrase-cases_false_evidence": true,
+        "known-paraphrase-cases_precision": true,
+        "known-paraphrase-cases_latency": true,
+        "paraphrase-holdout-v1_false_evidence": true,
+        "paraphrase-holdout-v1_precision": true,
+        "paraphrase-holdout-v1_latency": true
+      },
+      "ready_for_default": false,
+      "corpus_sha256": "d97dcb32d1b8dc5558741d6283be1b844b87de5f88dd3c8a38a0cadaf7645579"
+    },
+    "paragraphs": {
+      "gates": {
+        "canonical_target_hits": false,
+        "paraphrase_target_hits": false,
+        "official-cases_false_evidence": true,
+        "official-cases_precision": false,
+        "official-cases_latency": true,
+        "known-paraphrase-cases_false_evidence": true,
+        "known-paraphrase-cases_precision": true,
+        "known-paraphrase-cases_latency": true,
+        "paraphrase-holdout-v1_false_evidence": true,
+        "paraphrase-holdout-v1_precision": true,
+        "paraphrase-holdout-v1_latency": true
+      },
+      "ready_for_default": false,
+      "corpus_sha256": "18c8414fff64222125ec3807301d9bcd0c7712163c4b8084fe79beb2357190d9"
+    }
+  },
+  "comparison_sha256": "270ff52a35e309bf06883483f9658ecaf2e37fb2d62da14b50e5e0843d30e3dc"
+}

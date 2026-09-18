@@ -37,6 +37,18 @@ class PgStoreTests(unittest.TestCase):
         count=self.conn.execute('SELECT count(*) FROM evidence_kb.chunks WHERE corpus_id=%s',(self.corpus,)).fetchone()[0]
         self.assertEqual(count,0)
 
+    def test_source_context_is_searchable_without_rewriting_citation_body(self):
+        self.index['manifest']['document_context']='source-section'
+        for chunk in self.index['chunks']:chunk['source_title']='Fictional quasar policy'
+        ingest(self.conn,self.index)
+        class Encoder:
+            model_id='integration-fixture'
+            def encode(self,texts,query=False):return [[1.,0.]]
+        hits=retrieve(self.conn,self.corpus,'quasar',Encoder())
+        self.assertTrue(all(hit['keyword_score']>0 for hit in hits))
+        self.assertTrue(all('quasar' not in hit['text'] for hit in hits))
+        self.assertEqual(hits[0]['text'],self.index['chunks'][0]['text'])
+
     def test_instrument_filter_precedes_nearest_neighbor_limit(self):
         self.index['chunks'][0]['instrument_id']='gdpr'
         self.index['chunks'][1]['instrument_id']='dsa'

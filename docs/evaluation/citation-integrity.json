@@ -1,0 +1,2340 @@
+{
+  "created_at": "2026-09-18T17:47:58.556812+00:00",
+  "scope": "Previously observed author-labeled regression. Not independent evaluation, legal accuracy, or user outcomes.",
+  "latency_scope": "Warm model local CPU; includes query encoding; baseline runs first; no HTTP/database.",
+  "results": {
+    "index": {
+      "manifest": {
+        "schema_version": 1,
+        "model_id": "BAAI/bge-small-en-v1.5",
+        "dimension": 384,
+        "query_prefix": "Represent this sentence for searching relevant passages: ",
+        "normalized": true,
+        "chunker": "characters-320-overlap-40-v1",
+        "fastembed_version": "0.7.4",
+        "created_at": "2026-09-18T11:04:22.110764+00:00",
+        "tokenizer_sha256": "9114256b104cca80e04367526f03f46aa3c443c2ed174904142a73bbf13b9fbb",
+        "max_tokens": 512,
+        "corpus_sha256": "e619518fe1569053cfe02c16f65011c1abba4eed35894b3a869ba71896d26535"
+      },
+      "chunks": 350,
+      "datasets": {
+        "official-cases": {
+          "summary": {
+            "cases": 30,
+            "positive_cases": 24,
+            "negative_cases": 6,
+            "target_top1": 24,
+            "target_top5": 24,
+            "target_evidence_hits": 24,
+            "false_evidence_cases": 0,
+            "mean_positive_source_precision": 0.40208333333333335,
+            "latency_p50_ms": 52.706,
+            "latency_p95_ms": 84.869
+          },
+          "cases": [
+            {
+              "id": "privacy-notice",
+              "query": "What information must a controller provide when personal data are collected from the data subject?",
+              "expected": [
+                "gdpr-oj-art-13"
+              ],
+              "candidates": [
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-6"
+              ],
+              "candidate_top1": "gdpr-oj-art-13",
+              "evidence": [
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-6"
+              ],
+              "elapsed_ms": 242.162
+            },
+            {
+              "id": "access",
+              "query": "Which information is included in the right of access by the data subject?",
+              "expected": [
+                "gdpr-oj-art-15"
+              ],
+              "candidates": [
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-20",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-12"
+              ],
+              "candidate_top1": "gdpr-oj-art-15",
+              "evidence": [
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-20",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-12"
+              ],
+              "elapsed_ms": 56.452
+            },
+            {
+              "id": "erase",
+              "query": "What are the grounds and exceptions for erasure of personal data?",
+              "expected": [
+                "gdpr-oj-art-17"
+              ],
+              "candidates": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-5",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-25"
+              ],
+              "candidate_top1": "gdpr-oj-art-17",
+              "evidence": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-5",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-25"
+              ],
+              "elapsed_ms": 55.56
+            },
+            {
+              "id": "portability",
+              "query": "Can personal data be received in a structured commonly used machine-readable format?",
+              "expected": [
+                "gdpr-oj-art-20"
+              ],
+              "candidates": [
+                "gdpr-oj-art-20",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-5"
+              ],
+              "candidate_top1": "gdpr-oj-art-20",
+              "evidence": [
+                "gdpr-oj-art-20",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-5"
+              ],
+              "elapsed_ms": 77.837
+            },
+            {
+              "id": "automated-decisions",
+              "query": "What does the original text say about decisions based solely on automated processing including profiling?",
+              "expected": [
+                "gdpr-oj-art-22"
+              ],
+              "candidates": [
+                "gdpr-oj-art-22",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-20"
+              ],
+              "candidate_top1": "gdpr-oj-art-22",
+              "evidence": [
+                "gdpr-oj-art-22",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-20"
+              ],
+              "elapsed_ms": 60.536
+            },
+            {
+              "id": "security",
+              "query": "How should the controller assess an appropriate level of security of processing?",
+              "expected": [
+                "gdpr-oj-art-32"
+              ],
+              "candidates": [
+                "gdpr-oj-art-32",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-25",
+                "gdpr-oj-art-5",
+                "gdpr-oj-art-6"
+              ],
+              "candidate_top1": "gdpr-oj-art-32",
+              "evidence": [
+                "gdpr-oj-art-32",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-25",
+                "gdpr-oj-art-5",
+                "gdpr-oj-art-6"
+              ],
+              "elapsed_ms": 59.19
+            },
+            {
+              "id": "breach",
+              "query": "Which notification is required to a supervisory authority after a personal data breach?",
+              "expected": [
+                "gdpr-oj-art-33"
+              ],
+              "candidates": [
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-5",
+                "gdpr-oj-art-17"
+              ],
+              "candidate_top1": "gdpr-oj-art-33",
+              "evidence": [
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-5",
+                "gdpr-oj-art-17"
+              ],
+              "elapsed_ms": 50.257
+            },
+            {
+              "id": "dpia",
+              "query": "What must a data protection impact assessment contain?",
+              "expected": [
+                "gdpr-oj-art-35"
+              ],
+              "candidates": [
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-25"
+              ],
+              "candidate_top1": "gdpr-oj-art-35",
+              "evidence": [
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-25"
+              ],
+              "elapsed_ms": 47.617
+            },
+            {
+              "id": "terms",
+              "query": "What restrictions should intermediary services disclose in their terms and conditions?",
+              "expected": [
+                "dsa-oj-art-14"
+              ],
+              "candidates": [
+                "dsa-oj-art-14",
+                "dsa-oj-art-17",
+                "dsa-oj-art-20",
+                "dsa-oj-art-27"
+              ],
+              "candidate_top1": "dsa-oj-art-14",
+              "evidence": [
+                "dsa-oj-art-14",
+                "dsa-oj-art-17",
+                "dsa-oj-art-20",
+                "dsa-oj-art-27"
+              ],
+              "elapsed_ms": 45.744
+            },
+            {
+              "id": "notice-action",
+              "query": "How do recipients submit sufficiently precise and adequately substantiated notices of illegal content?",
+              "expected": [
+                "dsa-oj-art-16"
+              ],
+              "candidates": [
+                "dsa-oj-art-16",
+                "dsa-oj-art-17",
+                "dsa-oj-art-26",
+                "dsa-oj-art-20"
+              ],
+              "candidate_top1": "dsa-oj-art-16",
+              "evidence": [
+                "dsa-oj-art-16",
+                "dsa-oj-art-17",
+                "dsa-oj-art-26",
+                "dsa-oj-art-20"
+              ],
+              "elapsed_ms": 46.337
+            },
+            {
+              "id": "reasons",
+              "query": "What explanation must a statement of reasons provide when content is restricted?",
+              "expected": [
+                "dsa-oj-art-17"
+              ],
+              "candidates": [
+                "dsa-oj-art-17",
+                "dsa-oj-art-16",
+                "dsa-oj-art-20",
+                "dsa-oj-art-26"
+              ],
+              "candidate_top1": "dsa-oj-art-17",
+              "evidence": [
+                "dsa-oj-art-17",
+                "dsa-oj-art-16"
+              ],
+              "elapsed_ms": 42.848
+            },
+            {
+              "id": "complaints",
+              "query": "How long should access to the internal complaint-handling system be available?",
+              "expected": [
+                "dsa-oj-art-20"
+              ],
+              "candidates": [
+                "dsa-oj-art-20",
+                "dsa-oj-art-14",
+                "dsa-oj-art-17",
+                "dsa-oj-art-16"
+              ],
+              "candidate_top1": "dsa-oj-art-20",
+              "evidence": [
+                "dsa-oj-art-20",
+                "dsa-oj-art-14"
+              ],
+              "elapsed_ms": 42.695
+            },
+            {
+              "id": "dark-patterns",
+              "query": "What does the text say about online interfaces that deceive or manipulate recipients?",
+              "expected": [
+                "dsa-oj-art-25"
+              ],
+              "candidates": [
+                "dsa-oj-art-25",
+                "dsa-oj-art-26",
+                "dsa-oj-art-20",
+                "dsa-oj-art-27",
+                "dsa-oj-art-28"
+              ],
+              "candidate_top1": "dsa-oj-art-25",
+              "evidence": [
+                "dsa-oj-art-25",
+                "dsa-oj-art-26",
+                "dsa-oj-art-20",
+                "dsa-oj-art-27"
+              ],
+              "elapsed_ms": 48.731
+            },
+            {
+              "id": "ads",
+              "query": "How should advertisements identify the person on whose behalf the advertisement is presented?",
+              "expected": [
+                "dsa-oj-art-26"
+              ],
+              "candidates": [
+                "dsa-oj-art-26",
+                "dsa-oj-art-28",
+                "dsa-oj-art-16",
+                "dsa-oj-art-27"
+              ],
+              "candidate_top1": "dsa-oj-art-26",
+              "evidence": [
+                "dsa-oj-art-26"
+              ],
+              "elapsed_ms": 45.61
+            },
+            {
+              "id": "recommendations",
+              "query": "Which main parameters used in recommender systems must be explained?",
+              "expected": [
+                "dsa-oj-art-27"
+              ],
+              "candidates": [
+                "dsa-oj-art-27",
+                "dsa-oj-art-26",
+                "dsa-oj-art-14",
+                "dsa-oj-art-20",
+                "dsa-oj-art-28"
+              ],
+              "candidate_top1": "dsa-oj-art-27",
+              "evidence": [
+                "dsa-oj-art-27"
+              ],
+              "elapsed_ms": 43.737
+            },
+            {
+              "id": "children",
+              "query": "What privacy safety and security protections apply to minors on online platforms?",
+              "expected": [
+                "dsa-oj-art-28"
+              ],
+              "candidates": [
+                "dsa-oj-art-28",
+                "dsa-oj-art-14",
+                "dsa-oj-art-26",
+                "dsa-oj-art-25",
+                "dsa-oj-art-20"
+              ],
+              "candidate_top1": "dsa-oj-art-28",
+              "evidence": [
+                "dsa-oj-art-28",
+                "dsa-oj-art-26",
+                "dsa-oj-art-25",
+                "dsa-oj-art-20"
+              ],
+              "elapsed_ms": 40.836
+            },
+            {
+              "id": "gatekeeper",
+              "query": "Which thresholds are used in the designation of gatekeepers?",
+              "expected": [
+                "dma-oj-art-3"
+              ],
+              "candidates": [
+                "dma-oj-art-3",
+                "dma-oj-art-5",
+                "dma-oj-art-6",
+                "dma-oj-art-7"
+              ],
+              "candidate_top1": "dma-oj-art-3",
+              "evidence": [
+                "dma-oj-art-3",
+                "dma-oj-art-5",
+                "dma-oj-art-6",
+                "dma-oj-art-7"
+              ],
+              "elapsed_ms": 45.097
+            },
+            {
+              "id": "interoperability",
+              "query": "What basic functionalities of number-independent interpersonal communications services must be interoperable?",
+              "expected": [
+                "dma-oj-art-7"
+              ],
+              "candidates": [
+                "dma-oj-art-7",
+                "dma-oj-art-5"
+              ],
+              "candidate_top1": "dma-oj-art-7",
+              "evidence": [
+                "dma-oj-art-7"
+              ],
+              "elapsed_ms": 56.725
+            },
+            {
+              "id": "literacy",
+              "query": "What should providers consider for AI literacy of staff?",
+              "expected": [
+                "ai-act-oj-art-4"
+              ],
+              "candidates": [
+                "ai-act-oj-art-4",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10",
+                "ai-act-oj-art-14"
+              ],
+              "candidate_top1": "ai-act-oj-art-4",
+              "evidence": [
+                "ai-act-oj-art-4",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10"
+              ],
+              "elapsed_ms": 52.706
+            },
+            {
+              "id": "risk-management",
+              "query": "How is a risk management system established for high-risk AI systems?",
+              "expected": [
+                "ai-act-oj-art-9"
+              ],
+              "candidates": [
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-10"
+              ],
+              "candidate_top1": "ai-act-oj-art-9",
+              "evidence": [
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-10"
+              ],
+              "elapsed_ms": 48.847
+            },
+            {
+              "id": "oversight",
+              "query": "What measures enable natural persons to oversee high-risk AI systems?",
+              "expected": [
+                "ai-act-oj-art-14"
+              ],
+              "candidates": [
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-10",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-13"
+              ],
+              "candidate_top1": "ai-act-oj-art-14",
+              "evidence": [
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-10",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-13"
+              ],
+              "elapsed_ms": 47.801
+            },
+            {
+              "id": "synthetic-content",
+              "query": "What disclosure requirements concern deep fakes and artificially generated content?",
+              "expected": [
+                "ai-act-oj-art-50"
+              ],
+              "candidates": [
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10"
+              ],
+              "candidate_top1": "ai-act-oj-art-50",
+              "evidence": [
+                "ai-act-oj-art-50"
+              ],
+              "elapsed_ms": 42.563
+            },
+            {
+              "id": "global-breach",
+              "query": "Notification of a personal data breach to the supervisory authority",
+              "expected": [
+                "gdpr-oj-art-33"
+              ],
+              "candidates": [
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-35",
+                "dsa-oj-art-16",
+                "gdpr-oj-art-17"
+              ],
+              "candidate_top1": "gdpr-oj-art-33",
+              "evidence": [
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-17"
+              ],
+              "elapsed_ms": 84.264
+            },
+            {
+              "id": "global-dark-patterns",
+              "query": "Designing online interfaces to deceive manipulate or impair free informed decisions",
+              "expected": [
+                "dsa-oj-art-25"
+              ],
+              "candidates": [
+                "dsa-oj-art-25",
+                "dsa-oj-art-20",
+                "ai-act-oj-art-50",
+                "dsa-oj-art-27",
+                "dsa-oj-art-26"
+              ],
+              "candidate_top1": "dsa-oj-art-25",
+              "evidence": [
+                "dsa-oj-art-25",
+                "dsa-oj-art-20"
+              ],
+              "elapsed_ms": 82.482
+            },
+            {
+              "id": "tariff",
+              "query": "What is the import duty for roasted coffee from Brazil?",
+              "expected": [],
+              "candidates": [
+                "ai-act-oj-art-50",
+                "dsa-oj-art-25",
+                "dsa-oj-art-17",
+                "dsa-oj-art-20",
+                "dma-oj-art-5"
+              ],
+              "candidate_top1": "ai-act-oj-art-50",
+              "evidence": [],
+              "elapsed_ms": 79.61
+            },
+            {
+              "id": "weather",
+              "query": "What is the weather forecast for Paris next weekend?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-13",
+                "dsa-oj-art-17",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10",
+                "gdpr-oj-art-33"
+              ],
+              "candidate_top1": "gdpr-oj-art-13",
+              "evidence": [],
+              "elapsed_ms": 76.578
+            },
+            {
+              "id": "visa",
+              "query": "What visa documents are needed for a holiday in Japan?",
+              "expected": [],
+              "candidates": [
+                "dsa-oj-art-17",
+                "dsa-oj-art-14",
+                "dsa-oj-art-20",
+                "gdpr-oj-art-25",
+                "ai-act-oj-art-13"
+              ],
+              "candidate_top1": "dsa-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 84.869
+            },
+            {
+              "id": "recipe",
+              "query": "How do I bake a chocolate cake with walnuts?",
+              "expected": [],
+              "candidates": [
+                "dma-oj-art-3",
+                "gdpr-oj-art-6",
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-12",
+                "ai-act-oj-art-50"
+              ],
+              "candidate_top1": "dma-oj-art-3",
+              "evidence": [],
+              "elapsed_ms": 79.985
+            },
+            {
+              "id": "stock",
+              "query": "Predict the share price of Apple tomorrow",
+              "expected": [],
+              "candidates": [
+                "dma-oj-art-5",
+                "dsa-oj-art-20",
+                "dsa-oj-art-28",
+                "dma-oj-art-3",
+                "ai-act-oj-art-9"
+              ],
+              "candidate_top1": "dma-oj-art-5",
+              "evidence": [],
+              "elapsed_ms": 73.786
+            },
+            {
+              "id": "rail",
+              "query": "Which train departs Berlin for Munich at noon?",
+              "expected": [],
+              "candidates": [
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-14",
+                "dma-oj-art-3",
+                "dma-oj-art-5",
+                "ai-act-oj-art-10"
+              ],
+              "candidate_top1": "ai-act-oj-art-50",
+              "evidence": [],
+              "elapsed_ms": 80.302
+            }
+          ]
+        },
+        "known-paraphrase-cases": {
+          "summary": {
+            "cases": 5,
+            "positive_cases": 3,
+            "negative_cases": 2,
+            "target_top1": 2,
+            "target_top5": 3,
+            "target_evidence_hits": 0,
+            "false_evidence_cases": 0,
+            "mean_positive_source_precision": 0.0,
+            "latency_p50_ms": 48.195,
+            "latency_p95_ms": 73.975
+          },
+          "cases": [
+            {
+              "id": "known-probe-0",
+              "query": "Can people move a copy of their information to another provider?",
+              "expected": [
+                "gdpr-oj-art-20"
+              ],
+              "candidates": [
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-20",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-33"
+              ],
+              "candidate_top1": "gdpr-oj-art-15",
+              "evidence": [],
+              "elapsed_ms": 50.04
+            },
+            {
+              "id": "known-probe-1",
+              "query": "How can someone appeal a platform decision to take down their post?",
+              "expected": [
+                "dsa-oj-art-20"
+              ],
+              "candidates": [
+                "dsa-oj-art-20",
+                "dsa-oj-art-27",
+                "dsa-oj-art-17",
+                "dsa-oj-art-28",
+                "dsa-oj-art-16"
+              ],
+              "candidate_top1": "dsa-oj-art-20",
+              "evidence": [],
+              "elapsed_ms": 44.533
+            },
+            {
+              "id": "known-probe-2",
+              "query": "How should an operator override a machine recommendation?",
+              "expected": [
+                "ai-act-oj-art-14"
+              ],
+              "candidates": [
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10"
+              ],
+              "candidate_top1": "ai-act-oj-art-14",
+              "evidence": [],
+              "elapsed_ms": 42.14
+            },
+            {
+              "id": "known-probe-3",
+              "query": "What import tax do I pay on electric bicycles?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-12",
+                "dma-oj-art-5",
+                "dsa-oj-art-25",
+                "gdpr-oj-art-15",
+                "dma-oj-art-3"
+              ],
+              "candidate_top1": "gdpr-oj-art-12",
+              "evidence": [],
+              "elapsed_ms": 73.975
+            },
+            {
+              "id": "known-probe-4",
+              "query": "What retention deadline applies to employee attendance records?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-25",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-6",
+                "gdpr-oj-art-22"
+              ],
+              "candidate_top1": "gdpr-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 48.195
+            }
+          ]
+        },
+        "paraphrase-holdout-v1": {
+          "summary": {
+            "cases": 24,
+            "positive_cases": 16,
+            "negative_cases": 8,
+            "target_top1": 10,
+            "target_top5": 14,
+            "target_evidence_hits": 8,
+            "false_evidence_cases": 0,
+            "mean_positive_source_precision": 0.19999999999999998,
+            "latency_p50_ms": 52.527,
+            "latency_p95_ms": 77.048
+          },
+          "cases": [
+            {
+              "id": "portable-photos",
+              "query": "If I switch photo storage apps, can I take my personal information in a reusable file?",
+              "expected": [
+                "gdpr-oj-art-20"
+              ],
+              "candidates": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-25",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-6",
+                "gdpr-oj-art-13"
+              ],
+              "candidate_top1": "gdpr-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 53.924
+            },
+            {
+              "id": "computer-rejection",
+              "query": "Can a person challenge a decision about them made by a computer with no human involvement?",
+              "expected": [
+                "gdpr-oj-art-22"
+              ],
+              "candidates": [
+                "gdpr-oj-art-22",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-32",
+                "gdpr-oj-art-6",
+                "gdpr-oj-art-12"
+              ],
+              "candidate_top1": "gdpr-oj-art-22",
+              "evidence": [],
+              "elapsed_ms": 59.223
+            },
+            {
+              "id": "leaked-addresses",
+              "query": "A customer address list was leaked. What does the text say about reporting the incident to the regulator?",
+              "expected": [
+                "gdpr-oj-art-33"
+              ],
+              "candidates": [
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-32",
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-15"
+              ],
+              "candidate_top1": "gdpr-oj-art-35",
+              "evidence": [],
+              "elapsed_ms": 60.705
+            },
+            {
+              "id": "signup-explanation",
+              "query": "What should we tell someone at signup about why we collect their information and who receives it?",
+              "expected": [
+                "gdpr-oj-art-13"
+              ],
+              "candidates": [
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-6"
+              ],
+              "candidate_top1": "gdpr-oj-art-13",
+              "evidence": [],
+              "elapsed_ms": 52.527
+            },
+            {
+              "id": "design-safeguards",
+              "query": "Should privacy safeguards be considered while choosing how a new service will process personal information?",
+              "expected": [
+                "gdpr-oj-art-25"
+              ],
+              "candidates": [
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-6",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-17"
+              ],
+              "candidate_top1": "gdpr-oj-art-13",
+              "evidence": [
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-17"
+              ],
+              "elapsed_ms": 53.021
+            },
+            {
+              "id": "court-erasure",
+              "query": "Can erasure be refused when keeping the information is necessary to defend a court claim?",
+              "expected": [
+                "gdpr-oj-art-17"
+              ],
+              "candidates": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-35"
+              ],
+              "candidate_top1": "gdpr-oj-art-17",
+              "evidence": [
+                "gdpr-oj-art-12"
+              ],
+              "elapsed_ms": 53.503
+            },
+            {
+              "id": "hidden-listing",
+              "query": "My listing disappeared. What should the platform explain about the restriction and the rule it used?",
+              "expected": [
+                "dsa-oj-art-17"
+              ],
+              "candidates": [
+                "dsa-oj-art-17",
+                "dsa-oj-art-20",
+                "dsa-oj-art-27",
+                "dsa-oj-art-28",
+                "dsa-oj-art-14"
+              ],
+              "candidate_top1": "dsa-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 48.532
+            },
+            {
+              "id": "flag-post",
+              "query": "How can a visitor flag a specific post they believe is unlawful?",
+              "expected": [
+                "dsa-oj-art-16"
+              ],
+              "candidates": [
+                "dsa-oj-art-17",
+                "dsa-oj-art-16",
+                "dsa-oj-art-25",
+                "dsa-oj-art-20",
+                "dsa-oj-art-26"
+              ],
+              "candidate_top1": "dsa-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 43.627
+            },
+            {
+              "id": "feed-explanation",
+              "query": "Must a service explain why its feed suggests particular posts and how a user can change that?",
+              "expected": [
+                "dsa-oj-art-27"
+              ],
+              "candidates": [
+                "dsa-oj-art-26",
+                "dsa-oj-art-27",
+                "dsa-oj-art-14",
+                "dsa-oj-art-17",
+                "dsa-oj-art-25"
+              ],
+              "candidate_top1": "dsa-oj-art-26",
+              "evidence": [
+                "dsa-oj-art-26",
+                "dsa-oj-art-27",
+                "dsa-oj-art-14"
+              ],
+              "elapsed_ms": 57.363
+            },
+            {
+              "id": "child-profiling",
+              "query": "Can a platform use profiling to show targeted adverts when it knows the recipient is a child?",
+              "expected": [
+                "dsa-oj-art-28"
+              ],
+              "candidates": [
+                "dsa-oj-art-28",
+                "dsa-oj-art-26",
+                "dsa-oj-art-27",
+                "dsa-oj-art-20",
+                "dsa-oj-art-14"
+              ],
+              "candidate_top1": "dsa-oj-art-28",
+              "evidence": [
+                "dsa-oj-art-28",
+                "dsa-oj-art-26",
+                "dsa-oj-art-27"
+              ],
+              "elapsed_ms": 53.984
+            },
+            {
+              "id": "complaint-review",
+              "query": "What does the text say about having a qualified person review a complaint about a moderation decision?",
+              "expected": [
+                "dsa-oj-art-20"
+              ],
+              "candidates": [
+                "dsa-oj-art-14",
+                "dsa-oj-art-20",
+                "dsa-oj-art-16",
+                "dsa-oj-art-17"
+              ],
+              "candidate_top1": "dsa-oj-art-14",
+              "evidence": [
+                "dsa-oj-art-14",
+                "dsa-oj-art-20"
+              ],
+              "elapsed_ms": 47.596
+            },
+            {
+              "id": "large-platform-selection",
+              "query": "How are very large platforms selected for designation as gatekeepers?",
+              "expected": [
+                "dma-oj-art-3"
+              ],
+              "candidates": [
+                "dma-oj-art-3",
+                "dma-oj-art-5",
+                "dma-oj-art-6",
+                "dma-oj-art-7"
+              ],
+              "candidate_top1": "dma-oj-art-3",
+              "evidence": [
+                "dma-oj-art-3",
+                "dma-oj-art-5",
+                "dma-oj-art-6",
+                "dma-oj-art-7"
+              ],
+              "elapsed_ms": 45.052
+            },
+            {
+              "id": "staff-understanding",
+              "query": "What should an organisation consider so staff using an AI system have enough understanding to operate it?",
+              "expected": [
+                "ai-act-oj-art-4"
+              ],
+              "candidates": [
+                "ai-act-oj-art-4",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-13"
+              ],
+              "candidate_top1": "ai-act-oj-art-4",
+              "evidence": [
+                "ai-act-oj-art-4",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-13"
+              ],
+              "elapsed_ms": 46.428
+            },
+            {
+              "id": "stop-unsafe-output",
+              "query": "What controls should let a person disregard an unsafe AI recommendation or stop a system?",
+              "expected": [
+                "ai-act-oj-art-14"
+              ],
+              "candidates": [
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10"
+              ],
+              "candidate_top1": "ai-act-oj-art-14",
+              "evidence": [
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9"
+              ],
+              "elapsed_ms": 45.074
+            },
+            {
+              "id": "training-data-quality",
+              "query": "What quality considerations apply to data used to train and test a high-risk AI system?",
+              "expected": [
+                "ai-act-oj-art-10"
+              ],
+              "candidates": [
+                "ai-act-oj-art-10",
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-14"
+              ],
+              "candidate_top1": "ai-act-oj-art-10",
+              "evidence": [
+                "ai-act-oj-art-10",
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-14"
+              ],
+              "elapsed_ms": 53.022
+            },
+            {
+              "id": "fake-video-label",
+              "query": "How should an artificially altered video that looks authentic be disclosed?",
+              "expected": [
+                "ai-act-oj-art-50"
+              ],
+              "candidates": [
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-9"
+              ],
+              "candidate_top1": "ai-act-oj-art-50",
+              "evidence": [
+                "ai-act-oj-art-50"
+              ],
+              "elapsed_ms": 43.834
+            },
+            {
+              "id": "payroll-duration",
+              "query": "Exactly how many years must a business store employee payroll records?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-25"
+              ],
+              "candidate_top1": "gdpr-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 54.269
+            },
+            {
+              "id": "tax-percentage",
+              "query": "What percentage VAT rate applies to downloadable games in France?",
+              "expected": [],
+              "candidates": [
+                "dsa-oj-art-25",
+                "gdpr-oj-art-25",
+                "dma-oj-art-5",
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-6"
+              ],
+              "candidate_top1": "dsa-oj-art-25",
+              "evidence": [],
+              "elapsed_ms": 79.235
+            },
+            {
+              "id": "appeal-court-address",
+              "query": "What is the street address of the court where I should sue a social media platform?",
+              "expected": [],
+              "candidates": [
+                "dsa-oj-art-20",
+                "dsa-oj-art-28",
+                "dsa-oj-art-27",
+                "dsa-oj-art-14",
+                "dsa-oj-art-17"
+              ],
+              "candidate_top1": "dsa-oj-art-20",
+              "evidence": [],
+              "elapsed_ms": 46.395
+            },
+            {
+              "id": "french-consent-age",
+              "query": "What is the minimum digital consent age set by French national law?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-22",
+                "gdpr-oj-art-6",
+                "gdpr-oj-art-25",
+                "gdpr-oj-art-35"
+              ],
+              "candidate_top1": "gdpr-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 49.171
+            },
+            {
+              "id": "gdpr-fine-formula",
+              "query": "What is the maximum administrative fine as a percentage of global turnover?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-25",
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-33"
+              ],
+              "candidate_top1": "gdpr-oj-art-12",
+              "evidence": [],
+              "elapsed_ms": 51.717
+            },
+            {
+              "id": "ai-deployment-date",
+              "query": "On what calendar date does Article 14 begin to apply?",
+              "expected": [],
+              "candidates": [
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10"
+              ],
+              "candidate_top1": "ai-act-oj-art-13",
+              "evidence": [],
+              "elapsed_ms": 42.683
+            },
+            {
+              "id": "schengen-work",
+              "query": "Can a Schengen tourist visa holder work in Germany?",
+              "expected": [],
+              "candidates": [
+                "dma-oj-art-5",
+                "ai-act-oj-art-50",
+                "dsa-oj-art-28",
+                "dsa-oj-art-25",
+                "dma-oj-art-7"
+              ],
+              "candidate_top1": "dma-oj-art-5",
+              "evidence": [],
+              "elapsed_ms": 73.973
+            },
+            {
+              "id": "retail-return",
+              "query": "How many days do I have to return shoes bought in a physical shop?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-32",
+                "dma-oj-art-3",
+                "dma-oj-art-5",
+                "dsa-oj-art-20"
+              ],
+              "candidate_top1": "gdpr-oj-art-12",
+              "evidence": [],
+              "elapsed_ms": 77.048
+            }
+          ]
+        }
+      }
+    },
+    "corrected": {
+      "manifest": {
+        "schema_version": 1,
+        "model_id": "BAAI/bge-small-en-v1.5",
+        "document_context": "none",
+        "dimension": 384,
+        "query_prefix": "Represent this sentence for searching relevant passages: ",
+        "normalized": true,
+        "chunker": "characters-320-overlap-40-v2",
+        "fastembed_version": "0.7.4",
+        "created_at": "2026-09-18T17:45:26.268741+00:00",
+        "tokenizer_sha256": "9114256b104cca80e04367526f03f46aa3c443c2ed174904142a73bbf13b9fbb",
+        "max_tokens": 512,
+        "corpus_sha256": "0d8788b1e26208e011b3ebaf8c1e1fbd2c7aec54d555c58ed8cc2e75ccaf44b4"
+      },
+      "chunks": 350,
+      "datasets": {
+        "official-cases": {
+          "summary": {
+            "cases": 30,
+            "positive_cases": 24,
+            "negative_cases": 6,
+            "target_top1": 24,
+            "target_top5": 24,
+            "target_evidence_hits": 24,
+            "false_evidence_cases": 0,
+            "mean_positive_source_precision": 0.40208333333333335,
+            "latency_p50_ms": 52.582,
+            "latency_p95_ms": 81.684
+          },
+          "cases": [
+            {
+              "id": "privacy-notice",
+              "query": "What information must a controller provide when personal data are collected from the data subject?",
+              "expected": [
+                "gdpr-oj-art-13"
+              ],
+              "candidates": [
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-6"
+              ],
+              "candidate_top1": "gdpr-oj-art-13",
+              "evidence": [
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-6"
+              ],
+              "elapsed_ms": 54.358
+            },
+            {
+              "id": "access",
+              "query": "Which information is included in the right of access by the data subject?",
+              "expected": [
+                "gdpr-oj-art-15"
+              ],
+              "candidates": [
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-20",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-12"
+              ],
+              "candidate_top1": "gdpr-oj-art-15",
+              "evidence": [
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-20",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-12"
+              ],
+              "elapsed_ms": 50.385
+            },
+            {
+              "id": "erase",
+              "query": "What are the grounds and exceptions for erasure of personal data?",
+              "expected": [
+                "gdpr-oj-art-17"
+              ],
+              "candidates": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-5",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-25"
+              ],
+              "candidate_top1": "gdpr-oj-art-17",
+              "evidence": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-5",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-25"
+              ],
+              "elapsed_ms": 53.554
+            },
+            {
+              "id": "portability",
+              "query": "Can personal data be received in a structured commonly used machine-readable format?",
+              "expected": [
+                "gdpr-oj-art-20"
+              ],
+              "candidates": [
+                "gdpr-oj-art-20",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-5"
+              ],
+              "candidate_top1": "gdpr-oj-art-20",
+              "evidence": [
+                "gdpr-oj-art-20",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-5"
+              ],
+              "elapsed_ms": 53.965
+            },
+            {
+              "id": "automated-decisions",
+              "query": "What does the original text say about decisions based solely on automated processing including profiling?",
+              "expected": [
+                "gdpr-oj-art-22"
+              ],
+              "candidates": [
+                "gdpr-oj-art-22",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-20"
+              ],
+              "candidate_top1": "gdpr-oj-art-22",
+              "evidence": [
+                "gdpr-oj-art-22",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-20"
+              ],
+              "elapsed_ms": 52.258
+            },
+            {
+              "id": "security",
+              "query": "How should the controller assess an appropriate level of security of processing?",
+              "expected": [
+                "gdpr-oj-art-32"
+              ],
+              "candidates": [
+                "gdpr-oj-art-32",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-25",
+                "gdpr-oj-art-5",
+                "gdpr-oj-art-6"
+              ],
+              "candidate_top1": "gdpr-oj-art-32",
+              "evidence": [
+                "gdpr-oj-art-32",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-25",
+                "gdpr-oj-art-5",
+                "gdpr-oj-art-6"
+              ],
+              "elapsed_ms": 49.918
+            },
+            {
+              "id": "breach",
+              "query": "Which notification is required to a supervisory authority after a personal data breach?",
+              "expected": [
+                "gdpr-oj-art-33"
+              ],
+              "candidates": [
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-5",
+                "gdpr-oj-art-17"
+              ],
+              "candidate_top1": "gdpr-oj-art-33",
+              "evidence": [
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-5",
+                "gdpr-oj-art-17"
+              ],
+              "elapsed_ms": 52.582
+            },
+            {
+              "id": "dpia",
+              "query": "What must a data protection impact assessment contain?",
+              "expected": [
+                "gdpr-oj-art-35"
+              ],
+              "candidates": [
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-25"
+              ],
+              "candidate_top1": "gdpr-oj-art-35",
+              "evidence": [
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-25"
+              ],
+              "elapsed_ms": 47.315
+            },
+            {
+              "id": "terms",
+              "query": "What restrictions should intermediary services disclose in their terms and conditions?",
+              "expected": [
+                "dsa-oj-art-14"
+              ],
+              "candidates": [
+                "dsa-oj-art-14",
+                "dsa-oj-art-17",
+                "dsa-oj-art-20",
+                "dsa-oj-art-27"
+              ],
+              "candidate_top1": "dsa-oj-art-14",
+              "evidence": [
+                "dsa-oj-art-14",
+                "dsa-oj-art-17",
+                "dsa-oj-art-20",
+                "dsa-oj-art-27"
+              ],
+              "elapsed_ms": 61.57
+            },
+            {
+              "id": "notice-action",
+              "query": "How do recipients submit sufficiently precise and adequately substantiated notices of illegal content?",
+              "expected": [
+                "dsa-oj-art-16"
+              ],
+              "candidates": [
+                "dsa-oj-art-16",
+                "dsa-oj-art-17",
+                "dsa-oj-art-26",
+                "dsa-oj-art-20"
+              ],
+              "candidate_top1": "dsa-oj-art-16",
+              "evidence": [
+                "dsa-oj-art-16",
+                "dsa-oj-art-17",
+                "dsa-oj-art-26",
+                "dsa-oj-art-20"
+              ],
+              "elapsed_ms": 62.199
+            },
+            {
+              "id": "reasons",
+              "query": "What explanation must a statement of reasons provide when content is restricted?",
+              "expected": [
+                "dsa-oj-art-17"
+              ],
+              "candidates": [
+                "dsa-oj-art-17",
+                "dsa-oj-art-16",
+                "dsa-oj-art-20",
+                "dsa-oj-art-26"
+              ],
+              "candidate_top1": "dsa-oj-art-17",
+              "evidence": [
+                "dsa-oj-art-17",
+                "dsa-oj-art-16"
+              ],
+              "elapsed_ms": 59.0
+            },
+            {
+              "id": "complaints",
+              "query": "How long should access to the internal complaint-handling system be available?",
+              "expected": [
+                "dsa-oj-art-20"
+              ],
+              "candidates": [
+                "dsa-oj-art-20",
+                "dsa-oj-art-14",
+                "dsa-oj-art-17",
+                "dsa-oj-art-16"
+              ],
+              "candidate_top1": "dsa-oj-art-20",
+              "evidence": [
+                "dsa-oj-art-20",
+                "dsa-oj-art-14"
+              ],
+              "elapsed_ms": 44.655
+            },
+            {
+              "id": "dark-patterns",
+              "query": "What does the text say about online interfaces that deceive or manipulate recipients?",
+              "expected": [
+                "dsa-oj-art-25"
+              ],
+              "candidates": [
+                "dsa-oj-art-25",
+                "dsa-oj-art-26",
+                "dsa-oj-art-20",
+                "dsa-oj-art-27",
+                "dsa-oj-art-28"
+              ],
+              "candidate_top1": "dsa-oj-art-25",
+              "evidence": [
+                "dsa-oj-art-25",
+                "dsa-oj-art-26",
+                "dsa-oj-art-20",
+                "dsa-oj-art-27"
+              ],
+              "elapsed_ms": 48.203
+            },
+            {
+              "id": "ads",
+              "query": "How should advertisements identify the person on whose behalf the advertisement is presented?",
+              "expected": [
+                "dsa-oj-art-26"
+              ],
+              "candidates": [
+                "dsa-oj-art-26",
+                "dsa-oj-art-28",
+                "dsa-oj-art-16",
+                "dsa-oj-art-27"
+              ],
+              "candidate_top1": "dsa-oj-art-26",
+              "evidence": [
+                "dsa-oj-art-26"
+              ],
+              "elapsed_ms": 41.047
+            },
+            {
+              "id": "recommendations",
+              "query": "Which main parameters used in recommender systems must be explained?",
+              "expected": [
+                "dsa-oj-art-27"
+              ],
+              "candidates": [
+                "dsa-oj-art-27",
+                "dsa-oj-art-26",
+                "dsa-oj-art-14",
+                "dsa-oj-art-20",
+                "dsa-oj-art-28"
+              ],
+              "candidate_top1": "dsa-oj-art-27",
+              "evidence": [
+                "dsa-oj-art-27"
+              ],
+              "elapsed_ms": 44.795
+            },
+            {
+              "id": "children",
+              "query": "What privacy safety and security protections apply to minors on online platforms?",
+              "expected": [
+                "dsa-oj-art-28"
+              ],
+              "candidates": [
+                "dsa-oj-art-28",
+                "dsa-oj-art-14",
+                "dsa-oj-art-26",
+                "dsa-oj-art-25",
+                "dsa-oj-art-20"
+              ],
+              "candidate_top1": "dsa-oj-art-28",
+              "evidence": [
+                "dsa-oj-art-28",
+                "dsa-oj-art-26",
+                "dsa-oj-art-25",
+                "dsa-oj-art-20"
+              ],
+              "elapsed_ms": 43.204
+            },
+            {
+              "id": "gatekeeper",
+              "query": "Which thresholds are used in the designation of gatekeepers?",
+              "expected": [
+                "dma-oj-art-3"
+              ],
+              "candidates": [
+                "dma-oj-art-3",
+                "dma-oj-art-5",
+                "dma-oj-art-6",
+                "dma-oj-art-7"
+              ],
+              "candidate_top1": "dma-oj-art-3",
+              "evidence": [
+                "dma-oj-art-3",
+                "dma-oj-art-5",
+                "dma-oj-art-6",
+                "dma-oj-art-7"
+              ],
+              "elapsed_ms": 47.968
+            },
+            {
+              "id": "interoperability",
+              "query": "What basic functionalities of number-independent interpersonal communications services must be interoperable?",
+              "expected": [
+                "dma-oj-art-7"
+              ],
+              "candidates": [
+                "dma-oj-art-7",
+                "dma-oj-art-5"
+              ],
+              "candidate_top1": "dma-oj-art-7",
+              "evidence": [
+                "dma-oj-art-7"
+              ],
+              "elapsed_ms": 54.597
+            },
+            {
+              "id": "literacy",
+              "query": "What should providers consider for AI literacy of staff?",
+              "expected": [
+                "ai-act-oj-art-4"
+              ],
+              "candidates": [
+                "ai-act-oj-art-4",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10",
+                "ai-act-oj-art-14"
+              ],
+              "candidate_top1": "ai-act-oj-art-4",
+              "evidence": [
+                "ai-act-oj-art-4",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10"
+              ],
+              "elapsed_ms": 44.372
+            },
+            {
+              "id": "risk-management",
+              "query": "How is a risk management system established for high-risk AI systems?",
+              "expected": [
+                "ai-act-oj-art-9"
+              ],
+              "candidates": [
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-10"
+              ],
+              "candidate_top1": "ai-act-oj-art-9",
+              "evidence": [
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-10"
+              ],
+              "elapsed_ms": 47.055
+            },
+            {
+              "id": "oversight",
+              "query": "What measures enable natural persons to oversee high-risk AI systems?",
+              "expected": [
+                "ai-act-oj-art-14"
+              ],
+              "candidates": [
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-10",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-13"
+              ],
+              "candidate_top1": "ai-act-oj-art-14",
+              "evidence": [
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-10",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-13"
+              ],
+              "elapsed_ms": 49.629
+            },
+            {
+              "id": "synthetic-content",
+              "query": "What disclosure requirements concern deep fakes and artificially generated content?",
+              "expected": [
+                "ai-act-oj-art-50"
+              ],
+              "candidates": [
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10"
+              ],
+              "candidate_top1": "ai-act-oj-art-50",
+              "evidence": [
+                "ai-act-oj-art-50"
+              ],
+              "elapsed_ms": 47.509
+            },
+            {
+              "id": "global-breach",
+              "query": "Notification of a personal data breach to the supervisory authority",
+              "expected": [
+                "gdpr-oj-art-33"
+              ],
+              "candidates": [
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-35",
+                "dsa-oj-art-16",
+                "gdpr-oj-art-17"
+              ],
+              "candidate_top1": "gdpr-oj-art-33",
+              "evidence": [
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-17"
+              ],
+              "elapsed_ms": 90.908
+            },
+            {
+              "id": "global-dark-patterns",
+              "query": "Designing online interfaces to deceive manipulate or impair free informed decisions",
+              "expected": [
+                "dsa-oj-art-25"
+              ],
+              "candidates": [
+                "dsa-oj-art-25",
+                "dsa-oj-art-20",
+                "ai-act-oj-art-50",
+                "dsa-oj-art-27",
+                "dsa-oj-art-26"
+              ],
+              "candidate_top1": "dsa-oj-art-25",
+              "evidence": [
+                "dsa-oj-art-25",
+                "dsa-oj-art-20"
+              ],
+              "elapsed_ms": 81.684
+            },
+            {
+              "id": "tariff",
+              "query": "What is the import duty for roasted coffee from Brazil?",
+              "expected": [],
+              "candidates": [
+                "ai-act-oj-art-50",
+                "dsa-oj-art-25",
+                "dsa-oj-art-17",
+                "dsa-oj-art-20",
+                "dma-oj-art-5"
+              ],
+              "candidate_top1": "ai-act-oj-art-50",
+              "evidence": [],
+              "elapsed_ms": 80.951
+            },
+            {
+              "id": "weather",
+              "query": "What is the weather forecast for Paris next weekend?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-13",
+                "dsa-oj-art-17",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10",
+                "gdpr-oj-art-33"
+              ],
+              "candidate_top1": "gdpr-oj-art-13",
+              "evidence": [],
+              "elapsed_ms": 75.872
+            },
+            {
+              "id": "visa",
+              "query": "What visa documents are needed for a holiday in Japan?",
+              "expected": [],
+              "candidates": [
+                "dsa-oj-art-17",
+                "dsa-oj-art-14",
+                "dsa-oj-art-20",
+                "gdpr-oj-art-25",
+                "ai-act-oj-art-13"
+              ],
+              "candidate_top1": "dsa-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 71.368
+            },
+            {
+              "id": "recipe",
+              "query": "How do I bake a chocolate cake with walnuts?",
+              "expected": [],
+              "candidates": [
+                "dma-oj-art-3",
+                "gdpr-oj-art-6",
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-12",
+                "ai-act-oj-art-50"
+              ],
+              "candidate_top1": "dma-oj-art-3",
+              "evidence": [],
+              "elapsed_ms": 77.882
+            },
+            {
+              "id": "stock",
+              "query": "Predict the share price of Apple tomorrow",
+              "expected": [],
+              "candidates": [
+                "dma-oj-art-5",
+                "dsa-oj-art-20",
+                "dsa-oj-art-28",
+                "dma-oj-art-3",
+                "ai-act-oj-art-9"
+              ],
+              "candidate_top1": "dma-oj-art-5",
+              "evidence": [],
+              "elapsed_ms": 69.925
+            },
+            {
+              "id": "rail",
+              "query": "Which train departs Berlin for Munich at noon?",
+              "expected": [],
+              "candidates": [
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-14",
+                "dma-oj-art-3",
+                "dma-oj-art-5",
+                "ai-act-oj-art-10"
+              ],
+              "candidate_top1": "ai-act-oj-art-50",
+              "evidence": [],
+              "elapsed_ms": 71.384
+            }
+          ]
+        },
+        "known-paraphrase-cases": {
+          "summary": {
+            "cases": 5,
+            "positive_cases": 3,
+            "negative_cases": 2,
+            "target_top1": 2,
+            "target_top5": 3,
+            "target_evidence_hits": 0,
+            "false_evidence_cases": 0,
+            "mean_positive_source_precision": 0.0,
+            "latency_p50_ms": 46.853,
+            "latency_p95_ms": 74.82
+          },
+          "cases": [
+            {
+              "id": "known-probe-0",
+              "query": "Can people move a copy of their information to another provider?",
+              "expected": [
+                "gdpr-oj-art-20"
+              ],
+              "candidates": [
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-20",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-33"
+              ],
+              "candidate_top1": "gdpr-oj-art-15",
+              "evidence": [],
+              "elapsed_ms": 46.853
+            },
+            {
+              "id": "known-probe-1",
+              "query": "How can someone appeal a platform decision to take down their post?",
+              "expected": [
+                "dsa-oj-art-20"
+              ],
+              "candidates": [
+                "dsa-oj-art-20",
+                "dsa-oj-art-27",
+                "dsa-oj-art-17",
+                "dsa-oj-art-28",
+                "dsa-oj-art-16"
+              ],
+              "candidate_top1": "dsa-oj-art-20",
+              "evidence": [],
+              "elapsed_ms": 49.415
+            },
+            {
+              "id": "known-probe-2",
+              "query": "How should an operator override a machine recommendation?",
+              "expected": [
+                "ai-act-oj-art-14"
+              ],
+              "candidates": [
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10"
+              ],
+              "candidate_top1": "ai-act-oj-art-14",
+              "evidence": [],
+              "elapsed_ms": 45.169
+            },
+            {
+              "id": "known-probe-3",
+              "query": "What import tax do I pay on electric bicycles?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-12",
+                "dma-oj-art-5",
+                "dsa-oj-art-25",
+                "gdpr-oj-art-15",
+                "dma-oj-art-3"
+              ],
+              "candidate_top1": "gdpr-oj-art-12",
+              "evidence": [],
+              "elapsed_ms": 74.82
+            },
+            {
+              "id": "known-probe-4",
+              "query": "What retention deadline applies to employee attendance records?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-25",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-6",
+                "gdpr-oj-art-22"
+              ],
+              "candidate_top1": "gdpr-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 43.98
+            }
+          ]
+        },
+        "paraphrase-holdout-v1": {
+          "summary": {
+            "cases": 24,
+            "positive_cases": 16,
+            "negative_cases": 8,
+            "target_top1": 10,
+            "target_top5": 14,
+            "target_evidence_hits": 8,
+            "false_evidence_cases": 0,
+            "mean_positive_source_precision": 0.19999999999999998,
+            "latency_p50_ms": 51.887,
+            "latency_p95_ms": 79.88
+          },
+          "cases": [
+            {
+              "id": "portable-photos",
+              "query": "If I switch photo storage apps, can I take my personal information in a reusable file?",
+              "expected": [
+                "gdpr-oj-art-20"
+              ],
+              "candidates": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-25",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-6",
+                "gdpr-oj-art-13"
+              ],
+              "candidate_top1": "gdpr-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 56.082
+            },
+            {
+              "id": "computer-rejection",
+              "query": "Can a person challenge a decision about them made by a computer with no human involvement?",
+              "expected": [
+                "gdpr-oj-art-22"
+              ],
+              "candidates": [
+                "gdpr-oj-art-22",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-32",
+                "gdpr-oj-art-6",
+                "gdpr-oj-art-12"
+              ],
+              "candidate_top1": "gdpr-oj-art-22",
+              "evidence": [],
+              "elapsed_ms": 61.272
+            },
+            {
+              "id": "leaked-addresses",
+              "query": "A customer address list was leaked. What does the text say about reporting the incident to the regulator?",
+              "expected": [
+                "gdpr-oj-art-33"
+              ],
+              "candidates": [
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-32",
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-15"
+              ],
+              "candidate_top1": "gdpr-oj-art-35",
+              "evidence": [],
+              "elapsed_ms": 54.464
+            },
+            {
+              "id": "signup-explanation",
+              "query": "What should we tell someone at signup about why we collect their information and who receives it?",
+              "expected": [
+                "gdpr-oj-art-13"
+              ],
+              "candidates": [
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-6"
+              ],
+              "candidate_top1": "gdpr-oj-art-13",
+              "evidence": [],
+              "elapsed_ms": 58.008
+            },
+            {
+              "id": "design-safeguards",
+              "query": "Should privacy safeguards be considered while choosing how a new service will process personal information?",
+              "expected": [
+                "gdpr-oj-art-25"
+              ],
+              "candidates": [
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-6",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-17"
+              ],
+              "candidate_top1": "gdpr-oj-art-13",
+              "evidence": [
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-17"
+              ],
+              "elapsed_ms": 51.308
+            },
+            {
+              "id": "court-erasure",
+              "query": "Can erasure be refused when keeping the information is necessary to defend a court claim?",
+              "expected": [
+                "gdpr-oj-art-17"
+              ],
+              "candidates": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-13",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-35"
+              ],
+              "candidate_top1": "gdpr-oj-art-17",
+              "evidence": [
+                "gdpr-oj-art-12"
+              ],
+              "elapsed_ms": 58.805
+            },
+            {
+              "id": "hidden-listing",
+              "query": "My listing disappeared. What should the platform explain about the restriction and the rule it used?",
+              "expected": [
+                "dsa-oj-art-17"
+              ],
+              "candidates": [
+                "dsa-oj-art-17",
+                "dsa-oj-art-20",
+                "dsa-oj-art-27",
+                "dsa-oj-art-28",
+                "dsa-oj-art-14"
+              ],
+              "candidate_top1": "dsa-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 44.269
+            },
+            {
+              "id": "flag-post",
+              "query": "How can a visitor flag a specific post they believe is unlawful?",
+              "expected": [
+                "dsa-oj-art-16"
+              ],
+              "candidates": [
+                "dsa-oj-art-17",
+                "dsa-oj-art-16",
+                "dsa-oj-art-25",
+                "dsa-oj-art-20",
+                "dsa-oj-art-26"
+              ],
+              "candidate_top1": "dsa-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 47.003
+            },
+            {
+              "id": "feed-explanation",
+              "query": "Must a service explain why its feed suggests particular posts and how a user can change that?",
+              "expected": [
+                "dsa-oj-art-27"
+              ],
+              "candidates": [
+                "dsa-oj-art-26",
+                "dsa-oj-art-27",
+                "dsa-oj-art-14",
+                "dsa-oj-art-17",
+                "dsa-oj-art-25"
+              ],
+              "candidate_top1": "dsa-oj-art-26",
+              "evidence": [
+                "dsa-oj-art-26",
+                "dsa-oj-art-27",
+                "dsa-oj-art-14"
+              ],
+              "elapsed_ms": 44.035
+            },
+            {
+              "id": "child-profiling",
+              "query": "Can a platform use profiling to show targeted adverts when it knows the recipient is a child?",
+              "expected": [
+                "dsa-oj-art-28"
+              ],
+              "candidates": [
+                "dsa-oj-art-28",
+                "dsa-oj-art-26",
+                "dsa-oj-art-27",
+                "dsa-oj-art-20",
+                "dsa-oj-art-14"
+              ],
+              "candidate_top1": "dsa-oj-art-28",
+              "evidence": [
+                "dsa-oj-art-28",
+                "dsa-oj-art-26",
+                "dsa-oj-art-27"
+              ],
+              "elapsed_ms": 47.123
+            },
+            {
+              "id": "complaint-review",
+              "query": "What does the text say about having a qualified person review a complaint about a moderation decision?",
+              "expected": [
+                "dsa-oj-art-20"
+              ],
+              "candidates": [
+                "dsa-oj-art-14",
+                "dsa-oj-art-20",
+                "dsa-oj-art-16",
+                "dsa-oj-art-17"
+              ],
+              "candidate_top1": "dsa-oj-art-14",
+              "evidence": [
+                "dsa-oj-art-14",
+                "dsa-oj-art-20"
+              ],
+              "elapsed_ms": 52.285
+            },
+            {
+              "id": "large-platform-selection",
+              "query": "How are very large platforms selected for designation as gatekeepers?",
+              "expected": [
+                "dma-oj-art-3"
+              ],
+              "candidates": [
+                "dma-oj-art-3",
+                "dma-oj-art-5",
+                "dma-oj-art-6",
+                "dma-oj-art-7"
+              ],
+              "candidate_top1": "dma-oj-art-3",
+              "evidence": [
+                "dma-oj-art-3",
+                "dma-oj-art-5",
+                "dma-oj-art-6",
+                "dma-oj-art-7"
+              ],
+              "elapsed_ms": 53.347
+            },
+            {
+              "id": "staff-understanding",
+              "query": "What should an organisation consider so staff using an AI system have enough understanding to operate it?",
+              "expected": [
+                "ai-act-oj-art-4"
+              ],
+              "candidates": [
+                "ai-act-oj-art-4",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-13"
+              ],
+              "candidate_top1": "ai-act-oj-art-4",
+              "evidence": [
+                "ai-act-oj-art-4",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-13"
+              ],
+              "elapsed_ms": 50.88
+            },
+            {
+              "id": "stop-unsafe-output",
+              "query": "What controls should let a person disregard an unsafe AI recommendation or stop a system?",
+              "expected": [
+                "ai-act-oj-art-14"
+              ],
+              "candidates": [
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10"
+              ],
+              "candidate_top1": "ai-act-oj-art-14",
+              "evidence": [
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-9"
+              ],
+              "elapsed_ms": 45.188
+            },
+            {
+              "id": "training-data-quality",
+              "query": "What quality considerations apply to data used to train and test a high-risk AI system?",
+              "expected": [
+                "ai-act-oj-art-10"
+              ],
+              "candidates": [
+                "ai-act-oj-art-10",
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-14"
+              ],
+              "candidate_top1": "ai-act-oj-art-10",
+              "evidence": [
+                "ai-act-oj-art-10",
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-14"
+              ],
+              "elapsed_ms": 56.612
+            },
+            {
+              "id": "fake-video-label",
+              "query": "How should an artificially altered video that looks authentic be disclosed?",
+              "expected": [
+                "ai-act-oj-art-50"
+              ],
+              "candidates": [
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-9"
+              ],
+              "candidate_top1": "ai-act-oj-art-50",
+              "evidence": [
+                "ai-act-oj-art-50"
+              ],
+              "elapsed_ms": 46.874
+            },
+            {
+              "id": "payroll-duration",
+              "query": "Exactly how many years must a business store employee payroll records?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-33",
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-35",
+                "gdpr-oj-art-25"
+              ],
+              "candidate_top1": "gdpr-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 51.887
+            },
+            {
+              "id": "tax-percentage",
+              "query": "What percentage VAT rate applies to downloadable games in France?",
+              "expected": [],
+              "candidates": [
+                "dsa-oj-art-25",
+                "gdpr-oj-art-25",
+                "dma-oj-art-5",
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-6"
+              ],
+              "candidate_top1": "dsa-oj-art-25",
+              "evidence": [],
+              "elapsed_ms": 73.988
+            },
+            {
+              "id": "appeal-court-address",
+              "query": "What is the street address of the court where I should sue a social media platform?",
+              "expected": [],
+              "candidates": [
+                "dsa-oj-art-20",
+                "dsa-oj-art-28",
+                "dsa-oj-art-27",
+                "dsa-oj-art-14",
+                "dsa-oj-art-17"
+              ],
+              "candidate_top1": "dsa-oj-art-20",
+              "evidence": [],
+              "elapsed_ms": 47.674
+            },
+            {
+              "id": "french-consent-age",
+              "query": "What is the minimum digital consent age set by French national law?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-22",
+                "gdpr-oj-art-6",
+                "gdpr-oj-art-25",
+                "gdpr-oj-art-35"
+              ],
+              "candidate_top1": "gdpr-oj-art-17",
+              "evidence": [],
+              "elapsed_ms": 47.019
+            },
+            {
+              "id": "gdpr-fine-formula",
+              "query": "What is the maximum administrative fine as a percentage of global turnover?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-15",
+                "gdpr-oj-art-25",
+                "gdpr-oj-art-17",
+                "gdpr-oj-art-33"
+              ],
+              "candidate_top1": "gdpr-oj-art-12",
+              "evidence": [],
+              "elapsed_ms": 53.789
+            },
+            {
+              "id": "ai-deployment-date",
+              "query": "On what calendar date does Article 14 begin to apply?",
+              "expected": [],
+              "candidates": [
+                "ai-act-oj-art-13",
+                "ai-act-oj-art-50",
+                "ai-act-oj-art-14",
+                "ai-act-oj-art-9",
+                "ai-act-oj-art-10"
+              ],
+              "candidate_top1": "ai-act-oj-art-13",
+              "evidence": [],
+              "elapsed_ms": 43.897
+            },
+            {
+              "id": "schengen-work",
+              "query": "Can a Schengen tourist visa holder work in Germany?",
+              "expected": [],
+              "candidates": [
+                "dma-oj-art-5",
+                "ai-act-oj-art-50",
+                "dsa-oj-art-28",
+                "dsa-oj-art-25",
+                "dma-oj-art-7"
+              ],
+              "candidate_top1": "dma-oj-art-5",
+              "evidence": [],
+              "elapsed_ms": 79.88
+            },
+            {
+              "id": "retail-return",
+              "query": "How many days do I have to return shoes bought in a physical shop?",
+              "expected": [],
+              "candidates": [
+                "gdpr-oj-art-12",
+                "gdpr-oj-art-32",
+                "dma-oj-art-3",
+                "dma-oj-art-5",
+                "dsa-oj-art-20"
+              ],
+              "candidate_top1": "gdpr-oj-art-12",
+              "evidence": [],
+              "elapsed_ms": 83.506
+            }
+          ]
+        }
+      }
+    }
+  },
+  "integrity": {
+    "chunks": 350,
+    "corrected_positions": 65,
+    "text_unchanged": true,
+    "vectors_unchanged": true,
+    "all_spans_and_hashes_verified": true,
+    "all_regression_candidates_and_evidence_unchanged": true
+  }
+}

@@ -32,6 +32,12 @@ jobs:
       - run: python knowledge/pipeline.py build --language en --documents output/official-ci/documents.jsonl --index output/official-ci/index.json --cache-dir .cache/models
       - run: python knowledge/evaluate.py --language en --index output/official-ci/index.json --cases knowledge/evaluation/official-cases.json --output output/official-ci/evaluation.json --cache-dir .cache/models --top-k 5 --min-hit-rate 1 --max-false-evidence-rate 0
       - run: python -m unittest discover -s knowledge -v
+      - name: Compare explicit indexing variants without promoting defaults
+        run: |
+          python knowledge/pipeline.py build --language en --documents output/official-ci/documents.jsonl --index output/official-ci/context.json --document-context source-section --cache-dir .cache/models
+          python knowledge/pipeline.py build --language en --documents output/official-ci/documents.jsonl --index output/official-ci/paragraphs.json --chunker paragraphs --document-context source-section --cache-dir .cache/models
+          python knowledge/evaluate_indexing.py --index output/official-ci/index.json --index output/official-ci/context.json --index output/official-ci/paragraphs.json --cases knowledge/evaluation/official-cases.json --cases knowledge/evaluation/known-paraphrase-cases.json --cases knowledge/evaluation/paraphrase-holdout-v1.json --cache-dir .cache/models --output output/official-ci/indexing-comparison.json
+          python knowledge/assess_indexing.py --comparison output/official-ci/indexing-comparison.json --output output/official-ci/indexing-adoption.json
       - name: Start isolated review service
         run: |
           python knowledge/server.py --language en --index output/official-ci/index.json --cache-dir .cache/models --port 8892 > /tmp/eu-review.log 2>&1 &
@@ -79,4 +85,6 @@ jobs:
             output/official-ci/evaluation.json
             output/official-ci/http-postgres.json
             output/official-ci/rerank-*.json
+            output/official-ci/indexing-comparison.json
+            output/official-ci/indexing-adoption.json
             output/browser-*/report.json

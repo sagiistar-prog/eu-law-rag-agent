@@ -1,12 +1,17 @@
 """Source review layer for an explicit publication snapshot, without legal conclusions."""
 import argparse
 from datetime import datetime, timezone
+from hashlib import sha256
 import json
 from pathlib import Path
 import re
 
 from pipeline import Encoder, evidence_answer, search
 ROOT=Path(__file__).resolve().parents[1]
+
+
+class CitationIntegrityError(ValueError):
+    """A stored source or citation is inconsistent, not a malformed user query."""
 
 
 def select_index(index, instrument='all'):
@@ -44,10 +49,35 @@ def query_policy(query, index):
     return None, None
 
 
+def verify_spans(index, hits):
+    verified=[]
+    legacy=index['manifest'].get('chunker')=='characters-320-overlap-40-v1'
+    for hit in hits:
+        row=dict(hit)
+        source=index.get('sources',{}).get(row['source_id'])
+        if source and 'char_start' in row:
+            text, start=source['text'],row['char_start']
+            if not isinstance(start,int) or isinstance(start,bool) or start<0:
+                raise CitationIntegrityError('Invalid citation position; rebuild the index')
+            if text[start:start+len(row['text'])]!=row['text'] and legacy:
+                raw=text[start:start+320]
+                if raw.strip()==row['text']:
+                    start+=len(raw)-len(raw.lstrip())
+                    row['char_start']=start
+            if text[start:start+len(row['text'])]!=row['text']:
+                raise CitationIntegrityError('Citation does not match its source; rebuild the index')
+            row['char_end']=start+len(row['text'])
+        if 'content_sha256' in row and row['content_sha256']!=sha256(row['text'].encode()).hexdigest():
+            raise CitationIntegrityError('Citation checksum mismatch; rebuild the index')
+        verified.append(row)
+    return verified
+
+
 def research(index, query, encoder, instrument='all', retriever=None, reranker=None):
     selected = select_index(index, instrument)
     reason, message = query_policy(query, selected)
     hits = [] if reason else (retriever(query, instrument) if retriever else search(selected, query, encoder, top_k=40 if reranker else 12))
+    hits = verify_spans(index,hits)
     if reranker and hits:
         from reranker import contexts, scoped_query
         model_query=scoped_query(query,instrument)
@@ -66,7 +96,8 @@ def research(index, query, encoder, instrument='all', retriever=None, reranker=N
             match_gate=lambda h:h['rerank_score']>=max(MIN_LOGIT,best-MAX_LOGIT_GAP))
         result['ranking']=reranker.manifest
     else:
-        result = evidence_answer(query, distinct)
+        word_budget = 512 if index['manifest'].get('chunker','').startswith('paragraphs-') else 80
+        result = evidence_answer(query, distinct, max_words=word_budget)
     emitted={hit['source_id'] for hit in result['evidence']}
     if reason:
         result.update(answer_status='insufficient_evidence', reason=reason, next_step=message)
@@ -91,7 +122,12 @@ def markdown(result):
         lines += [f"### {hit['source_title']}", '', hit['text'], '',
             f"Source: {hit['source_url']}", f"CELEX: {hit.get('celex', 'not provided')}",
             f"Publication: {hit.get('publication_date', 'not provided')}",
-            f"Retrieved: {hit['retrieved_at']}", f"Chunk: {hit['chunk_id']}", '']
+            f"Retrieved: {hit['retrieved_at']}", f"Chunk: {hit['chunk_id']}",
+            f"Excerpt SHA-256: {hit['content_sha256']}", '']
+        if 'char_end' in hit:
+            lines += [f"Cleaned-source span: [{hit['char_start']}, {hit['char_end']})", '']
+        if hit.get('truncated'):
+            lines += ['Partial excerpt. Read the full article for conditions and exceptions.', '']
     if result.get('review_candidates'):
         lines += ['## Related candidates, not supporting evidence', '']
         for hit in result['review_candidates']:

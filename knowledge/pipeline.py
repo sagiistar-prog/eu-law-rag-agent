@@ -10,6 +10,7 @@ import math
 from pathlib import Path
 import re
 import unicodedata
+from chunking import character_spans, paragraph_spans, retrieval_text
 
 MODELS = {
     'zh': ('BAAI/bge-small-zh-v1.5', 512, '为这个句子生成表示以用于检索相关文章：'),
@@ -24,7 +25,8 @@ def clean(text):
     text = ''.join(c for c in text if c in '\n\t' or unicodedata.category(c) != 'Cc')
     return re.sub(r'\n{3,}', '\n\n', '\n'.join(line.rstrip() for line in text.split('\n'))).strip()
 
-def prepare(documents):
+def prepare(documents,chunker='characters'):
+    if chunker not in ('characters','paragraphs'): raise ValueError('Unknown chunker')
     chunks, seen, ids = [], set(), set()
     for doc in documents:
         if any(not isinstance(doc.get(k), str) or not doc[k].strip() for k in REQUIRED):
@@ -39,8 +41,8 @@ def prepare(documents):
         ids.add(doc['source_id'])
         text = clean(doc['text'])
         # A short character bound is conservative for the 512-token BGE encoders.
-        for offset in range(0, len(text), 280):
-            fragment = text[offset:offset + 320].strip()
+        spans = paragraph_spans(text) if chunker=='paragraphs' else character_spans(text)
+        for offset,fragment in spans:
             if not fragment: continue
             digest = sha256(fragment.encode()).hexdigest()
             # Preserve duplicate text from different sources for attribution.
@@ -65,8 +67,8 @@ def tokens(text):
         words.extend(run[i:i+2] for i in range(max(1, len(run)-1)))
     return words
 
-def bm25(query, chunks):
-    terms = set(tokens(query)); counts = [Counter(tokens(c['text'])) for c in chunks]
+def bm25(query, chunks,context='none'):
+    terms = set(tokens(query)); counts = [Counter(tokens(retrieval_text(c,context))) for c in chunks]
     lengths = [sum(c.values()) for c in counts]; avg = sum(lengths)/max(1,len(lengths))
     scores = []
     for i, count in enumerate(counts):
@@ -126,19 +128,23 @@ class Encoder:
             result.append([x/norm for x in v])
         return result
 
-def build(documents,encoder):
-    chunks=prepare(documents)
+def build(documents,encoder,chunker='characters',context='none'):
+    chunks=prepare(documents,chunker)
     if not chunks: raise ValueError('No chunks to index')
     from jsonschema import Draft202012Validator
     validator=Draft202012Validator(json.loads(Path(__file__).with_name('chunk.schema.json').read_text(encoding='utf-8')))
     for chunk in chunks:validator.validate(chunk)
+    texts=[retrieval_text(c,context) for c in chunks]
+    descriptor='paragraphs-1200-overlap-160-v1' if chunker=='paragraphs' else 'characters-320-overlap-40-v2'
+    payload=chunks if chunker=='characters' and context=='none' else {'chunker':descriptor,'document_context':context,'chunks':chunks}
     return {'manifest': {'schema_version':1,'model_id':encoder.model_id,
+        'document_context':context,
         'dimension':encoder.dimension,'query_prefix':encoder.prefix,'normalized':True,
-        'chunker':'characters-320-overlap-40-v1','fastembed_version':importlib.metadata.version('fastembed'),
+        'chunker':descriptor,'fastembed_version':importlib.metadata.version('fastembed'),
         'created_at':datetime.now(timezone.utc).isoformat(),
         'tokenizer_sha256':encoder.tokenizer_sha256,'max_tokens':encoder.max_tokens,
-        'corpus_sha256':sha256(json.dumps(chunks,sort_keys=True,ensure_ascii=False).encode()).hexdigest()},
-        'chunks':chunks,'vectors':encoder.encode([c['text'] for c in chunks]),
+        'corpus_sha256':sha256(json.dumps(payload,sort_keys=True,ensure_ascii=False).encode()).hexdigest()},
+        'chunks':chunks,'vectors':encoder.encode(texts),
         'sources':{d['source_id']:{**d,'text':clean(d['text'])} for d in documents}}
 
 def search(index,query,encoder,top_k=5,mode='hybrid'):
@@ -150,7 +156,7 @@ def search(index,query,encoder,top_k=5,mode='hybrid'):
     if len(chunks)!=len(vectors): raise ValueError('Incomplete vector index')
     if any(len(v)!=encoder.dimension or not all(math.isfinite(x) for x in v) for v in vectors):
         raise ValueError('Corrupt vector index')
-    keyword=bm25(query,chunks)
+    keyword=bm25(query,chunks,m.get('document_context','none'))
     if mode=='keyword':
         return [{**chunks[i], 'rrf_score':None,'keyword_score':score,
             'cosine_similarity':None,'retrieval_method':mode,'requires_review':True} for i,score in keyword[:top_k]]
@@ -164,6 +170,8 @@ def search(index,query,encoder,top_k=5,mode='hybrid'):
         'retrieval_method':mode,'requires_review':True} for i,score in candidates[:top_k]]
 
 def evidence_answer(query,hits,max_words=80,match_gate=None):
+    if not isinstance(max_words, int) or isinstance(max_words, bool) or max_words < 1:
+        raise ValueError('Quote budget must be a positive integer')
     # A nearest vector always exists. Do not convert that fact into an answer.
     def supported_hit(hit):
         if hit['review_status'] not in ('reviewed','fictional','source_verified'):
@@ -182,10 +190,21 @@ def evidence_answer(query,hits,max_words=80,match_gate=None):
     for h in supported:
         remaining=max_words-used.get(h['source_id'],0)
         if remaining<=0: continue
-        words=h['text'].split()
-        excerpt=h['text'] if len(words)<=remaining else ' '.join(words[:remaining])
+        words=list(re.finditer(r'\S+',h['text']))
+        excerpt=h['text'] if len(words)<=remaining else h['text'][:words[remaining-1].end()]
         used[h['source_id']]=used.get(h['source_id'],0)+min(len(words),remaining)
-        evidence.append({**h,'text':excerpt,'truncated':len(words)>remaining})
+        quoted={**h,'text':excerpt,'truncated':len(words)>remaining,
+            'content_sha256':sha256(excerpt.encode()).hexdigest()}
+        if 'char_start' in h:
+            quoted['char_end']=h['char_start']+len(excerpt)
+        if quoted['truncated']:
+            quoted['excerpt_of']={k:h[k] for k in ('chunk_id','char_start','context_char_end','matched_chunk_id') if k in h}
+            quoted['excerpt_of']['content_sha256']=sha256(h['text'].encode()).hexdigest()
+            if 'char_start' in h:
+                quoted['excerpt_of']['char_end']=h['char_start']+len(h['text'])
+                quoted['chunk_id']=f"{h['source_id']}:excerpt:{h['char_start']}:{quoted['char_end']}:{quoted['content_sha256'][:12]}"
+            quoted.pop('context_char_end',None)
+        evidence.append(quoted)
     return {'query':query,'answer_status':'evidence_found' if evidence else 'insufficient_evidence',
         'answer_mode':'extractive','evidence':evidence,'candidates':hits,
         'manual_review_required':True,'confidence':'unrated',
@@ -196,11 +215,13 @@ def main():
     p.add_argument('command',choices=['build','search','evaluate'])
     p.add_argument('--documents',type=Path);p.add_argument('--index',type=Path,required=True)
     p.add_argument('--language',choices=MODELS,default='en');p.add_argument('--query')
+    p.add_argument('--chunker',choices=['characters','paragraphs'],default='characters')
+    p.add_argument('--document-context',choices=['none','source-section'],default='none')
     p.add_argument('--cases',type=Path);p.add_argument('--cache-dir',type=Path)
     a=p.parse_args();encoder=Encoder(a.language,str(a.cache_dir) if a.cache_dir else None)
     if a.command=='build':
         docs=[json.loads(line) for line in a.documents.read_text(encoding='utf-8-sig').splitlines() if line.strip()]
-        index=build(docs,encoder);a.index.parent.mkdir(parents=True,exist_ok=True)
+        index=build(docs,encoder,a.chunker,a.document_context);a.index.parent.mkdir(parents=True,exist_ok=True)
         with a.index.open('x',encoding='utf-8') as f:json.dump(index,f,ensure_ascii=False,allow_nan=False)
         with a.index.with_suffix('.chunks.jsonl').open('w',encoding='utf-8') as f:
             for c in index['chunks']:f.write(json.dumps(c,ensure_ascii=False)+'\n')

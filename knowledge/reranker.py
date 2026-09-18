@@ -33,18 +33,23 @@ def contexts(index, hits, query, ranker):
             result.append(hit)
             continue
         text, pivot = source['text'], hit['char_start']
+        if not isinstance(pivot,int) or isinstance(pivot,bool) or pivot<0 or text[pivot:pivot+len(hit['text'])]!=hit['text']:
+            raise ValueError('Matched passage does not match its source')
+        if not hit['text'] or len(hit['text'])>1600:
+            raise ValueError('Matched passage exceeds the context window')
+        minimum = max(320,len(hit['text']))
         width = 1600
         while True:
-            start = max(0, pivot - min(640, (width-320)//2))
+            start = max(0, pivot - min(640, (width-minimum)//2))
             end = min(len(text), start+width)
             start = max(0, end-width)
             passage = text[start:end]
             count = len(ranker.tokenizer.encode(query, hit['source_title']+'\n'+passage).ids)
             if count <= 512:
                 break
-            if width == 320:
+            if width == minimum:
                 raise TokenLimitExceeded('Query and matched passage exceed the reranker token limit')
-            width = max(320, width-200)
+            width = max(minimum, width-200)
         key = (hit['source_id'], start, end)
         if key in seen:
             continue
@@ -52,7 +57,7 @@ def contexts(index, hits, query, ranker):
         digest = sha256(passage.encode()).hexdigest()
         result.append({**hit, 'text':passage, 'matched_chunk_id':hit['chunk_id'],
             'chunk_id':f"{hit['source_id']}:context:{start}:{end}:{digest[:12]}",
-            'content_sha256':digest, 'char_start':start, 'context_char_end':end})
+            'content_sha256':digest, 'char_start':start, 'char_end':end, 'context_char_end':end})
     return result
 
 
@@ -90,7 +95,7 @@ class Reranker:
         self.manifest = {'method': 'hybrid-cross-encoder', 'model': MODEL, 'revision': REVISION,
             'model_sha256': FILES['onnx/model.onnx'], 'tokenizer_sha256': sha256(self.tokenizer.to_str().encode()).hexdigest(),
             'max_pair_tokens': 512, 'max_candidates': MAX_CANDIDATES, 'score_kind': 'uncalibrated_logit',
-            'query_context':'selected-instrument-v1', 'passage_context':'neighbor-window-1600-v1',
+            'query_context':'selected-instrument-v1', 'passage_context':'neighbor-window-1600-v2',
             'minimum_logit':MIN_LOGIT, 'max_logit_gap':MAX_LOGIT_GAP}
 
     def rank(self, query, hits):

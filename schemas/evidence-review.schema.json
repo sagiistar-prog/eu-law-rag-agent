@@ -172,6 +172,56 @@
         },
         "rerank_score": {
           "type": "number"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 of the exact UTF-8 text emitted in this hit."
+        },
+        "char_start": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Unicode code-point offset in the cleaned source, inclusive."
+        },
+        "char_end": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Unicode code-point offset in the cleaned source, exclusive."
+        },
+        "truncated": {
+          "type": "boolean"
+        },
+        "excerpt_of": {
+          "type": "object",
+          "required": [
+            "content_sha256"
+          ],
+          "description": "Original scored passage provenance when the emitted excerpt is shortened.",
+          "properties": {
+            "chunk_id": {
+              "type": "string"
+            },
+            "content_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "char_start": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "char_end": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "context_char_end": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "matched_chunk_id": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
         }
       }
     }

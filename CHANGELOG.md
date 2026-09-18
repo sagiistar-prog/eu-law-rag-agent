@@ -1,5 +1,12 @@
 # Maintenance log
 
+## 0.3.2 — 2026-09-18
+
+- Fixed whitespace-trimmed chunk offsets and exact-prefix quote truncation. Excerpt text, hash and source positions now agree; shortened passages retain original provenance separately.
+- Added strict source-span checks with a narrowly bounded compatibility repair for v1 character indexes. Invalid spans and checksums fail instead of exporting a misleading citation.
+- Compared source/section context and paragraph-first chunking on the same observed regression sets. Neither met the predeclared adoption gates; default retrieval remains unchanged.
+- Added executable adoption decisions, source-identical comparison, PostgreSQL context checks and browser export-to-source verification. Experimental chunking is explicit opt-in.
+
 ## 0.3.1 — 2026-09-18
 
 - Added an explicit opt-in, checksum-pinned MiniLM cross-encoder experiment with bounded source context and token checks.

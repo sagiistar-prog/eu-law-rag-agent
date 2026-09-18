@@ -1,6 +1,6 @@
 {
   "name": "eu-law-rag-agent",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "官方公报条文导入、本地混合检索与版本可追溯核对单",
   "author": {
     "name": "Oscar Qi",

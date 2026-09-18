@@ -9,6 +9,7 @@
 | [MS MARCO MiniLM L6](https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2) / [ONNX 转换](https://huggingface.co/Xenova/ms-marco-MiniLM-L-6-v2) | Apache-2.0，英文 query/passage 重排，CPU 成本可实测 | 显式实验模式，固定 revision 与五个制品 SHA256；未通过默认接入门槛 |
 | [pgvector](https://github.com/pgvector/pgvector) | PostgreSQL License，可验证事务和语料隔离 | PostgreSQL 16 / pgvector 0.8.1 实际联调，另保留无数据库文件模式 |
 | [Haystack](https://github.com/deepset-ai/haystack) | Apache-2.0，阶段式管线和检索融合边界可借鉴 | 架构参考，没有复制代码或接入完整框架 |
+| [LlamaIndex SentenceSplitter](https://github.com/run-llama/llama_index/blob/main/llama-index-core/llama_index/core/node_parser/text/sentence.py) | 优先保留段落/句子并在预算中考虑元数据的实现可检查 | 分块设计参考，无代码复制或框架依赖；本项目仍使用字符上限加真实 token 检查，并非同一算法，实验未达默认门槛 |
 | [AI Elements](https://github.com/vercel/ai-elements) | Apache-2.0，引用与任务状态组件提供交互参考 | 参考，没有安装；小工具用原生 HTML 与 JavaScript |
 | [Playwright](https://github.com/microsoft/playwright) / [axe-core](https://github.com/dequelabs/axe-core) | 浏览器真实任务及自动可访问性检测可复现 | 实际开发依赖，版本在 package-lock.json |
 

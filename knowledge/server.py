@@ -6,7 +6,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
 from pipeline import Encoder, TokenLimitExceeded
-from research import research, coverage, markdown
+from research import research, coverage, markdown, CitationIntegrityError
 from jsonschema import Draft202012Validator, ValidationError
 
 def serve(index,encoder,port,database_url=None,reranker=None):
@@ -76,6 +76,7 @@ def serve(index,encoder,port,database_url=None,reranker=None):
                 result['markdown']=markdown(result)
                 self.reply(200,result)
             except TokenLimitExceeded:self.reply(400,{'error':'问题超过模型长度限制，请缩短后重试。','code':'QUERY_TOO_LONG'})
+            except CitationIntegrityError:self.reply(503,{'error':'引用与来源不一致，请重建资料索引后重试。','code':'CITATION_MISMATCH'})
             except (ValueError,TypeError,ValidationError):self.reply(400,{'error':'请检查问题和资料范围，问题需为 1 到 1000 字。'})
             except Exception:self.reply(503,{'error':'检索暂不可用，请保留问题后重试。'})
         def log_message(self,*args):pass  # Never log query text.

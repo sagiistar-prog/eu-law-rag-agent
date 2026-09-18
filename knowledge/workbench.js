@@ -60,6 +60,7 @@ $('query-form').addEventListener('submit',async event=>{
     if(!data.evidence.length)$('result').append(el('h3','需要进一步核对'),el('p',data.next_step));
     for(const hit of data.evidence) {
       const row=el('section','','source');row.append(el('h3',hit.source_title),el('blockquote',hit.text));
+      if(hit.truncated)row.append(el('p','摘录已截短，请核对完整条文中的条件。','excerpt-note'));
       if(hit.document_version==='original_oj')row.append(el('p',`原始公报 ${hit.publication_date} / ${hit.celex}`));
       const button=el('button','核对完整条文','secondary');button.onclick=()=>showSource(hit,button);row.append(button);$('result').append(row);
     }
