@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "model_id": "BAAI/bge-small-en-v1.5",
+  "dimension": 384,
+  "query_prefix": "Represent this sentence for searching relevant passages: ",
+  "normalized": true,
+  "chunker": "characters-320-overlap-40-v1",
+  "fastembed_version": "0.7.4",
+  "created_at": "2026-09-18T03:55:36.904439+00:00",
+  "tokenizer_sha256": "9114256b104cca80e04367526f03f46aa3c443c2ed174904142a73bbf13b9fbb",
+  "max_tokens": 512,
+  "corpus_sha256": "c59b46d174bbb3bce24deb26547e5c1aa1270e05714cf631ab8df6330ca70699"
+}

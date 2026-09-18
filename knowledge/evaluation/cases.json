@@ -1,0 +1,76 @@
+[
+  {
+    "id": "fixture-01",
+    "query": "Which product material and intended use details are needed for classification?",
+    "relevant_sources": [
+      "classification"
+    ],
+    "expect_evidence": true,
+    "category": "classification",
+    "label_basis": "Authored fictional fixture; no medical or legal correctness claim"
+  },
+  {
+    "id": "fixture-02",
+    "query": "What does the fictional retention policy require for deletion?",
+    "relevant_sources": [
+      "privacy"
+    ],
+    "expect_evidence": true,
+    "category": "retention",
+    "label_basis": "Authored fictional fixture; no medical or legal correctness claim"
+  },
+  {
+    "id": "fixture-03",
+    "query": "Which manufacturer and traceability reference belongs in a safety inspection?",
+    "relevant_sources": [
+      "safety"
+    ],
+    "expect_evidence": true,
+    "category": "safety",
+    "label_basis": "Authored fictional fixture; no medical or legal correctness claim"
+  },
+  {
+    "id": "fixture-04",
+    "query": "Which decision date and grounds are recorded in an appeal?",
+    "relevant_sources": [
+      "appeal"
+    ],
+    "expect_evidence": true,
+    "category": "appeal",
+    "label_basis": "Authored fictional fixture; no medical or legal correctness claim"
+  },
+  {
+    "id": "fixture-05",
+    "query": "What shipment reference and destination should the transport record contain?",
+    "relevant_sources": [
+      "shipping"
+    ],
+    "expect_evidence": true,
+    "category": "transport",
+    "label_basis": "Authored fictional fixture; no medical or legal correctness claim"
+  },
+  {
+    "id": "fixture-06",
+    "query": "Quasar photosynthesis",
+    "relevant_sources": [],
+    "expect_evidence": false,
+    "category": "unrelated",
+    "label_basis": "Authored fictional fixture; no medical or legal correctness claim"
+  },
+  {
+    "id": "fixture-07",
+    "query": "Pizza recipe ingredients",
+    "relevant_sources": [],
+    "expect_evidence": false,
+    "category": "unrelated",
+    "label_basis": "Authored fictional fixture; no medical or legal correctness claim"
+  },
+  {
+    "id": "fixture-08",
+    "query": "Tomorrow rainfall forecast",
+    "relevant_sources": [],
+    "expect_evidence": false,
+    "category": "unrelated",
+    "label_basis": "Authored fictional fixture; no medical or legal correctness claim"
+  }
+]

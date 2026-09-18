@@ -1,0 +1,902 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-18T03:58:51.811313+00:00",
+  "scope": "authored component regression set; not expert accuracy, user outcomes, or web E2E",
+  "top_k": 3,
+  "corpus_sha256": "c59b46d174bbb3bce24deb26547e5c1aa1270e05714cf631ab8df6330ca70699",
+  "cases_sha256": "7d8937e59b35f8f93fb80479711d4bc16f3cec376cbc3e9ef9d2535c944d9953",
+  "model": "BAAI/bge-small-en-v1.5",
+  "dimension": 384,
+  "latency_scope": "model loaded; dense/hybrid include query inference, keyword does not; no web/database latency or hardware isolation",
+  "metrics_scope": "source IDs labeled relevant; source hit does not prove passage relevance",
+  "results": {
+    "keyword": {
+      "summary": {
+        "cases": 8,
+        "retrieval_labeled_cases": 5,
+        "no_evidence_cases": 3,
+        "recall_at_k": 1.0,
+        "mrr_at_k": 1.0,
+        "hit_rate_at_k": 1.0,
+        "mean_source_precision": 0.5,
+        "evidence_policy_accuracy": 1.0,
+        "false_evidence_rate": 0.0,
+        "jurisdiction_leak_cases": 0,
+        "latency_p50_ms": 0.312,
+        "latency_p95_ms": 2.119
+      },
+      "categories": {
+        "appeal": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 1.0,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 0.306,
+          "latency_p95_ms": 0.306
+        },
+        "classification": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 2.119,
+          "latency_p95_ms": 2.119
+        },
+        "retention": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 0.469,
+          "latency_p95_ms": 0.469
+        },
+        "safety": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.5,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 0.325,
+          "latency_p95_ms": 0.325
+        },
+        "transport": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 0.318,
+          "latency_p95_ms": 0.318
+        },
+        "unrelated": {
+          "cases": 3,
+          "retrieval_labeled_cases": 0,
+          "no_evidence_cases": 3,
+          "recall_at_k": null,
+          "mrr_at_k": null,
+          "hit_rate_at_k": null,
+          "mean_source_precision": null,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": 0.0,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 0.278,
+          "latency_p95_ms": 0.286
+        }
+      },
+      "cases": [
+        {
+          "id": "fixture-01",
+          "category": "classification",
+          "query": "Which product material and intended use details are needed for classification?",
+          "relevant_sources": [
+            "classification"
+          ],
+          "retrieved_sources": [
+            "classification",
+            "safety",
+            "shipping"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "safety",
+            "shipping"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 2.119
+        },
+        {
+          "id": "fixture-02",
+          "category": "retention",
+          "query": "What does the fictional retention policy require for deletion?",
+          "relevant_sources": [
+            "privacy"
+          ],
+          "retrieved_sources": [
+            "privacy",
+            "safety",
+            "appeal"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "appeal",
+            "safety"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 0.469
+        },
+        {
+          "id": "fixture-03",
+          "category": "safety",
+          "query": "Which manufacturer and traceability reference belongs in a safety inspection?",
+          "relevant_sources": [
+            "safety"
+          ],
+          "retrieved_sources": [
+            "safety",
+            "shipping"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "shipping"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 0.325
+        },
+        {
+          "id": "fixture-04",
+          "category": "appeal",
+          "query": "Which decision date and grounds are recorded in an appeal?",
+          "relevant_sources": [
+            "appeal"
+          ],
+          "retrieved_sources": [
+            "appeal"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 0.306
+        },
+        {
+          "id": "fixture-05",
+          "category": "transport",
+          "query": "What shipment reference and destination should the transport record contain?",
+          "relevant_sources": [
+            "shipping"
+          ],
+          "retrieved_sources": [
+            "shipping",
+            "safety",
+            "classification"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "classification",
+            "safety"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 0.318
+        },
+        {
+          "id": "fixture-06",
+          "category": "unrelated",
+          "query": "Quasar photosynthesis",
+          "relevant_sources": [],
+          "retrieved_sources": [],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 0.286
+        },
+        {
+          "id": "fixture-07",
+          "category": "unrelated",
+          "query": "Pizza recipe ingredients",
+          "relevant_sources": [],
+          "retrieved_sources": [],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 0.278
+        },
+        {
+          "id": "fixture-08",
+          "category": "unrelated",
+          "query": "Tomorrow rainfall forecast",
+          "relevant_sources": [],
+          "retrieved_sources": [],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 0.272
+        }
+      ]
+    },
+    "dense": {
+      "summary": {
+        "cases": 8,
+        "retrieval_labeled_cases": 5,
+        "no_evidence_cases": 3,
+        "recall_at_k": 1.0,
+        "mrr_at_k": 1.0,
+        "hit_rate_at_k": 1.0,
+        "mean_source_precision": 0.333333,
+        "evidence_policy_accuracy": 1.0,
+        "false_evidence_rate": 0.0,
+        "jurisdiction_leak_cases": 0,
+        "latency_p50_ms": 30.0,
+        "latency_p95_ms": 71.28
+      },
+      "categories": {
+        "appeal": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 31.122,
+          "latency_p95_ms": 31.122
+        },
+        "classification": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 71.28,
+          "latency_p95_ms": 71.28
+        },
+        "retention": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 46.018,
+          "latency_p95_ms": 46.018
+        },
+        "safety": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 29.421,
+          "latency_p95_ms": 29.421
+        },
+        "transport": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 30.58,
+          "latency_p95_ms": 30.58
+        },
+        "unrelated": {
+          "cases": 3,
+          "retrieval_labeled_cases": 0,
+          "no_evidence_cases": 3,
+          "recall_at_k": null,
+          "mrr_at_k": null,
+          "hit_rate_at_k": null,
+          "mean_source_precision": null,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": 0.0,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 26.717,
+          "latency_p95_ms": 27.238
+        }
+      },
+      "cases": [
+        {
+          "id": "fixture-01",
+          "category": "classification",
+          "query": "Which product material and intended use details are needed for classification?",
+          "relevant_sources": [
+            "classification"
+          ],
+          "retrieved_sources": [
+            "classification",
+            "safety",
+            "shipping"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "safety",
+            "shipping"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 71.28
+        },
+        {
+          "id": "fixture-02",
+          "category": "retention",
+          "query": "What does the fictional retention policy require for deletion?",
+          "relevant_sources": [
+            "privacy"
+          ],
+          "retrieved_sources": [
+            "privacy",
+            "appeal",
+            "shipping"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "appeal",
+            "shipping"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 46.018
+        },
+        {
+          "id": "fixture-03",
+          "category": "safety",
+          "query": "Which manufacturer and traceability reference belongs in a safety inspection?",
+          "relevant_sources": [
+            "safety"
+          ],
+          "retrieved_sources": [
+            "safety",
+            "classification",
+            "shipping"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "shipping"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 29.421
+        },
+        {
+          "id": "fixture-04",
+          "category": "appeal",
+          "query": "Which decision date and grounds are recorded in an appeal?",
+          "relevant_sources": [
+            "appeal"
+          ],
+          "retrieved_sources": [
+            "appeal",
+            "privacy",
+            "classification"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 31.122
+        },
+        {
+          "id": "fixture-05",
+          "category": "transport",
+          "query": "What shipment reference and destination should the transport record contain?",
+          "relevant_sources": [
+            "shipping"
+          ],
+          "retrieved_sources": [
+            "shipping",
+            "classification",
+            "safety"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "classification",
+            "safety"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 30.58
+        },
+        {
+          "id": "fixture-06",
+          "category": "unrelated",
+          "query": "Quasar photosynthesis",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "appeal",
+            "shipping",
+            "classification"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 26.717
+        },
+        {
+          "id": "fixture-07",
+          "category": "unrelated",
+          "query": "Pizza recipe ingredients",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "classification",
+            "appeal",
+            "privacy"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 27.238
+        },
+        {
+          "id": "fixture-08",
+          "category": "unrelated",
+          "query": "Tomorrow rainfall forecast",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "appeal",
+            "privacy",
+            "classification"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 25.587
+        }
+      ]
+    },
+    "hybrid": {
+      "summary": {
+        "cases": 8,
+        "retrieval_labeled_cases": 5,
+        "no_evidence_cases": 3,
+        "recall_at_k": 1.0,
+        "mrr_at_k": 1.0,
+        "hit_rate_at_k": 1.0,
+        "mean_source_precision": 0.333333,
+        "evidence_policy_accuracy": 1.0,
+        "false_evidence_rate": 0.0,
+        "jurisdiction_leak_cases": 0,
+        "latency_p50_ms": 31.317,
+        "latency_p95_ms": 34.145
+      },
+      "categories": {
+        "appeal": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 31.828,
+          "latency_p95_ms": 31.828
+        },
+        "classification": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 32.097,
+          "latency_p95_ms": 32.097
+        },
+        "retention": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 32.869,
+          "latency_p95_ms": 32.869
+        },
+        "safety": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 30.807,
+          "latency_p95_ms": 30.807
+        },
+        "transport": {
+          "cases": 1,
+          "retrieval_labeled_cases": 1,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.333333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 34.145,
+          "latency_p95_ms": 34.145
+        },
+        "unrelated": {
+          "cases": 3,
+          "retrieval_labeled_cases": 0,
+          "no_evidence_cases": 3,
+          "recall_at_k": null,
+          "mrr_at_k": null,
+          "hit_rate_at_k": null,
+          "mean_source_precision": null,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": 0.0,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 26.641,
+          "latency_p95_ms": 29.842
+        }
+      },
+      "cases": [
+        {
+          "id": "fixture-01",
+          "category": "classification",
+          "query": "Which product material and intended use details are needed for classification?",
+          "relevant_sources": [
+            "classification"
+          ],
+          "retrieved_sources": [
+            "classification",
+            "safety",
+            "shipping"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "safety",
+            "shipping"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 32.097
+        },
+        {
+          "id": "fixture-02",
+          "category": "retention",
+          "query": "What does the fictional retention policy require for deletion?",
+          "relevant_sources": [
+            "privacy"
+          ],
+          "retrieved_sources": [
+            "privacy",
+            "appeal",
+            "safety"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "appeal",
+            "safety"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 32.869
+        },
+        {
+          "id": "fixture-03",
+          "category": "safety",
+          "query": "Which manufacturer and traceability reference belongs in a safety inspection?",
+          "relevant_sources": [
+            "safety"
+          ],
+          "retrieved_sources": [
+            "safety",
+            "shipping",
+            "classification"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "shipping"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 30.807
+        },
+        {
+          "id": "fixture-04",
+          "category": "appeal",
+          "query": "Which decision date and grounds are recorded in an appeal?",
+          "relevant_sources": [
+            "appeal"
+          ],
+          "retrieved_sources": [
+            "appeal",
+            "privacy",
+            "classification"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 31.828
+        },
+        {
+          "id": "fixture-05",
+          "category": "transport",
+          "query": "What shipment reference and destination should the transport record contain?",
+          "relevant_sources": [
+            "shipping"
+          ],
+          "retrieved_sources": [
+            "shipping",
+            "classification",
+            "safety"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "classification",
+            "safety"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 34.145
+        },
+        {
+          "id": "fixture-06",
+          "category": "unrelated",
+          "query": "Quasar photosynthesis",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "appeal",
+            "shipping",
+            "classification"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 26.641
+        },
+        {
+          "id": "fixture-07",
+          "category": "unrelated",
+          "query": "Pizza recipe ingredients",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "classification",
+            "appeal",
+            "privacy"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 24.749
+        },
+        {
+          "id": "fixture-08",
+          "category": "unrelated",
+          "query": "Tomorrow rainfall forecast",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "appeal",
+            "privacy",
+            "classification"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 29.842
+        }
+      ]
+    }
+  },
+  "release_gate": {
+    "mode": "hybrid",
+    "passed": true,
+    "checks": [
+      {
+        "metric": "hit_rate_at_k",
+        "threshold": 1.0,
+        "observed": 1.0,
+        "passed": true
+      },
+      {
+        "metric": "false_evidence_rate",
+        "threshold": 0.0,
+        "observed": 0.0,
+        "passed": true
+      },
+      {
+        "metric": "jurisdiction_leak_cases",
+        "threshold": 0,
+        "observed": 0,
+        "passed": true
+      }
+    ]
+  }
+}

@@ -83,13 +83,35 @@ def fuse(*rankings, k=60):
         for rank,(i,_) in enumerate(ranking,1): scores[i] = scores.get(i,0) + 1/(k+rank)
     return sorted(scores.items(),key=lambda x:(-x[1],x[0]))
 
+class TokenLimitExceeded(ValueError):
+    """The full input cannot be encoded without losing content."""
+
+
 class Encoder:
     def __init__(self, language, cache_dir=None):
         from fastembed import TextEmbedding
         self.model_id,self.dimension,self.prefix = MODELS[language]
         self.model = TextEmbedding(model_name=self.model_id,cache_dir=cache_dir,threads=2)
+        from tokenizers import Tokenizer
+        tokenizer = getattr(self.model.model, 'tokenizer', None)
+        if tokenizer is None or not tokenizer.truncation:
+            raise ValueError('Pinned FastEmbed tokenizer contract unavailable')
+        self.max_tokens = min(512, tokenizer.truncation['max_length'])
+        self.tokenizer = Tokenizer.from_str(tokenizer.to_str())
+        self.tokenizer.no_truncation()
+        self.tokenizer.no_padding()
+        self.tokenizer_sha256 = sha256(self.tokenizer.to_str().encode()).hexdigest()
+
+    def token_counts(self, texts, query=False):
+        prepared = [self.prefix+t if query else t for t in texts]
+        counts = [len(row.ids) for row in self.tokenizer.encode_batch(prepared)]
+        if any(count > self.max_tokens for count in counts):
+            raise TokenLimitExceeded(f'Input exceeds the {self.max_tokens}-token model limit; shorten the query or split the source')
+        return counts
+
 
     def encode(self,texts,query=False):
+        self.token_counts(texts,query=query)
         prepared = [self.prefix+t if query else t for t in texts]
         result=[]
         for raw in self.model.embed(prepared):
@@ -111,6 +133,7 @@ def build(documents,encoder):
         'dimension':encoder.dimension,'query_prefix':encoder.prefix,'normalized':True,
         'chunker':'characters-320-overlap-40-v1','fastembed_version':importlib.metadata.version('fastembed'),
         'created_at':datetime.now(timezone.utc).isoformat(),
+        'tokenizer_sha256':encoder.tokenizer_sha256,'max_tokens':encoder.max_tokens,
         'corpus_sha256':sha256(json.dumps(chunks,sort_keys=True,ensure_ascii=False).encode()).hexdigest()},
         'chunks':chunks,'vectors':encoder.encode([c['text'] for c in chunks])}
 
@@ -124,6 +147,9 @@ def search(index,query,encoder,top_k=5,mode='hybrid'):
     if any(len(v)!=encoder.dimension or not all(math.isfinite(x) for x in v) for v in vectors):
         raise ValueError('Corrupt vector index')
     keyword=bm25(query,chunks)
+    if mode=='keyword':
+        return [{**chunks[i], 'rrf_score':None,'keyword_score':score,
+            'cosine_similarity':None,'retrieval_method':mode,'requires_review':True} for i,score in keyword[:top_k]]
     q=encoder.encode([query],query=True)[0]
     dense=sorted([(i,sum(a*b for a,b in zip(q,v))) for i,v in enumerate(vectors)],key=lambda x:-x[1])
     candidates=fuse(keyword[:20],dense[:20]) if mode=='hybrid' else keyword if mode=='keyword' else dense
@@ -152,7 +178,7 @@ def main():
     p=argparse.ArgumentParser()
     p.add_argument('command',choices=['build','search','evaluate'])
     p.add_argument('--documents',type=Path);p.add_argument('--index',type=Path,required=True)
-    p.add_argument('--language',choices=MODELS,default='zh');p.add_argument('--query')
+    p.add_argument('--language',choices=MODELS,default='en');p.add_argument('--query')
     p.add_argument('--cases',type=Path);p.add_argument('--cache-dir',type=Path)
     a=p.parse_args();encoder=Encoder(a.language,str(a.cache_dir) if a.cache_dir else None)
     if a.command=='build':

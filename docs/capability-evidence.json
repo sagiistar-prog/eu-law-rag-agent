@@ -6,5 +6,7 @@
   "measurement_contract": "docs/metrics.schema.json",
   "user_validation": "planned, not conducted",
   "production_outcomes": "not measured",
-  "upstream_credit": "docs/open-source.md"
+  "upstream_credit": "docs/open-source.md",
+  "retrieval_evaluation": "docs/retrieval-evaluation.md",
+  "model_regression_ci": ".github/workflows/knowledge-model.yml"
 }

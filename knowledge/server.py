@@ -5,9 +5,12 @@ import os
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
-from pipeline import Encoder, search, evidence_answer
+from pipeline import Encoder, search, evidence_answer, TokenLimitExceeded
 
 def serve(index,encoder,port,database_url=None):
+    manifest=index['manifest']
+    if (manifest['model_id'],manifest['dimension'],manifest['query_prefix']) != (encoder.model_id,encoder.dimension,encoder.prefix):
+        raise ValueError('Index and query model differ; choose the matching language or rebuild')
     connection=None
     if database_url:
         import psycopg
@@ -58,6 +61,7 @@ def serve(index,encoder,port,database_url=None):
                 result['review_candidates']=[{**h,'text':h['text'][:240]} for h in hits
                     if h['keyword_score']>0 and h['review_status']=='pending']
                 self.reply(200,result)
+            except TokenLimitExceeded:self.reply(400,{'error':'问题超过模型长度限制，请缩短后重试。','code':'QUERY_TOO_LONG'})
             except (ValueError,TypeError):self.reply(400,{'error':'请输入 1 到 1000 字的问题。'})
             except Exception:self.reply(503,{'error':'检索暂不可用，请保留问题后重试。'})
         def log_message(self,*args):pass  # Never log query text.
@@ -66,6 +70,6 @@ def serve(index,encoder,port,database_url=None):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--index',type=Path,required=True)
-    p.add_argument('--language',choices=['zh','en'],default='zh');p.add_argument('--port',type=int,default=8782)
+    p.add_argument('--language',choices=['zh','en'],default='en');p.add_argument('--port',type=int,default=8782)
     p.add_argument('--cache-dir',type=Path);a=p.parse_args()
     serve(json.loads(a.index.read_text(encoding='utf-8')),Encoder(a.language,str(a.cache_dir) if a.cache_dir else None),a.port,os.getenv('KB_DATABASE_URL'))

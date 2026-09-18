@@ -34,9 +34,9 @@ python knowledge/server.py --language en --index output/kb/index.json --cache-di
 
 ## 模型与契约
 
-默认 `BAAI/bge-small-en-v1.5`，384 维。Token embedding、position embedding、Transformer 编码和池化由预训练 BGE ONNX 模型完成，不自行编造词向量。文档无指令前缀，查询使用模型卡的检索指令，结果归一化。输入保守限制为每块 320 字符、40 字符重叠，避免 512-token 模型截断长资料。章节、页码来自上游提供，不能猜测。部署应增加token长度统计与超限拒绝，不依赖静默截断。
+默认 `BAAI/bge-small-en-v1.5`，384 维。Token embedding、position embedding、Transformer 编码和池化由预训练 BGE ONNX 模型完成，不自行编造词向量。文档无指令前缀，查询使用模型卡的检索指令，结果归一化。输入保守限制为每块 320 字符、40 字符重叠，避免 512-token 模型截断长资料。章节、页码来自上游提供，不能猜测。现在使用真实模型 tokenizer 检查每个片段和查询（包含查询指令与特殊 token）；超过 512 token 时在推理前拒绝，服务返回 QUERY_TOO_LONG。FastEmbed 0.7.4 的 tokenizer 接口与依赖版本固定。
 
-Manifest 记录模型、维数、指令、FastEmbed 版本、chunker 版本、语料哈希和构建时间。切换模型必须完整重建。部署应固定下载模型制品 SHA256；当前本地缓存未作为受信任生产制品发布。
+Manifest 记录模型、维数、指令、FastEmbed 版本、chunker 版本、语料哈希、tokenizer 哈希、长度上限和构建时间。切换模型必须完整重建。部署应固定下载模型制品 SHA256；当前本地缓存未作为受信任生产制品发布。
 
 JSONL 保留 source_id、source_title、source_url、retrieved_at、chunk_id、section、page、content_sha256 和 review_status。相同来源的重复段落去重，不合并不同来源的出处。清洗保留否定、数字、表格和换行。`pending` 来源不能进入证据答案。
 
@@ -56,3 +56,7 @@ JSONL 保留 source_id、source_title、source_url、retrieved_at、chunk_id、s
 - 可选持久化使用 [pgvector](https://github.com/pgvector/pgvector)，PostgreSQL License。参见 pg_store.py，独立 schema 不混入原有 Gemini 向量空间。
 
 小型虚构 eval 只证明链路可跑，不代表真实专业效果。需要新增真实授权语料、人工标注、不相关问题、时效冲突样本，比较 Recall@k、MRR、拒答准确率、延迟和成本之后才能决定上线。
+
+## 可复现回归
+
+新增三路检索比较、分母检查和 CI 发布门槛，见 [检索评测](../docs/retrieval-evaluation.md)。旧的简单命中测试保留；新增评测不能视为专业答案准确率。
