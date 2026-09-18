@@ -1,0 +1,66 @@
+[
+  {
+    "query": "Can people move a copy of their information to another provider?",
+    "instrument": "gdpr",
+    "expected": "gdpr-oj-art-20",
+    "evidence": [
+      "gdpr-oj-art-15"
+    ],
+    "review_candidates": [
+      "gdpr-oj-art-33",
+      "gdpr-oj-art-13",
+      "gdpr-oj-art-20"
+    ],
+    "corpus_sha256": "e619518fe1569053cfe02c16f65011c1abba4eed35894b3a869ba71896d26535",
+    "storage": "postgres-pgvector"
+  },
+  {
+    "query": "How can someone appeal a platform decision to take down their post?",
+    "instrument": "dsa",
+    "expected": "dsa-oj-art-20",
+    "evidence": [],
+    "review_candidates": [
+      "dsa-oj-art-20",
+      "dsa-oj-art-17",
+      "dsa-oj-art-27"
+    ],
+    "corpus_sha256": "e619518fe1569053cfe02c16f65011c1abba4eed35894b3a869ba71896d26535",
+    "storage": "postgres-pgvector"
+  },
+  {
+    "query": "How should an operator override a machine recommendation?",
+    "instrument": "ai-act",
+    "expected": "ai-act-oj-art-14",
+    "evidence": [],
+    "review_candidates": [
+      "ai-act-oj-art-14",
+      "ai-act-oj-art-50",
+      "ai-act-oj-art-9",
+      "ai-act-oj-art-10"
+    ],
+    "corpus_sha256": "e619518fe1569053cfe02c16f65011c1abba4eed35894b3a869ba71896d26535",
+    "storage": "postgres-pgvector"
+  },
+  {
+    "query": "What import tax do I pay on electric bicycles?",
+    "instrument": "all",
+    "expected": "",
+    "evidence": [],
+    "review_candidates": [],
+    "corpus_sha256": "e619518fe1569053cfe02c16f65011c1abba4eed35894b3a869ba71896d26535",
+    "storage": "postgres-pgvector"
+  },
+  {
+    "query": "What retention deadline applies to employee attendance records?",
+    "instrument": "gdpr",
+    "expected": "",
+    "evidence": [],
+    "review_candidates": [
+      "gdpr-oj-art-17",
+      "gdpr-oj-art-25",
+      "gdpr-oj-art-33"
+    ],
+    "corpus_sha256": "e619518fe1569053cfe02c16f65011c1abba4eed35894b3a869ba71896d26535",
+    "storage": "postgres-pgvector"
+  }
+]

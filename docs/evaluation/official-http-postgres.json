@@ -1,0 +1,374 @@
+{
+  "scope": "authored article relevance and missing-source development regression, not legal correctness",
+  "health": {
+    "status": "ready",
+    "model": "BAAI/bge-small-en-v1.5",
+    "chunks": 350,
+    "storage": "postgres-pgvector",
+    "sources": 30
+  },
+  "corpus_sha256": "e619518fe1569053cfe02c16f65011c1abba4eed35894b3a869ba71896d26535",
+  "passed": 30,
+  "total": 30,
+  "cases": [
+    {
+      "id": "privacy-notice",
+      "expected": [
+        "gdpr-oj-art-13"
+      ],
+      "evidence": [
+        "gdpr-oj-art-13",
+        "gdpr-oj-art-15",
+        "gdpr-oj-art-12",
+        "gdpr-oj-art-20",
+        "gdpr-oj-art-6"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "access",
+      "expected": [
+        "gdpr-oj-art-15"
+      ],
+      "evidence": [
+        "gdpr-oj-art-15",
+        "gdpr-oj-art-13",
+        "gdpr-oj-art-20",
+        "gdpr-oj-art-12",
+        "gdpr-oj-art-22"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "erase",
+      "expected": [
+        "gdpr-oj-art-17"
+      ],
+      "evidence": [
+        "gdpr-oj-art-17",
+        "gdpr-oj-art-15",
+        "gdpr-oj-art-5",
+        "gdpr-oj-art-13"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "portability",
+      "expected": [
+        "gdpr-oj-art-20"
+      ],
+      "evidence": [
+        "gdpr-oj-art-20",
+        "gdpr-oj-art-13",
+        "gdpr-oj-art-5",
+        "gdpr-oj-art-17",
+        "gdpr-oj-art-15"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "automated-decisions",
+      "expected": [
+        "gdpr-oj-art-22"
+      ],
+      "evidence": [
+        "gdpr-oj-art-22",
+        "gdpr-oj-art-35",
+        "gdpr-oj-art-13",
+        "gdpr-oj-art-15"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "security",
+      "expected": [
+        "gdpr-oj-art-32"
+      ],
+      "evidence": [
+        "gdpr-oj-art-32",
+        "gdpr-oj-art-25",
+        "gdpr-oj-art-35",
+        "gdpr-oj-art-5",
+        "gdpr-oj-art-6"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "breach",
+      "expected": [
+        "gdpr-oj-art-33"
+      ],
+      "evidence": [
+        "gdpr-oj-art-33",
+        "gdpr-oj-art-15",
+        "gdpr-oj-art-17",
+        "gdpr-oj-art-13"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "dpia",
+      "expected": [
+        "gdpr-oj-art-35"
+      ],
+      "evidence": [
+        "gdpr-oj-art-35"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "terms",
+      "expected": [
+        "dsa-oj-art-14"
+      ],
+      "evidence": [
+        "dsa-oj-art-14",
+        "dsa-oj-art-17",
+        "dsa-oj-art-20",
+        "dsa-oj-art-27"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "notice-action",
+      "expected": [
+        "dsa-oj-art-16"
+      ],
+      "evidence": [
+        "dsa-oj-art-16",
+        "dsa-oj-art-17",
+        "dsa-oj-art-26",
+        "dsa-oj-art-20"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "reasons",
+      "expected": [
+        "dsa-oj-art-17"
+      ],
+      "evidence": [
+        "dsa-oj-art-17"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "complaints",
+      "expected": [
+        "dsa-oj-art-20"
+      ],
+      "evidence": [
+        "dsa-oj-art-20",
+        "dsa-oj-art-14"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "dark-patterns",
+      "expected": [
+        "dsa-oj-art-25"
+      ],
+      "evidence": [
+        "dsa-oj-art-25",
+        "dsa-oj-art-26",
+        "dsa-oj-art-20",
+        "dsa-oj-art-27"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "ads",
+      "expected": [
+        "dsa-oj-art-26"
+      ],
+      "evidence": [
+        "dsa-oj-art-26"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "recommendations",
+      "expected": [
+        "dsa-oj-art-27"
+      ],
+      "evidence": [
+        "dsa-oj-art-27"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "children",
+      "expected": [
+        "dsa-oj-art-28"
+      ],
+      "evidence": [
+        "dsa-oj-art-28",
+        "dsa-oj-art-26",
+        "dsa-oj-art-25",
+        "dsa-oj-art-20"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "gatekeeper",
+      "expected": [
+        "dma-oj-art-3"
+      ],
+      "evidence": [
+        "dma-oj-art-3",
+        "dma-oj-art-5",
+        "dma-oj-art-6",
+        "dma-oj-art-7"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "interoperability",
+      "expected": [
+        "dma-oj-art-7"
+      ],
+      "evidence": [
+        "dma-oj-art-7"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "literacy",
+      "expected": [
+        "ai-act-oj-art-4"
+      ],
+      "evidence": [
+        "ai-act-oj-art-4",
+        "ai-act-oj-art-50",
+        "ai-act-oj-art-9"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "risk-management",
+      "expected": [
+        "ai-act-oj-art-9"
+      ],
+      "evidence": [
+        "ai-act-oj-art-9",
+        "ai-act-oj-art-14"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "oversight",
+      "expected": [
+        "ai-act-oj-art-14"
+      ],
+      "evidence": [
+        "ai-act-oj-art-9",
+        "ai-act-oj-art-14",
+        "ai-act-oj-art-10",
+        "ai-act-oj-art-50",
+        "ai-act-oj-art-13"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "synthetic-content",
+      "expected": [
+        "ai-act-oj-art-50"
+      ],
+      "evidence": [
+        "ai-act-oj-art-50"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "global-breach",
+      "expected": [
+        "gdpr-oj-art-33"
+      ],
+      "evidence": [
+        "gdpr-oj-art-33",
+        "gdpr-oj-art-15",
+        "gdpr-oj-art-17",
+        "gdpr-oj-art-13",
+        "ai-act-oj-art-10"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "global-dark-patterns",
+      "expected": [
+        "dsa-oj-art-25"
+      ],
+      "evidence": [
+        "dsa-oj-art-25",
+        "dsa-oj-art-20"
+      ],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "tariff",
+      "expected": [],
+      "evidence": [],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "weather",
+      "expected": [],
+      "evidence": [],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "visa",
+      "expected": [],
+      "evidence": [],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "recipe",
+      "expected": [],
+      "evidence": [],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "stock",
+      "expected": [],
+      "evidence": [],
+      "instrument_isolated": true,
+      "passed": true
+    },
+    {
+      "id": "rail",
+      "expected": [],
+      "evidence": [],
+      "instrument_isolated": true,
+      "passed": true
+    }
+  ]
+}

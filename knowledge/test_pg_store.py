@@ -37,4 +37,25 @@ class PgStoreTests(unittest.TestCase):
         count=self.conn.execute('SELECT count(*) FROM evidence_kb.chunks WHERE corpus_id=%s',(self.corpus,)).fetchone()[0]
         self.assertEqual(count,0)
 
+    def test_instrument_filter_precedes_nearest_neighbor_limit(self):
+        self.index['chunks'][0]['instrument_id']='gdpr'
+        self.index['chunks'][1]['instrument_id']='dsa'
+        ingest(self.conn,self.index)
+        class Encoder:
+            model_id='integration-fixture'
+            def encode(self,texts,query=False):return [[1.,0.]]
+        hits=retrieve(self.conn,self.corpus,'deposit',Encoder(),instrument='dsa')
+        self.assertEqual([h['chunk_id'] for h in hits],['b'])
+
+    def test_lexical_candidate_outside_dense_limit_still_has_semantic_score(self):
+        self.index['chunks']=[{'chunk_id':str(n),'text':'common' if n<24 else 'specialwhale','review_status':'fictional'} for n in range(25)]
+        self.index['vectors']=[[1.,0.] for _ in range(24)]+[[0.,1.]]
+        ingest(self.conn,self.index)
+        class Encoder:
+            model_id='integration-fixture'
+            def encode(self,texts,query=False):return [[1.,0.]]
+        hits=retrieve(self.conn,self.corpus,'specialwhale',Encoder(),top_k=25)
+        candidate=next(h for h in hits if h['chunk_id']=='24')
+        self.assertEqual(candidate['cosine_similarity'],0.0)
+
 if __name__=='__main__':unittest.main()

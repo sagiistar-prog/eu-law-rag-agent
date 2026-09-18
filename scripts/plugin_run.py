@@ -22,7 +22,7 @@ def execute(data: dict) -> dict:
         markdown += '\n\nManual legal review required. Similarity is not a legal conclusion.'
         return {'markdown':markdown,'answer_status':'answered' if evidence else 'refused',
             'sources':[{k:h[k] for k in ('source_id','source_title','source_url','retrieved_at','chunk_id')} for h in evidence],
-            'confidence':'low' if evidence else 'none','manual_review_required':True,'not_legal_advice':True}
+            'confidence':'unrated' if evidence else 'none','manual_review_required':True,'not_legal_advice':True}
     from build_index import build_index
     from query_rag import retrieve, format_answer, format_refusal, confidence_label
     chunks = [{**source, "chunk_id": f"{source['source_id']}::demo"} for source in data["documents"]]

@@ -1,37 +1,9 @@
-# Workflow
+# 使用流程
 
-## Stage 1: Source Intake
-
-Sources are short Markdown files under `examples\docs`. Each file includes front matter with:
-
-- `source_id`
-- `source_title`
-- `source_url`
-- `retrieved_at`
-
-## Stage 2: Chunking
-
-`scripts\ingest_documents.py` reads Markdown files, removes front matter, splits body text into small chunks, and writes `examples\index\chunks.json`.
-
-## Stage 3: Indexing
-
-`scripts\build_index.py` tokenizes chunks and builds a local keyword index. This is intentionally simple so the retrieval logic can be reviewed without a vector database.
-
-## Stage 4: Retrieval
-
-`scripts\query_rag.py` reads the query and scores chunks by keyword overlap. It selects top matching chunks and refuses to answer when no source is retrieved.
-
-## Stage 5: Answer Formatting
-
-The answer is written to `examples\sample_answer.md` with:
-
-- source-grounded answer
-- source list
-- confidence level
-- manual-review flag
-- limitations
-- legal information disclaimer
-
-## Stage 6: Audit
-
-`scripts\portfolio_audit.ps1` checks repository safety before publication.
+1. **界定问题**：明确产品、角色、法规范围和要核对的原文问题。当前库只包含原始公报选定条文。
+2. **导入**：按 knowledge/official-sources.json 通过官方 Cellar API 读取英文公报。只保留指定条文，检查身份和字符覆盖，写入新的 output/ 快照目录。
+3. **建立索引**：清洗、320 字符切片和 40 字符重叠、JSONL、真实 BGE 编码。检查包含查询前缀的 token 上限；不静默截断。
+4. **检索**：先限定法规，运行 BM25/向量/RRF；PostgreSQL 使用全文排名与 pgvector。保留排名信号但不赋予法律置信度。
+5. **核对**：阅读相关摘录与完整条文。匹配不足的线索置于折叠候选列表，原始公报版本和采集时间可追溯。
+6. **交付**：导出 Markdown 核对单与 JSON。人工复查修订、事实、对象、适用时间；只有经明确来源支持的内容才能写入宿主综述。
+7. **评测与迭代**：保留三路基线、无资料问题、额外口语探针和失败记录；再决定是否增加重排、跨语言或更多法规。真实用户效益需要另行测试。

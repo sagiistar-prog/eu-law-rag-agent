@@ -1,62 +1,79 @@
-# 可复查的知识库
+# 可复查的法规知识库
 
-解决的问题：研究者需要找到能核对的原文，并看见资料不足，而不是得到没有出处的流畅结论。
+研究者需要找到能核对的原文，并知道资料缺在哪一步。默认链路不依赖数据库或付费 API；可选 PostgreSQL 适合验证持久化与隔离。
 
 ```mermaid
 flowchart LR
- A[来源及授权] --> B[清洗与来源校验]
- B --> C[分块 JSONL]
- C --> D[BGE ONNX 编码]
- D --> E[版本化向量索引]
- Q[问题] --> F[同模型查询编码]
- Q --> G[BM25]
- E --> H[余弦检索]
- F --> H
- H --> I[RRF]
+ A[官方 Cellar 出版物] --> B[身份核验与条文提取]
+ B --> C[清洗 JSONL 与覆盖检查]
+ C --> D[320 字符分块与 tokenizer 检查]
+ D --> E[BGE ONNX 编码]
+ E --> F[版本化索引与完整条文]
+ Q[英文问题及法规范围] --> G[同模型查询编码]
+ Q --> H[关键词检索]
+ F --> I[余弦检索]
  G --> I
- I --> J[来源与审核门槛]
- J --> K[证据摘录或资料不足]
+ H --> J[RRF 候选融合]
+ I --> J
+ J --> K[来源与匹配门槛]
+ K --> L[摘录 原文核对 导出]
 ```
 
-## 本地运行
+## 安装与运行
 
-Python 3.10 或 3.11，首次运行下载公开模型。文档推理在本机完成，未接入收费 API。以下命令在仓库根目录运行。
+建议独立 CPython 3.10。本机 Conda 3.11 出现 ONNX DLL 初始化失败，已用独立 3.10 验收。首次运行需要网络下载模型和资料；此后可离线检索本地快照。命令在仓库根目录执行。
 
 ```sh
 python -m pip install -r knowledge/requirements.txt
-python knowledge/pipeline.py build --language en --documents knowledge/examples/documents.jsonl --index output/kb/index.json --cache-dir .cache/models
-python knowledge/pipeline.py search --language en --index output/kb/index.json --query "Which information is needed for tariff classification?" --cache-dir .cache/models
-python knowledge/pipeline.py evaluate --language en --index output/kb/index.json --cases knowledge/examples/eval.json --cache-dir .cache/models
-python knowledge/server.py --language en --index output/kb/index.json --cache-dir .cache/models --port 8781
+python knowledge/import_official.py --output output/official-v1
+python knowledge/pipeline.py build --language en --documents output/official-v1/documents.jsonl --index output/official-v1/index.json --cache-dir .cache/models
+python knowledge/server.py --language en --index output/official-v1/index.json --cache-dir .cache/models --port 8892
 ```
 
-索引输出目录不能已包含同名索引，避免覆盖旧版本。原始资料不修改；模型缓存、向量和运行产物均不提交。
+打开 http://127.0.0.1:8892 。GDPR、DSA、DMA、AI Act 共 30 条选定原始公报条文，范围固定在 [来源清单](official-sources.json)。界面可展开目录、选法规、查看完整选定条文并导出。不是完整法规库，也不含后续修订、判例或现行适用性审核。
 
-## 模型与契约
+## 导入与结构化
 
-默认 `BAAI/bge-small-en-v1.5`，384 维。Token embedding、position embedding、Transformer 编码和池化由预训练 BGE ONNX 模型完成，不自行编造词向量。文档无指令前缀，查询使用模型卡的检索指令，结果归一化。输入保守限制为每块 320 字符、40 字符重叠，避免 512-token 模型截断长资料。章节、页码来自上游提供，不能猜测。现在使用真实模型 tokenizer 检查每个片段和查询（包含查询指令与特殊 token）；超过 512 token 时在推理前拒绝，服务返回 QUERY_TOO_LONG。FastEmbed 0.7.4 的 tokenizer 接口与依赖版本固定。
+`import_official.py` 使用官方 Cellar 的 XHTML 内容协商接口，只允许官方 HTTPS 主机。校验法规编号、文章 ID；若条文整体非空白文本与提取段落的非空白文本不一致，拒绝导入，避免静默漏掉表格条件。清洗保留否定、数字及段落关系。`coverage.json` 记录 URL、下载哈希、各法规字符数和覆盖率。
 
-Manifest 记录模型、维数、指令、FastEmbed 版本、chunker 版本、语料哈希、tokenizer 哈希、长度上限和构建时间。切换模型必须完整重建。部署应固定下载模型制品 SHA256；当前本地缓存未作为受信任生产制品发布。
+每行 JSONL 是一条完整选定条文，保留 source_id、source_title、source_url、retrieved_at、CELEX、publication_date、document_version、review_status。原文与索引仅写入新的 output 子目录。模型缓存和所有全文均不提交 Git。
 
-JSONL 保留 source_id、source_title、source_url、retrieved_at、chunk_id、section、page、content_sha256 和 review_status。相同来源的重复段落去重，不合并不同来源的出处。清洗保留否定、数字、表格和换行。`pending` 来源不能进入证据答案。
+`source_verified` 只代表官方来源身份与提取检查通过。`pending` 不进入证据；`reviewed` 需要调用者自己的审核依据；`fictional` 只用于测试。来源级别不能证明片段相关性或法律有效性。
 
-## 检索与回答
+## 编码与索引
 
-本地模式采用真正 BM25、归一化向量余弦相似度和 RRF（k=60）；中文关键词通道使用确定性二元字组，英文使用词项。没有证据说明它优于成熟中文分词器，后续应使用领域评估选择。
+默认 `BAAI/bge-small-en-v1.5`，384 维。token embedding、position embedding、Transformer 与池化由预训练 ONNX 模型完成。文档无查询前缀；查询使用模型卡的检索指令，向量归一化。
 
-向量最近邻总会返回候选，不能等同有答案。当前证据门槛要求有关键词重合且来源已审核或明确为虚构演示。语义命中但无词项重合仅作为候选，召回可能受限。它是保守可解释基线，不是法律/医疗适用性判定器。相似度不标为置信概率。
+片段上限 320 字符、重叠 40 字符。真实 tokenizer 在推理前检查每个片段和问题，包含指令与特殊 token；超过 512 token 拒绝，不静默截断。本次 350 块最大 83 token。短片段可能拆开条文条件，因此结果始终提供完整选定条文复核，不能只读摘录。
 
-默认输出为检索增强的原文摘录，不伪称 LLM 生成。插件宿主可以在证据上生成综述，但每条结论必须带 chunk_id，缺依据时拒答；不得自动执行后续决策。
+Manifest 包含模型、维数、指令、FastEmbed 版本、chunker、语料哈希、tokenizer 哈希和构建时间。更换模型必须完整重建。本机模型缓存尚未作为固定制品哈希的生产供应链发布。
 
-## 开源取舍
+## 检索和门槛
 
-- 实际依赖 [Qdrant FastEmbed](https://github.com/qdrant/fastembed)，Apache-2.0，执行本地 ONNX embedding。
-- 实际模型 [BGE](https://github.com/FlagOpen/FlagEmbedding)，MIT。模型许可独立于框架许可。
-- 借鉴 [Haystack](https://github.com/deepset-ai/haystack) 的阶段式管线与 DocumentJoiner RRF 边界；未复制代码或声称完整接入框架。
-- 可选持久化使用 [pgvector](https://github.com/pgvector/pgvector)，PostgreSQL License。参见 pg_store.py，独立 schema 不混入原有 Gemini 向量空间。
+先按法规过滤候选空间，再检索。文件模式使用 BM25、余弦相似度与 RRF(k=60)。数据库模式使用 PostgreSQL `ts_rank_cd`、pgvector 与 RRF，不把全文排名称作 BM25。不同语料和模型空间隔离，候选排名后按条文去重。
 
-小型虚构 eval 只证明链路可跑，不代表真实专业效果。需要新增真实授权语料、人工标注、不相关问题、时效冲突样本，比较 Recall@k、MRR、拒答准确率、延迟和成本之后才能决定上线。
+官方摘录需要词项匹配；长查询至少两个不同内容词重合，并在有语义分数时要求余弦不低于 0.6。它是开发集上调整的启发式规则，不是蕴含判定。额外改写测试暴露召回损失；相近候选可展开核对但不当作支持证据。`confidence` 始终为 `unrated`。
 
-## 可复现回归
+结果是原文摘录，不调用 LLM。宿主综述必须逐项引用支持片段；资料不足时明确缺口。原始公报不能回答“目前是否合法”。当前版本提示基于有限词项规则，不能保证识别所有时效类问法。
 
-新增三路检索比较、分母检查和 CI 发布门槛，见 [检索评测](../docs/retrieval-evaluation.md)。旧的简单命中测试保留；新增评测不能视为专业答案准确率。
+## 可选 PostgreSQL
+
+准备独立 PostgreSQL 16 和 pgvector 0.8.1，设置 `KB_DATABASE_URL` 后执行相同 server 命令。服务建立自己的表并按语料标识幂等写入。不要指向未经授权的业务库。测试用 `KB_TEST_DATABASE_URL` 指向隔离测试库；不要提交凭据。
+
+```sh
+python -m unittest discover -s knowledge -v
+python knowledge/accept_official.py --output output/official-v1/http-postgres.json
+npm ci
+npx playwright install chromium
+npm run test:browser
+```
+
+HTTP 验收要求 8892 的真实 PostgreSQL 服务；浏览器测试也要求数据库模式。默认无数据库用户不需要运行这些数据库专用检查。网页和 API 共用 loopback 服务，Host/Origin 校验、请求长度限制和 CSP 限制页面能力；这不是多租户生产部署。
+
+## 评测与维护
+
+```sh
+python knowledge/evaluate.py --language en --index output/official-v1/index.json --cases knowledge/evaluation/official-cases.json --output output/official-v1/evaluation.json --cache-dir .cache/models --top-k 5 --min-hit-rate 1 --max-false-evidence-rate 0
+```
+
+报告不覆盖旧文件。指标不足或分母缺失返回非零。完整本次结果及失败分析见 [官方资料验收](../docs/official-source-acceptance.md)，历史虚构样例见 [检索评测](../docs/retrieval-evaluation.md)。CI 每次重新下载官方条文和真实模型，不以随机向量替代。官网结构变化会阻断发布，需要修复提取器并重查覆盖。

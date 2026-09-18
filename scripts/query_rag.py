@@ -113,12 +113,7 @@ def extract_evidence_sentences(query: str, chunks: List[Dict[str, object]], max_
 
 
 def confidence_label(results: List[Tuple[float, Dict[str, object]]]) -> str:
-    if not results:
-        return "none"
-    top_score = results[0][0]
-    if len(results) >= 2 and top_score >= 0.2:
-        return "medium"
-    return "low"
+    return "unrated" if results else "none"
 
 
 def needs_manual_review(query: str, chunks: Iterable[Dict[str, object]]) -> bool:
@@ -128,7 +123,7 @@ def needs_manual_review(query: str, chunks: Iterable[Dict[str, object]]) -> bool
 
 
 def format_source(score: float, chunk: Dict[str, object], manual_review_required: bool) -> str:
-    source_confidence = "medium" if score >= 0.2 else "low"
+    source_confidence = "unrated"
     return "\n".join(
         [
             "  - source_id: " + str(chunk.get("source_id", "")),

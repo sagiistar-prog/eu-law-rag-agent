@@ -1,27 +1,11 @@
-# Case Study
+# 从法规检索到可以核对的交付物
 
-## Context
+目标用户是为产品评审准备法规依据的研究助理。任务常始于“需要在隐私告知里写什么”，结束于审核者能够打开原文，确认版本和遗漏条件。
 
-EU Law RAG Agent is a public portfolio prototype for source-grounded legal and compliance research. It demonstrates how a retrieval workflow can keep responses tied to source metadata and avoid unsupported claims.
+0.2 的向量链路能够运行，但默认只有虚构材料，原文面板展示的是截断片段，无法实际完成条文核对。0.3 接入官方出版物，保留完整选定条文与来源快照，增加法规范围筛选、完整原文阅读及 Markdown 核对单。修改问题即清除旧结果，长条文可返回原结果位置。
 
-## Challenge
+模型负责语义候选，程序负责来源和版本、检索边界与结构，人工负责适用性。没有把“查到相似条文”变成“产品可以上线”。当前原始公报有明确范围，未纳入所有后续修订，不能替代现行法规研究。
 
-Regulatory research can become unreliable when summaries are produced without clear evidence. A portfolio demo must also avoid private data and must be safe to publish.
+实际问题推动迭代：首轮 6 个无资料问题有 5 个错误输出摘录，修复通用词匹配和证据门槛后，同一开发集为 0/6。额外口语化探针仍有目标条文只出现在候选列表中的情况，保留失败记录，没有只挑成功题。后续重排和评测扩展优先于增加装饰或自动法律结论。
 
-## Approach
-
-The project uses a small local pipeline:
-
-1. Ingest short Markdown examples.
-2. Preserve source metadata for each chunk.
-3. Build a simple keyword index.
-4. Retrieve relevant chunks for a query.
-5. Produce a structured answer with limitations and review flags.
-
-## Outcome
-
-The demo produces a source-grounded answer that includes source identifiers, titles, URLs, retrieval dates, confidence, manual-review requirements, limitations, and a legal information disclaimer.
-
-## Portfolio Boundary
-
-The sample materials are fictional and minimal. They are not copied from internal documents or real client records.
+用户任务、指标及验证计划见 product-case.md；运行结果见 official-source-acceptance.md。没有真实研究人员效率提升数据，不能把测试通过写成客户收益。

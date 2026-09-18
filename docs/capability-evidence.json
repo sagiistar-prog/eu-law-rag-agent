@@ -8,5 +8,10 @@
   "production_outcomes": "not measured",
   "upstream_credit": "docs/open-source.md",
   "retrieval_evaluation": "docs/retrieval-evaluation.md",
-  "model_regression_ci": ".github/workflows/knowledge-model.yml"
+  "model_regression_ci": ".github/workflows/knowledge-model.yml",
+  "official_import": "knowledge/import_official.py",
+  "source_review": "knowledge/research.py",
+  "research_contract": "schemas/evidence-review.schema.json",
+  "official_acceptance": "docs/official-source-acceptance.md",
+  "official_ci": ".github/workflows/official-review.yml"
 }

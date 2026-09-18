@@ -1,5 +1,14 @@
 # Maintenance log
 
+## 0.3.0 — 2026-09-18
+
+- Added official Cellar ingestion for 30 selected original-publication articles, provenance checks and extraction coverage.
+- Added a persistent BGE source-review workflow, typed JSON contracts, complete selected-article view and Markdown/JSON export.
+- Added instrument filtering before ranking, article diversity and an explicit candidate-versus-evidence boundary.
+- Fixed PostgreSQL lexical candidates outside the dense shortlist missing their semantic score.
+- Added real official-source, database and browser CI, including negative cases. Preserved failed paraphrase probes and current-law limitations.
+- Retained the fictional short-document plugin interface and no-database local startup.
+
 ## 0.2.0 — 2026-09-17
 
 - Added a versioned Codex plugin manifest with the existing Skill.

@@ -25,21 +25,24 @@ def ingest(conn,index):
                 (corpus,m['model_id'],c['chunk_id'],Jsonb(c),' '.join(tokens(c['text'])),json.dumps(v)))
     return corpus
 
-def retrieve(conn,corpus_id,query,encoder,top_k=5):
+def retrieve(conn,corpus_id,query,encoder,top_k=5,instrument='all'):
     if not isinstance(query,str) or not query.strip() or len(query)>1000:
         raise ValueError('Query must contain 1 to 1000 characters')
     vector=json.dumps(encoder.encode([query],query=True)[0]);model=encoder.model_id
     dense=conn.execute('''SELECT chunk_id,metadata,1-(embedding <=> %s::vector) AS score
         FROM evidence_kb.chunks WHERE corpus_id=%s AND model_id=%s
-        ORDER BY embedding <=> %s::vector LIMIT 20''',(vector,corpus_id,model,vector)).fetchall()
+        AND (%s='all' OR metadata->>'instrument_id'=%s)
+        ORDER BY embedding <=> %s::vector,chunk_id LIMIT 20''',(vector,corpus_id,model,instrument,instrument,vector)).fetchall()
     lexical_query=' | '.join(sorted(set(tokens(query))))
-    keyword=conn.execute('''SELECT chunk_id,metadata,ts_rank_cd(terms,q) AS score
+    keyword=conn.execute('''SELECT chunk_id,metadata,ts_rank_cd(terms,q) AS score,1-(embedding <=> %s::vector) AS cosine
         FROM evidence_kb.chunks, to_tsquery('simple',%s) q
-        WHERE corpus_id=%s AND model_id=%s AND terms @@ q ORDER BY score DESC LIMIT 20''',
-        (lexical_query,corpus_id,model)).fetchall() if lexical_query else []
+        WHERE corpus_id=%s AND model_id=%s AND terms @@ q
+        AND (%s='all' OR metadata->>'instrument_id'=%s) ORDER BY score DESC,chunk_id LIMIT 20''',
+        (vector,lexical_query,corpus_id,model,instrument,instrument)).fetchall() if lexical_query else []
     records={r[0]:r[1] for r in dense+keyword}
     ranks=fuse([(r[0],r[2]) for r in dense],[(r[0],r[2]) for r in keyword])
     lexical={r[0]:float(r[2]) for r in keyword};semantic={r[0]:float(r[2]) for r in dense}
+    semantic.update({r[0]:float(r[3]) for r in keyword})
     return [{**records[i],'rrf_score':score,'keyword_score':lexical.get(i,0),
         'cosine_similarity':semantic.get(i),'retrieval_method':'pgvector-fulltext-rrf',
         'requires_review':True} for i,score in ranks[:top_k]]

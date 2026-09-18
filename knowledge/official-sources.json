@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "scope": "Selected articles from original Official Journal publications, not consolidated current law",
+  "instruments": [
+    {"id":"gdpr","name":"GDPR","celex":"32016R0679","number":"2016/679","publication_date":"2016-05-04","articles":[5,6,12,13,15,17,20,22,25,32,33,35]},
+    {"id":"dsa","name":"Digital Services Act","celex":"32022R2065","number":"2022/2065","publication_date":"2022-10-27","articles":[14,16,17,20,25,26,27,28]},
+    {"id":"dma","name":"Digital Markets Act","celex":"32022R1925","number":"2022/1925","publication_date":"2022-10-12","articles":[3,5,6,7]},
+    {"id":"ai-act","name":"AI Act","celex":"32024R1689","number":"2024/1689","publication_date":"2024-07-12","articles":[4,9,10,13,14,50]}
+  ]
+}

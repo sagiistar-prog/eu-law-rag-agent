@@ -1,18 +1,18 @@
-# 开源选择与贡献边界
+# 开源与官方来源的选择
 
-FastEmbed/BGE：实际接入本地向量检索与插件接口。Web工作台为原生HTML，避免让小型证据工具承担大型前端框架。
+选择依据是任务匹配、可检查接口、维护方式、许可、可测试性和部署成本。使用成熟模型与向量数据库，把本项目的贡献集中在来源治理、任务流程、门槛和验证。
 
-| 项目 | 质量判断与用途 | 采用状态 |
+| 来源 | 为什么采用 | 实际状态 |
 |---|---|---|
-| [Radix Primitives](https://github.com/radix-ui/primitives) | MIT，明确可访问组件语义；Dialog适合核对出处、关闭后继续阅读 | CareGuide实际使用，其他项目按需 |
-| [Motion](https://github.com/motiondivision/motion) | MIT，成熟React动效；状态和reduced motion优先于装饰 | Where-to-live已有依赖 |
-| [Sonner](https://github.com/emilkowalski/sonner) | MIT，适合短反馈；本轮原位状态已足够，不重复引入 | 参考，未接入 |
-| [AI Elements](https://github.com/vercel/ai-elements) | Apache-2.0，任务与引用组件值得参考；不强行把证据工具改成聊天 | 参考，未复制代码 |
-| [FastEmbed](https://github.com/qdrant/fastembed) | Apache-2.0，ONNX本地CPU推理，明确模型列表 | CareGuide与EU Law实际使用 |
-| [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding) | BGE模型MIT，区分语言、维数与查询指令 | CareGuide中文，EU Law英文 |
-| [Haystack](https://github.com/deepset-ai/haystack) | Apache-2.0，清洗、检索、融合阶段边界清楚 | 架构参考，未声明整体框架接入 |
-| [pgvector](https://github.com/pgvector/pgvector) | PostgreSQL License，复用已有数据库运维能力 | 可选持久化适配；本轮未连接数据库 |
+| [FastEmbed](https://github.com/qdrant/fastembed) | Apache-2.0，CPU ONNX 推理、明确模型接口，适合本地研究资料 | 固定 0.7.4，真实下载及推理 |
+| [BGE small English](https://huggingface.co/BAAI/bge-small-en-v1.5) | MIT，英文检索模型，384 维，查询指令清晰 | 默认编码器，真实 tokenizer 检查 |
+| [pgvector](https://github.com/pgvector/pgvector) | PostgreSQL License，可验证事务和语料隔离 | PostgreSQL 16 / pgvector 0.8.1 实际联调，另保留无数据库文件模式 |
+| [Haystack](https://github.com/deepset-ai/haystack) | Apache-2.0，阶段式管线和检索融合边界可借鉴 | 架构参考，没有复制代码或接入完整框架 |
+| [AI Elements](https://github.com/vercel/ai-elements) | Apache-2.0，引用与任务状态组件提供交互参考 | 参考，没有安装；小工具用原生 HTML 与 JavaScript |
+| [Playwright](https://github.com/microsoft/playwright) / [axe-core](https://github.com/dequelabs/axe-core) | 浏览器真实任务及自动可访问性检测可复现 | 实际开发依赖，版本在 package-lock.json |
 
-依赖的实际版本以锁文件/requirements为准。选择依据是维护方式、许可证、接口清晰度、可测试性、部署成本与任务匹配，不仅是star数量。更新依赖先在独立分支运行构建、契约和关键任务测试，再升级。
+官方条文通过 [Cellar 出版物接口](https://op.europa.eu/en/web/cellar/cellar-data/publications) 下载，保留 CELEX 与 [EUR-Lex 原文链接](https://eur-lex.europa.eu/content/help/data-reuse/reuse-contents-eurlex-details.html?locale=en)。下载内容遵循其来源的 [欧盟法律声明](https://european-union.europa.eu/legal-notice_en)，仓库 MIT 许可不替代来源许可。全文和向量不随仓库再分发。
 
-原始参考图用于理解留白、蓝紫灰、光影和状态反馈，没有复制其图片、Logo或商业素材。Impeccable用于审查布局、交互与可访问性；技术注释与产品取舍留在文档中，产品界面不堆砌说明。
+Impeccable 用于状态、留白、焦点、移动阅读与失败恢复的审查。采用用户给定的蓝紫灰方向，没有复制参考图中的图片、Logo 或商业素材。点阵只表示实际请求活动，不虚构模型思考或百分比。
+
+维护时固定依赖并运行三路检索、真实数据库和浏览器回归。框架热度不是适用性证据；本轮没有证据证明混合检索比关键词在所有任务上更好。

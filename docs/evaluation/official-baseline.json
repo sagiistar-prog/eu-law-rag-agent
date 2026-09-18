@@ -1,0 +1,2742 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-18T11:06:52.133048+00:00",
+  "scope": "authored component regression set; not expert accuracy, user outcomes, or web E2E",
+  "top_k": 5,
+  "corpus_sha256": "e619518fe1569053cfe02c16f65011c1abba4eed35894b3a869ba71896d26535",
+  "cases_sha256": "11f76657c832e7c61a02516fa18539ebbbb08364291a0774a6f2b629e9bb0114",
+  "model": "BAAI/bge-small-en-v1.5",
+  "dimension": 384,
+  "latency_scope": "model loaded; dense/hybrid include query inference, keyword does not; no web/database latency or hardware isolation",
+  "metrics_scope": "source IDs labeled relevant; source hit does not prove passage relevance",
+  "results": {
+    "keyword": {
+      "summary": {
+        "cases": 30,
+        "retrieval_labeled_cases": 24,
+        "no_evidence_cases": 6,
+        "recall_at_k": 1.0,
+        "mrr_at_k": 0.979167,
+        "hit_rate_at_k": 1.0,
+        "mean_source_precision": 0.486111,
+        "evidence_policy_accuracy": 0.833333,
+        "false_evidence_rate": 0.833333,
+        "jurisdiction_leak_cases": 0,
+        "latency_p50_ms": 10.572,
+        "latency_p95_ms": 39.916
+      },
+      "categories": {
+        "AI Act": {
+          "cases": 4,
+          "retrieval_labeled_cases": 4,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.645833,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 7.348,
+          "latency_p95_ms": 7.994
+        },
+        "Across instruments": {
+          "cases": 2,
+          "retrieval_labeled_cases": 2,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 0.75,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.416667,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 39.919,
+          "latency_p95_ms": 39.923
+        },
+        "DMA": {
+          "cases": 2,
+          "retrieval_labeled_cases": 2,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.625,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 8.715,
+          "latency_p95_ms": 9.382
+        },
+        "DSA": {
+          "cases": 8,
+          "retrieval_labeled_cases": 8,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.447917,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 5.284,
+          "latency_p95_ms": 6.436
+        },
+        "GDPR": {
+          "cases": 8,
+          "retrieval_labeled_cases": 8,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.427083,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 11.658,
+          "latency_p95_ms": 17.038
+        },
+        "Missing source": {
+          "cases": 6,
+          "retrieval_labeled_cases": 0,
+          "no_evidence_cases": 6,
+          "recall_at_k": null,
+          "mrr_at_k": null,
+          "hit_rate_at_k": null,
+          "mean_source_precision": null,
+          "evidence_policy_accuracy": 0.166667,
+          "false_evidence_rate": 0.833333,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 27.685,
+          "latency_p95_ms": 32.702
+        }
+      },
+      "cases": [
+        {
+          "id": "privacy-notice",
+          "category": "GDPR",
+          "query": "What information must a controller provide when personal data are collected from the data subject?",
+          "relevant_sources": [
+            "gdpr-oj-art-13"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-15"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-15"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 17.038
+        },
+        {
+          "id": "access",
+          "category": "GDPR",
+          "query": "Which information is included in the right of access by the data subject?",
+          "relevant_sources": [
+            "gdpr-oj-art-15"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-20"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-20"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 12.446
+        },
+        {
+          "id": "erase",
+          "category": "GDPR",
+          "query": "What are the grounds and exceptions for erasure of personal data?",
+          "relevant_sources": [
+            "gdpr-oj-art-17"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-13"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-15"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 11.235
+        },
+        {
+          "id": "portability",
+          "category": "GDPR",
+          "query": "Can personal data be received in a structured commonly used machine-readable format?",
+          "relevant_sources": [
+            "gdpr-oj-art-20"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-20",
+            "gdpr-oj-art-12",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-12",
+            "gdpr-oj-art-33"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-12",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-33"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 12.018
+        },
+        {
+          "id": "automated-decisions",
+          "category": "GDPR",
+          "query": "What does the original text say about decisions based solely on automated processing including profiling?",
+          "relevant_sources": [
+            "gdpr-oj-art-22"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-22",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-22"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-35"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 10.414
+        },
+        {
+          "id": "security",
+          "category": "GDPR",
+          "query": "How should the controller assess an appropriate level of security of processing?",
+          "relevant_sources": [
+            "gdpr-oj-art-32"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-32",
+            "gdpr-oj-art-32",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-5"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-5"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 10.729
+        },
+        {
+          "id": "breach",
+          "category": "GDPR",
+          "query": "Which notification is required to a supervisory authority after a personal data breach?",
+          "relevant_sources": [
+            "gdpr-oj-art-33"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-35"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 12.648
+        },
+        {
+          "id": "dpia",
+          "category": "GDPR",
+          "query": "What must a data protection impact assessment contain?",
+          "relevant_sources": [
+            "gdpr-oj-art-35"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 11.298
+        },
+        {
+          "id": "terms",
+          "category": "DSA",
+          "query": "What restrictions should intermediary services disclose in their terms and conditions?",
+          "relevant_sources": [
+            "dsa-oj-art-14"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-14",
+            "dsa-oj-art-14",
+            "dsa-oj-art-14",
+            "dsa-oj-art-14",
+            "dsa-oj-art-17"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-17"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 5.258
+        },
+        {
+          "id": "notice-action",
+          "category": "DSA",
+          "query": "How do recipients submit sufficiently precise and adequately substantiated notices of illegal content?",
+          "relevant_sources": [
+            "dsa-oj-art-16"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-16",
+            "dsa-oj-art-20",
+            "dsa-oj-art-16",
+            "dsa-oj-art-26",
+            "dsa-oj-art-16"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 5.374
+        },
+        {
+          "id": "reasons",
+          "category": "DSA",
+          "query": "What explanation must a statement of reasons provide when content is restricted?",
+          "relevant_sources": [
+            "dsa-oj-art-17"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-17",
+            "dsa-oj-art-26",
+            "dsa-oj-art-17",
+            "dsa-oj-art-16",
+            "dsa-oj-art-17"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-16",
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 5.042
+        },
+        {
+          "id": "complaints",
+          "category": "DSA",
+          "query": "How long should access to the internal complaint-handling system be available?",
+          "relevant_sources": [
+            "dsa-oj-art-20"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-20",
+            "dsa-oj-art-20",
+            "dsa-oj-art-20",
+            "dsa-oj-art-14"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-14"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 5.696
+        },
+        {
+          "id": "dark-patterns",
+          "category": "DSA",
+          "query": "What does the text say about online interfaces that deceive or manipulate recipients?",
+          "relevant_sources": [
+            "dsa-oj-art-25"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-25",
+            "dsa-oj-art-26",
+            "dsa-oj-art-26",
+            "dsa-oj-art-20",
+            "dsa-oj-art-26"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 6.436
+        },
+        {
+          "id": "ads",
+          "category": "DSA",
+          "query": "How should advertisements identify the person on whose behalf the advertisement is presented?",
+          "relevant_sources": [
+            "dsa-oj-art-26"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-26",
+            "dsa-oj-art-26",
+            "dsa-oj-art-26",
+            "dsa-oj-art-26",
+            "dsa-oj-art-26"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 5.088
+        },
+        {
+          "id": "recommendations",
+          "category": "DSA",
+          "query": "Which main parameters used in recommender systems must be explained?",
+          "relevant_sources": [
+            "dsa-oj-art-27"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-27",
+            "dsa-oj-art-27",
+            "dsa-oj-art-27",
+            "dsa-oj-art-26",
+            "dsa-oj-art-20"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 4.855
+        },
+        {
+          "id": "children",
+          "category": "DSA",
+          "query": "What privacy safety and security protections apply to minors on online platforms?",
+          "relevant_sources": [
+            "dsa-oj-art-28"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-28",
+            "dsa-oj-art-14",
+            "dsa-oj-art-28",
+            "dsa-oj-art-26",
+            "dsa-oj-art-17"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-14",
+            "dsa-oj-art-17",
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 5.31
+        },
+        {
+          "id": "gatekeeper",
+          "category": "DMA",
+          "query": "Which thresholds are used in the designation of gatekeepers?",
+          "relevant_sources": [
+            "dma-oj-art-3"
+          ],
+          "retrieved_sources": [
+            "dma-oj-art-3",
+            "dma-oj-art-5",
+            "dma-oj-art-7",
+            "dma-oj-art-5",
+            "dma-oj-art-6"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dma-oj-art-5",
+            "dma-oj-art-6",
+            "dma-oj-art-7"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 8.047
+        },
+        {
+          "id": "interoperability",
+          "category": "DMA",
+          "query": "What basic functionalities of number-independent interpersonal communications services must be interoperable?",
+          "relevant_sources": [
+            "dma-oj-art-7"
+          ],
+          "retrieved_sources": [
+            "dma-oj-art-7",
+            "dma-oj-art-7",
+            "dma-oj-art-7",
+            "dma-oj-art-7",
+            "dma-oj-art-7"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 9.382
+        },
+        {
+          "id": "literacy",
+          "category": "AI Act",
+          "query": "What should providers consider for AI literacy of staff?",
+          "relevant_sources": [
+            "ai-act-oj-art-4"
+          ],
+          "retrieved_sources": [
+            "ai-act-oj-art-4",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-9"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 6.81
+        },
+        {
+          "id": "risk-management",
+          "category": "AI Act",
+          "query": "How is a risk management system established for high-risk AI systems?",
+          "relevant_sources": [
+            "ai-act-oj-art-9"
+          ],
+          "retrieved_sources": [
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-9"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 7.887
+        },
+        {
+          "id": "oversight",
+          "category": "AI Act",
+          "query": "What measures enable natural persons to oversee high-risk AI systems?",
+          "relevant_sources": [
+            "ai-act-oj-art-14"
+          ],
+          "retrieved_sources": [
+            "ai-act-oj-art-14",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-10",
+            "ai-act-oj-art-14",
+            "ai-act-oj-art-13"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-10",
+            "ai-act-oj-art-13",
+            "ai-act-oj-art-50"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 7.994
+        },
+        {
+          "id": "synthetic-content",
+          "category": "AI Act",
+          "query": "What disclosure requirements concern deep fakes and artificially generated content?",
+          "relevant_sources": [
+            "ai-act-oj-art-50"
+          ],
+          "retrieved_sources": [
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 6.133
+        },
+        {
+          "id": "global-breach",
+          "category": "Across instruments",
+          "query": "Notification of a personal data breach to the supervisory authority",
+          "relevant_sources": [
+            "gdpr-oj-art-33"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-35"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 39.923
+        },
+        {
+          "id": "global-dark-patterns",
+          "category": "Across instruments",
+          "query": "Designing online interfaces to deceive manipulate or impair free informed decisions",
+          "relevant_sources": [
+            "dsa-oj-art-25"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-25",
+            "dsa-oj-art-25",
+            "dsa-oj-art-20",
+            "dsa-oj-art-26"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 39.916
+        },
+        {
+          "id": "tariff",
+          "category": "Missing source",
+          "query": "What is the import duty for roasted coffee from Brazil?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "dma-oj-art-5",
+            "gdpr-oj-art-13",
+            "dsa-oj-art-26",
+            "dma-oj-art-5",
+            "gdpr-oj-art-32"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": true,
+          "evidence_policy_passed": false,
+          "unlabeled_evidence_sources": [
+            "dma-oj-art-5",
+            "dsa-oj-art-26",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-32"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 28.766
+        },
+        {
+          "id": "weather",
+          "category": "Missing source",
+          "query": "What is the weather forecast for Paris next weekend?",
+          "relevant_sources": [],
+          "retrieved_sources": [],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 27.828
+        },
+        {
+          "id": "visa",
+          "category": "Missing source",
+          "query": "What visa documents are needed for a holiday in Japan?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "ai-act-oj-art-10",
+            "ai-act-oj-art-13"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": true,
+          "evidence_policy_passed": false,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-10",
+            "ai-act-oj-art-13"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 26.482
+        },
+        {
+          "id": "recipe",
+          "category": "Missing source",
+          "query": "How do I bake a chocolate cake with walnuts?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "dsa-oj-art-26",
+            "ai-act-oj-art-10",
+            "dsa-oj-art-17",
+            "dsa-oj-art-25",
+            "dsa-oj-art-16"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": true,
+          "evidence_policy_passed": false,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-10",
+            "dsa-oj-art-16",
+            "dsa-oj-art-17",
+            "dsa-oj-art-25",
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 27.542
+        },
+        {
+          "id": "stock",
+          "category": "Missing source",
+          "query": "Predict the share price of Apple tomorrow",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "dma-oj-art-5",
+            "dma-oj-art-5",
+            "dma-oj-art-5",
+            "dma-oj-art-5"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": true,
+          "evidence_policy_passed": false,
+          "unlabeled_evidence_sources": [
+            "dma-oj-art-5"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 26.807
+        },
+        {
+          "id": "rail",
+          "category": "Missing source",
+          "query": "Which train departs Berlin for Munich at noon?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "gdpr-oj-art-25",
+            "gdpr-oj-art-6",
+            "dsa-oj-art-27",
+            "dsa-oj-art-20",
+            "gdpr-oj-art-13"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": true,
+          "evidence_policy_passed": false,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-27",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-25",
+            "gdpr-oj-art-6"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 32.702
+        }
+      ]
+    },
+    "dense": {
+      "summary": {
+        "cases": 30,
+        "retrieval_labeled_cases": 24,
+        "no_evidence_cases": 6,
+        "recall_at_k": 1.0,
+        "mrr_at_k": 1.0,
+        "hit_rate_at_k": 1.0,
+        "mean_source_precision": 0.482639,
+        "evidence_policy_accuracy": 0.933333,
+        "false_evidence_rate": 0.333333,
+        "jurisdiction_leak_cases": 0,
+        "latency_p50_ms": 49.096,
+        "latency_p95_ms": 88.814
+      },
+      "categories": {
+        "AI Act": {
+          "cases": 4,
+          "retrieval_labeled_cases": 4,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.395833,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 46.525,
+          "latency_p95_ms": 48.629
+        },
+        "Across instruments": {
+          "cases": 2,
+          "retrieval_labeled_cases": 2,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.416667,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 93.351,
+          "latency_p95_ms": 97.888
+        },
+        "DMA": {
+          "cases": 2,
+          "retrieval_labeled_cases": 2,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.75,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 49.663,
+          "latency_p95_ms": 51.979
+        },
+        "DSA": {
+          "cases": 8,
+          "retrieval_labeled_cases": 8,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.53125,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 40.132,
+          "latency_p95_ms": 52.919
+        },
+        "GDPR": {
+          "cases": 8,
+          "retrieval_labeled_cases": 8,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.427083,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 50.521,
+          "latency_p95_ms": 87.557
+        },
+        "Missing source": {
+          "cases": 6,
+          "retrieval_labeled_cases": 0,
+          "no_evidence_cases": 6,
+          "recall_at_k": null,
+          "mrr_at_k": null,
+          "hit_rate_at_k": null,
+          "mean_source_precision": null,
+          "evidence_policy_accuracy": 0.666667,
+          "false_evidence_rate": 0.333333,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 74.587,
+          "latency_p95_ms": 78.668
+        }
+      },
+      "cases": [
+        {
+          "id": "privacy-notice",
+          "category": "GDPR",
+          "query": "What information must a controller provide when personal data are collected from the data subject?",
+          "relevant_sources": [
+            "gdpr-oj-art-13"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-33"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-33"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 87.557
+        },
+        {
+          "id": "access",
+          "category": "GDPR",
+          "query": "Which information is included in the right of access by the data subject?",
+          "relevant_sources": [
+            "gdpr-oj-art-15"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-20",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-12",
+            "gdpr-oj-art-12"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-12",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-20"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 49.205
+        },
+        {
+          "id": "erase",
+          "category": "GDPR",
+          "query": "What are the grounds and exceptions for erasure of personal data?",
+          "relevant_sources": [
+            "gdpr-oj-art-17"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-5",
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-17"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-5"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 51.837
+        },
+        {
+          "id": "portability",
+          "category": "GDPR",
+          "query": "Can personal data be received in a structured commonly used machine-readable format?",
+          "relevant_sources": [
+            "gdpr-oj-art-20"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-20",
+            "gdpr-oj-art-20",
+            "gdpr-oj-art-5",
+            "gdpr-oj-art-12",
+            "gdpr-oj-art-17"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-12",
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-5"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 66.669
+        },
+        {
+          "id": "automated-decisions",
+          "category": "GDPR",
+          "query": "What does the original text say about decisions based solely on automated processing including profiling?",
+          "relevant_sources": [
+            "gdpr-oj-art-22"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-22",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-35"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 59.048
+        },
+        {
+          "id": "security",
+          "category": "GDPR",
+          "query": "How should the controller assess an appropriate level of security of processing?",
+          "relevant_sources": [
+            "gdpr-oj-art-32"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-32",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-25",
+            "gdpr-oj-art-32"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-25",
+            "gdpr-oj-art-35"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 46.794
+        },
+        {
+          "id": "breach",
+          "category": "GDPR",
+          "query": "Which notification is required to a supervisory authority after a personal data breach?",
+          "relevant_sources": [
+            "gdpr-oj-art-33"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-5"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-5"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 48.986
+        },
+        {
+          "id": "dpia",
+          "category": "GDPR",
+          "query": "What must a data protection impact assessment contain?",
+          "relevant_sources": [
+            "gdpr-oj-art-35"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 44.177
+        },
+        {
+          "id": "terms",
+          "category": "DSA",
+          "query": "What restrictions should intermediary services disclose in their terms and conditions?",
+          "relevant_sources": [
+            "dsa-oj-art-14"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-14",
+            "dsa-oj-art-14",
+            "dsa-oj-art-14",
+            "dsa-oj-art-17",
+            "dsa-oj-art-17"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-17"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 40.073
+        },
+        {
+          "id": "notice-action",
+          "category": "DSA",
+          "query": "How do recipients submit sufficiently precise and adequately substantiated notices of illegal content?",
+          "relevant_sources": [
+            "dsa-oj-art-16"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-16",
+            "dsa-oj-art-16",
+            "dsa-oj-art-26",
+            "dsa-oj-art-16",
+            "dsa-oj-art-16"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 39.839
+        },
+        {
+          "id": "reasons",
+          "category": "DSA",
+          "query": "What explanation must a statement of reasons provide when content is restricted?",
+          "relevant_sources": [
+            "dsa-oj-art-17"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-17",
+            "dsa-oj-art-17",
+            "dsa-oj-art-17",
+            "dsa-oj-art-17",
+            "dsa-oj-art-20"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-20"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 37.115
+        },
+        {
+          "id": "complaints",
+          "category": "DSA",
+          "query": "How long should access to the internal complaint-handling system be available?",
+          "relevant_sources": [
+            "dsa-oj-art-20"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-20",
+            "dsa-oj-art-20",
+            "dsa-oj-art-20",
+            "dsa-oj-art-20"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 40.555
+        },
+        {
+          "id": "dark-patterns",
+          "category": "DSA",
+          "query": "What does the text say about online interfaces that deceive or manipulate recipients?",
+          "relevant_sources": [
+            "dsa-oj-art-25"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-25",
+            "dsa-oj-art-20",
+            "dsa-oj-art-26",
+            "dsa-oj-art-28",
+            "dsa-oj-art-26"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-26",
+            "dsa-oj-art-28"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 40.19
+        },
+        {
+          "id": "ads",
+          "category": "DSA",
+          "query": "How should advertisements identify the person on whose behalf the advertisement is presented?",
+          "relevant_sources": [
+            "dsa-oj-art-26"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-26",
+            "dsa-oj-art-26",
+            "dsa-oj-art-26",
+            "dsa-oj-art-28",
+            "dsa-oj-art-26"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-28"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 39.231
+        },
+        {
+          "id": "recommendations",
+          "category": "DSA",
+          "query": "Which main parameters used in recommender systems must be explained?",
+          "relevant_sources": [
+            "dsa-oj-art-27"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-27",
+            "dsa-oj-art-27",
+            "dsa-oj-art-27",
+            "dsa-oj-art-26",
+            "dsa-oj-art-26"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 47.054
+        },
+        {
+          "id": "children",
+          "category": "DSA",
+          "query": "What privacy safety and security protections apply to minors on online platforms?",
+          "relevant_sources": [
+            "dsa-oj-art-28"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-28",
+            "dsa-oj-art-28",
+            "dsa-oj-art-28",
+            "dsa-oj-art-20",
+            "dsa-oj-art-28"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-20"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 52.919
+        },
+        {
+          "id": "gatekeeper",
+          "category": "DMA",
+          "query": "Which thresholds are used in the designation of gatekeepers?",
+          "relevant_sources": [
+            "dma-oj-art-3"
+          ],
+          "retrieved_sources": [
+            "dma-oj-art-3",
+            "dma-oj-art-3",
+            "dma-oj-art-3",
+            "dma-oj-art-3",
+            "dma-oj-art-5"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dma-oj-art-5"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 47.347
+        },
+        {
+          "id": "interoperability",
+          "category": "DMA",
+          "query": "What basic functionalities of number-independent interpersonal communications services must be interoperable?",
+          "relevant_sources": [
+            "dma-oj-art-7"
+          ],
+          "retrieved_sources": [
+            "dma-oj-art-7",
+            "dma-oj-art-7",
+            "dma-oj-art-7",
+            "dma-oj-art-7",
+            "dma-oj-art-7"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 51.979
+        },
+        {
+          "id": "literacy",
+          "category": "AI Act",
+          "query": "What should providers consider for AI literacy of staff?",
+          "relevant_sources": [
+            "ai-act-oj-art-4"
+          ],
+          "retrieved_sources": [
+            "ai-act-oj-art-4",
+            "ai-act-oj-art-4",
+            "ai-act-oj-art-14",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-50"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-14",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-9"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 48.629
+        },
+        {
+          "id": "risk-management",
+          "category": "AI Act",
+          "query": "How is a risk management system established for high-risk AI systems?",
+          "relevant_sources": [
+            "ai-act-oj-art-9"
+          ],
+          "retrieved_sources": [
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-10",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-9"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-10"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 45.366
+        },
+        {
+          "id": "oversight",
+          "category": "AI Act",
+          "query": "What measures enable natural persons to oversee high-risk AI systems?",
+          "relevant_sources": [
+            "ai-act-oj-art-14"
+          ],
+          "retrieved_sources": [
+            "ai-act-oj-art-14",
+            "ai-act-oj-art-10",
+            "ai-act-oj-art-14",
+            "ai-act-oj-art-14",
+            "ai-act-oj-art-9"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-10",
+            "ai-act-oj-art-9"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 44.452
+        },
+        {
+          "id": "synthetic-content",
+          "category": "AI Act",
+          "query": "What disclosure requirements concern deep fakes and artificially generated content?",
+          "relevant_sources": [
+            "ai-act-oj-art-50"
+          ],
+          "retrieved_sources": [
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-13"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 47.683
+        },
+        {
+          "id": "global-breach",
+          "category": "Across instruments",
+          "query": "Notification of a personal data breach to the supervisory authority",
+          "relevant_sources": [
+            "gdpr-oj-art-33"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-17"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-17"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 97.888
+        },
+        {
+          "id": "global-dark-patterns",
+          "category": "Across instruments",
+          "query": "Designing online interfaces to deceive manipulate or impair free informed decisions",
+          "relevant_sources": [
+            "dsa-oj-art-25"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-25",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50",
+            "dsa-oj-art-20",
+            "ai-act-oj-art-50"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-50",
+            "dsa-oj-art-20"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 88.814
+        },
+        {
+          "id": "tariff",
+          "category": "Missing source",
+          "query": "What is the import duty for roasted coffee from Brazil?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "ai-act-oj-art-50",
+            "dsa-oj-art-25",
+            "dsa-oj-art-17",
+            "ai-act-oj-art-50",
+            "dsa-oj-art-20"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 78.668
+        },
+        {
+          "id": "weather",
+          "category": "Missing source",
+          "query": "What is the weather forecast for Paris next weekend?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "gdpr-oj-art-13",
+            "dsa-oj-art-17",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-10",
+            "gdpr-oj-art-33"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 72.123
+        },
+        {
+          "id": "visa",
+          "category": "Missing source",
+          "query": "What visa documents are needed for a holiday in Japan?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "dsa-oj-art-17",
+            "dsa-oj-art-14",
+            "dsa-oj-art-20",
+            "gdpr-oj-art-25",
+            "ai-act-oj-art-13"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 74.69
+        },
+        {
+          "id": "recipe",
+          "category": "Missing source",
+          "query": "How do I bake a chocolate cake with walnuts?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "dma-oj-art-3",
+            "dma-oj-art-3",
+            "dma-oj-art-3",
+            "dma-oj-art-3",
+            "gdpr-oj-art-6"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 74.642
+        },
+        {
+          "id": "stock",
+          "category": "Missing source",
+          "query": "Predict the share price of Apple tomorrow",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-28",
+            "dma-oj-art-5",
+            "dma-oj-art-3",
+            "dma-oj-art-3"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": true,
+          "evidence_policy_passed": false,
+          "unlabeled_evidence_sources": [
+            "dma-oj-art-5"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 70.036
+        },
+        {
+          "id": "rail",
+          "category": "Missing source",
+          "query": "Which train departs Berlin for Munich at noon?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-14",
+            "dma-oj-art-3",
+            "dma-oj-art-5",
+            "dma-oj-art-3"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": true,
+          "evidence_policy_passed": false,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-50",
+            "dma-oj-art-3"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 74.532
+        }
+      ]
+    },
+    "hybrid": {
+      "summary": {
+        "cases": 30,
+        "retrieval_labeled_cases": 24,
+        "no_evidence_cases": 6,
+        "recall_at_k": 1.0,
+        "mrr_at_k": 0.979167,
+        "hit_rate_at_k": 1.0,
+        "mean_source_precision": 0.504861,
+        "evidence_policy_accuracy": 0.833333,
+        "false_evidence_rate": 0.833333,
+        "jurisdiction_leak_cases": 0,
+        "latency_p50_ms": 47.489,
+        "latency_p95_ms": 82.474
+      },
+      "categories": {
+        "AI Act": {
+          "cases": 4,
+          "retrieval_labeled_cases": 4,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 0.875,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.708333,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 42.046,
+          "latency_p95_ms": 49.867
+        },
+        "Across instruments": {
+          "cases": 2,
+          "retrieval_labeled_cases": 2,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.375,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 86.671,
+          "latency_p95_ms": 92.065
+        },
+        "DMA": {
+          "cases": 2,
+          "retrieval_labeled_cases": 2,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.666667,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 45.466,
+          "latency_p95_ms": 46.009
+        },
+        "DSA": {
+          "cases": 8,
+          "retrieval_labeled_cases": 8,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.5,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 42.192,
+          "latency_p95_ms": 47.307
+        },
+        "GDPR": {
+          "cases": 8,
+          "retrieval_labeled_cases": 8,
+          "no_evidence_cases": 0,
+          "recall_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "hit_rate_at_k": 1.0,
+          "mean_source_precision": 0.4,
+          "evidence_policy_accuracy": 1.0,
+          "false_evidence_rate": null,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 50.571,
+          "latency_p95_ms": 55.322
+        },
+        "Missing source": {
+          "cases": 6,
+          "retrieval_labeled_cases": 0,
+          "no_evidence_cases": 6,
+          "recall_at_k": null,
+          "mrr_at_k": null,
+          "hit_rate_at_k": null,
+          "mean_source_precision": null,
+          "evidence_policy_accuracy": 0.166667,
+          "false_evidence_rate": 0.833333,
+          "jurisdiction_leak_cases": 0,
+          "latency_p50_ms": 74.159,
+          "latency_p95_ms": 82.474
+        }
+      },
+      "cases": [
+        {
+          "id": "privacy-notice",
+          "category": "GDPR",
+          "query": "What information must a controller provide when personal data are collected from the data subject?",
+          "relevant_sources": [
+            "gdpr-oj-art-13"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-12"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-12",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-33"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 51.482
+        },
+        {
+          "id": "access",
+          "category": "GDPR",
+          "query": "Which information is included in the right of access by the data subject?",
+          "relevant_sources": [
+            "gdpr-oj-art-15"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-20",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-12",
+            "gdpr-oj-art-13"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-12",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-20"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 47.67
+        },
+        {
+          "id": "erase",
+          "category": "GDPR",
+          "query": "What are the grounds and exceptions for erasure of personal data?",
+          "relevant_sources": [
+            "gdpr-oj-art-17"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-17",
+            "gdpr-oj-art-17"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-15"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 44.385
+        },
+        {
+          "id": "portability",
+          "category": "GDPR",
+          "query": "Can personal data be received in a structured commonly used machine-readable format?",
+          "relevant_sources": [
+            "gdpr-oj-art-20"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-20",
+            "gdpr-oj-art-12",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-5"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.2,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-12",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-5"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 52.751
+        },
+        {
+          "id": "automated-decisions",
+          "category": "GDPR",
+          "query": "What does the original text say about decisions based solely on automated processing including profiling?",
+          "relevant_sources": [
+            "gdpr-oj-art-22"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-22",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-15"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-13",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-35"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 55.322
+        },
+        {
+          "id": "security",
+          "category": "GDPR",
+          "query": "How should the controller assess an appropriate level of security of processing?",
+          "relevant_sources": [
+            "gdpr-oj-art-32"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-32",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-25",
+            "gdpr-oj-art-32",
+            "gdpr-oj-art-5"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-25",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-5"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 45.178
+        },
+        {
+          "id": "breach",
+          "category": "GDPR",
+          "query": "Which notification is required to a supervisory authority after a personal data breach?",
+          "relevant_sources": [
+            "gdpr-oj-art-33"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-35"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 49.66
+        },
+        {
+          "id": "dpia",
+          "category": "GDPR",
+          "query": "What must a data protection impact assessment contain?",
+          "relevant_sources": [
+            "gdpr-oj-art-35"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35",
+            "gdpr-oj-art-35"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 53.111
+        },
+        {
+          "id": "terms",
+          "category": "DSA",
+          "query": "What restrictions should intermediary services disclose in their terms and conditions?",
+          "relevant_sources": [
+            "dsa-oj-art-14"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-14",
+            "dsa-oj-art-14",
+            "dsa-oj-art-14",
+            "dsa-oj-art-17",
+            "dsa-oj-art-14"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-17"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 45.29
+        },
+        {
+          "id": "notice-action",
+          "category": "DSA",
+          "query": "How do recipients submit sufficiently precise and adequately substantiated notices of illegal content?",
+          "relevant_sources": [
+            "dsa-oj-art-16"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-16",
+            "dsa-oj-art-16",
+            "dsa-oj-art-17",
+            "dsa-oj-art-16",
+            "dsa-oj-art-26"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-17",
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 42.282
+        },
+        {
+          "id": "reasons",
+          "category": "DSA",
+          "query": "What explanation must a statement of reasons provide when content is restricted?",
+          "relevant_sources": [
+            "dsa-oj-art-17"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-17",
+            "dsa-oj-art-17",
+            "dsa-oj-art-17",
+            "dsa-oj-art-16",
+            "dsa-oj-art-16"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-16"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 42.102
+        },
+        {
+          "id": "complaints",
+          "category": "DSA",
+          "query": "How long should access to the internal complaint-handling system be available?",
+          "relevant_sources": [
+            "dsa-oj-art-20"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-20",
+            "dsa-oj-art-20",
+            "dsa-oj-art-20",
+            "dsa-oj-art-14"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-14"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 43.733
+        },
+        {
+          "id": "dark-patterns",
+          "category": "DSA",
+          "query": "What does the text say about online interfaces that deceive or manipulate recipients?",
+          "relevant_sources": [
+            "dsa-oj-art-25"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-25",
+            "dsa-oj-art-26",
+            "dsa-oj-art-20",
+            "dsa-oj-art-26",
+            "dsa-oj-art-26"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-20",
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 40.081
+        },
+        {
+          "id": "ads",
+          "category": "DSA",
+          "query": "How should advertisements identify the person on whose behalf the advertisement is presented?",
+          "relevant_sources": [
+            "dsa-oj-art-26"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-26",
+            "dsa-oj-art-26",
+            "dsa-oj-art-26",
+            "dsa-oj-art-26",
+            "dsa-oj-art-26"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 39.7
+        },
+        {
+          "id": "recommendations",
+          "category": "DSA",
+          "query": "Which main parameters used in recommender systems must be explained?",
+          "relevant_sources": [
+            "dsa-oj-art-27"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-27",
+            "dsa-oj-art-27",
+            "dsa-oj-art-27",
+            "dsa-oj-art-26",
+            "dsa-oj-art-26"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 38.174
+        },
+        {
+          "id": "children",
+          "category": "DSA",
+          "query": "What privacy safety and security protections apply to minors on online platforms?",
+          "relevant_sources": [
+            "dsa-oj-art-28"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-28",
+            "dsa-oj-art-28",
+            "dsa-oj-art-28",
+            "dsa-oj-art-26",
+            "dsa-oj-art-14"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dsa-oj-art-14",
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 47.307
+        },
+        {
+          "id": "gatekeeper",
+          "category": "DMA",
+          "query": "Which thresholds are used in the designation of gatekeepers?",
+          "relevant_sources": [
+            "dma-oj-art-3"
+          ],
+          "retrieved_sources": [
+            "dma-oj-art-3",
+            "dma-oj-art-5",
+            "dma-oj-art-7",
+            "dma-oj-art-5",
+            "dma-oj-art-3"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "dma-oj-art-5",
+            "dma-oj-art-7"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 44.923
+        },
+        {
+          "id": "interoperability",
+          "category": "DMA",
+          "query": "What basic functionalities of number-independent interpersonal communications services must be interoperable?",
+          "relevant_sources": [
+            "dma-oj-art-7"
+          ],
+          "retrieved_sources": [
+            "dma-oj-art-7",
+            "dma-oj-art-7",
+            "dma-oj-art-7",
+            "dma-oj-art-7",
+            "dma-oj-art-7"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 46.009
+        },
+        {
+          "id": "literacy",
+          "category": "AI Act",
+          "query": "What should providers consider for AI literacy of staff?",
+          "relevant_sources": [
+            "ai-act-oj-art-4"
+          ],
+          "retrieved_sources": [
+            "ai-act-oj-art-4",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-4",
+            "ai-act-oj-art-50"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.3333333333333333,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-9"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 42.413
+        },
+        {
+          "id": "risk-management",
+          "category": "AI Act",
+          "query": "How is a risk management system established for high-risk AI systems?",
+          "relevant_sources": [
+            "ai-act-oj-art-9"
+          ],
+          "retrieved_sources": [
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-9"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 49.867
+        },
+        {
+          "id": "oversight",
+          "category": "AI Act",
+          "query": "What measures enable natural persons to oversee high-risk AI systems?",
+          "relevant_sources": [
+            "ai-act-oj-art-14"
+          ],
+          "retrieved_sources": [
+            "ai-act-oj-art-10",
+            "ai-act-oj-art-14",
+            "ai-act-oj-art-14",
+            "ai-act-oj-art-14",
+            "ai-act-oj-art-14"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 0.5,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-10"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 41.679
+        },
+        {
+          "id": "synthetic-content",
+          "category": "AI Act",
+          "query": "What disclosure requirements concern deep fakes and artificially generated content?",
+          "relevant_sources": [
+            "ai-act-oj-art-50"
+          ],
+          "retrieved_sources": [
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50",
+            "ai-act-oj-art-50"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 1.0,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 40.241
+        },
+        {
+          "id": "global-breach",
+          "category": "Across instruments",
+          "query": "Notification of a personal data breach to the supervisory authority",
+          "relevant_sources": [
+            "gdpr-oj-art-33"
+          ],
+          "retrieved_sources": [
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-33",
+            "gdpr-oj-art-15",
+            "gdpr-oj-art-33"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.5,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "gdpr-oj-art-15"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 81.277
+        },
+        {
+          "id": "global-dark-patterns",
+          "category": "Across instruments",
+          "query": "Designing online interfaces to deceive manipulate or impair free informed decisions",
+          "relevant_sources": [
+            "dsa-oj-art-25"
+          ],
+          "retrieved_sources": [
+            "dsa-oj-art-25",
+            "dsa-oj-art-20",
+            "dsa-oj-art-27",
+            "ai-act-oj-art-50",
+            "dsa-oj-art-20"
+          ],
+          "recall_at_k": 1.0,
+          "reciprocal_rank": 1.0,
+          "hit_at_k": true,
+          "source_precision": 0.25,
+          "expect_evidence": true,
+          "emitted_evidence": true,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-50",
+            "dsa-oj-art-20",
+            "dsa-oj-art-27"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 92.065
+        },
+        {
+          "id": "tariff",
+          "category": "Missing source",
+          "query": "What is the import duty for roasted coffee from Brazil?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "dma-oj-art-5",
+            "ai-act-oj-art-50",
+            "gdpr-oj-art-13",
+            "dsa-oj-art-25",
+            "dsa-oj-art-17"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": true,
+          "evidence_policy_passed": false,
+          "unlabeled_evidence_sources": [
+            "dma-oj-art-5",
+            "gdpr-oj-art-13"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 77.287
+        },
+        {
+          "id": "weather",
+          "category": "Missing source",
+          "query": "What is the weather forecast for Paris next weekend?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "gdpr-oj-art-13",
+            "dsa-oj-art-17",
+            "ai-act-oj-art-9",
+            "ai-act-oj-art-10",
+            "gdpr-oj-art-33"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": false,
+          "evidence_policy_passed": true,
+          "unlabeled_evidence_sources": [],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 70.735
+        },
+        {
+          "id": "visa",
+          "category": "Missing source",
+          "query": "What visa documents are needed for a holiday in Japan?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "dsa-oj-art-17",
+            "ai-act-oj-art-10",
+            "dsa-oj-art-14",
+            "ai-act-oj-art-13",
+            "dsa-oj-art-20"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": true,
+          "evidence_policy_passed": false,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-10",
+            "ai-act-oj-art-13"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 70.166
+        },
+        {
+          "id": "recipe",
+          "category": "Missing source",
+          "query": "How do I bake a chocolate cake with walnuts?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "dsa-oj-art-26",
+            "dma-oj-art-3",
+            "dma-oj-art-3",
+            "ai-act-oj-art-10",
+            "dsa-oj-art-17"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": true,
+          "evidence_policy_passed": false,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-10",
+            "dsa-oj-art-17",
+            "dsa-oj-art-26"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 76.685
+        },
+        {
+          "id": "stock",
+          "category": "Missing source",
+          "query": "Predict the share price of Apple tomorrow",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "dma-oj-art-5",
+            "dsa-oj-art-20",
+            "dma-oj-art-5",
+            "dsa-oj-art-28",
+            "dma-oj-art-5"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": true,
+          "evidence_policy_passed": false,
+          "unlabeled_evidence_sources": [
+            "dma-oj-art-5"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 71.633
+        },
+        {
+          "id": "rail",
+          "category": "Missing source",
+          "query": "Which train departs Berlin for Munich at noon?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "ai-act-oj-art-50",
+            "gdpr-oj-art-25",
+            "ai-act-oj-art-50",
+            "gdpr-oj-art-6",
+            "ai-act-oj-art-14"
+          ],
+          "recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null,
+          "source_precision": null,
+          "expect_evidence": false,
+          "emitted_evidence": true,
+          "evidence_policy_passed": false,
+          "unlabeled_evidence_sources": [
+            "ai-act-oj-art-50",
+            "gdpr-oj-art-25",
+            "gdpr-oj-art-6"
+          ],
+          "jurisdiction_leaks": [],
+          "elapsed_ms": 82.474
+        }
+      ]
+    }
+  },
+  "release_gate": null
+}

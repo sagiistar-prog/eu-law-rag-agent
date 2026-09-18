@@ -1,3 +1,12 @@
+# 0.3 原始公报快照规则
+
+当前下载清单仅含 30 条选定原始公报条文。`original_oj` 不是当前合并文本。必须保留 CELEX、publication_date、retrieved_at、document_version 和 version_notice；采集时间不是生效日期。
+
+`source_verified` 表示官方下载身份及条文提取覆盖检查通过，不代表专家审核、现行适用性或法律结论。`confidence: unrated` 和 `manual_review_required: true` 保留在结果中。候选不等于支持证据；无充分摘录时请求补充来源或核对完整原文。
+
+全文仅存于本地 ignored output。宿主综述须逐项引用，未被原文支持的推论明确标注。法律时效关键词提示是有限启发式，不应作为完整风险分类器。
+
+
 # Source Policy
 
 ## Evidence Levels

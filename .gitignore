@@ -31,3 +31,5 @@ test-results/
 
 !knowledge/requirements.txt
 !docs/fonts/OFL.txt
+
+node_modules/

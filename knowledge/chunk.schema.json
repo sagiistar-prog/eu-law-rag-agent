@@ -47,7 +47,8 @@
       "enum": [
         "pending",
         "reviewed",
-        "fictional"
+        "fictional",
+        "source_verified"
       ]
     },
     "page": {
@@ -73,6 +74,21 @@
       "type": "string"
     },
     "source_sha256": {
+      "type": "string"
+    },
+    "instrument_id": {
+      "type": "string"
+    },
+    "celex": {
+      "type": "string"
+    },
+    "publication_date": {
+      "type": "string"
+    },
+    "document_version": {
+      "type": "string"
+    },
+    "version_notice": {
       "type": "string"
     }
   },

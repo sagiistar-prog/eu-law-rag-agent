@@ -1,0 +1,60 @@
+name: Official source review
+on:
+  push:
+    paths: ['knowledge/**', 'schemas/**', 'tests/browser-review.mjs', 'package*.json', '.github/workflows/official-review.yml']
+  pull_request:
+    paths: ['knowledge/**', 'schemas/**', 'tests/browser-review.mjs', 'package*.json', '.github/workflows/official-review.yml']
+  workflow_dispatch:
+jobs:
+  official:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      db:
+        image: pgvector/pgvector:0.8.1-pg16@sha256:33198da2828a14c30348d2ccb4750833d5ed9a44c88d840a0e523d7417120337
+        env:
+          POSTGRES_PASSWORD: ci-disposable-only
+          POSTGRES_DB: evidence
+        ports: ['5432:5432']
+        options: --health-cmd "pg_isready -U postgres -d evidence" --health-interval 5s --health-timeout 3s --health-retries 10
+    env:
+      KB_DATABASE_URL: postgresql://postgres:ci-disposable-only@localhost:5432/evidence
+      KB_TEST_DATABASE_URL: postgresql://postgres:ci-disposable-only@localhost:5432/evidence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: pip
+          cache-dependency-path: knowledge/requirements.txt
+      - run: python -m pip install -r knowledge/requirements.txt
+      - run: python knowledge/import_official.py --output output/official-ci
+      - run: python knowledge/pipeline.py build --language en --documents output/official-ci/documents.jsonl --index output/official-ci/index.json --cache-dir .cache/models
+      - run: python knowledge/evaluate.py --language en --index output/official-ci/index.json --cases knowledge/evaluation/official-cases.json --output output/official-ci/evaluation.json --cache-dir .cache/models --top-k 5 --min-hit-rate 1 --max-false-evidence-rate 0
+      - run: python -m unittest discover -s knowledge -v
+      - name: Start isolated review service
+        run: |
+          python knowledge/server.py --language en --index output/official-ci/index.json --cache-dir .cache/models --port 8892 > /tmp/eu-review.log 2>&1 &
+          for i in $(seq 1 60); do
+            if curl --fail --silent http://127.0.0.1:8892/health; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/eu-review.log
+          exit 1
+      - run: python knowledge/accept_official.py --output output/official-ci/http-postgres.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: official-source-acceptance
+          path: |
+            output/official-ci/coverage.json
+            output/official-ci/evaluation.json
+            output/official-ci/http-postgres.json
+            output/browser-*/report.json

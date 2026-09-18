@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "query",
+    "answer_status",
+    "answer_mode",
+    "manual_review_required",
+    "confidence",
+    "next_step",
+    "instrument",
+    "corpus_sha256",
+    "created_at",
+    "version_scope",
+    "evidence",
+    "candidates",
+    "review_candidates"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1"
+    },
+    "query": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "answer_status": {
+      "enum": [
+        "evidence_found",
+        "insufficient_evidence"
+      ]
+    },
+    "answer_mode": {
+      "const": "extractive"
+    },
+    "manual_review_required": {
+      "const": true
+    },
+    "confidence": {
+      "const": "unrated"
+    },
+    "next_step": {
+      "type": "string"
+    },
+    "instrument": {
+      "type": "string"
+    },
+    "corpus_sha256": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "version_scope": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hit"
+      },
+      "maxItems": 5
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hit"
+      },
+      "maxItems": 5
+    },
+    "review_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hit"
+      },
+      "maxItems": 5
+    },
+    "storage": {
+      "enum": [
+        "postgres-pgvector",
+        "local-json"
+      ]
+    },
+    "markdown": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "hit": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "source_title",
+        "source_url",
+        "retrieved_at",
+        "text",
+        "keyword_score",
+        "review_status",
+        "chunk_id"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string"
+        },
+        "source_title": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "retrieved_at": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "review_status": {
+          "enum": [
+            "fictional",
+            "pending",
+            "reviewed",
+            "source_verified"
+          ]
+        },
+        "chunk_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "keyword_score": {
+          "type": "number"
+        },
+        "cosine_similarity": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

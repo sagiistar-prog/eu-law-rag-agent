@@ -1,11 +1,13 @@
-# 本地知识库集成
+# 插件与持久化知识库
 
-知识库与插件流程见 [运行手册](../knowledge/README.md)。输入/输出协议见schemas/，向量步骤见skills/knowledge-indexing/。
+插件版本 0.3.0，保留旧 JSON 小样例接口，新增官方出版物快照工作流。两个 Skill 分别负责知识索引和来源核对，不把模型内部 token/position embedding 拆成假的独立算法。
 
-真实模型运行记录见retrieval-smoke.json：每个模型5条虚构文档、3个问题。它只验证推理、检索和评估链路；没有真实业务效果或临床/法律质量结论。
+主流程：导入选定官方条文，构建一次索引，重复查询同一索引，导出核对单。`knowledge/research.py --request` 读取结构化请求，避免把用户问题拼进 shell。请求与输出 Schema 位于 schemas/research-input.schema.json 和 schemas/evidence-review.schema.json。
 
-Windows本机验收使用Python 3.10与固定ONNX Runtime。Conda Python 3.11环境发生DLL初始化失败，已切换独立CPython环境；遇到同样问题应使用隔离环境，不修改系统DLL。
+旧 `scripts/plugin_run.py` 适合短 JSON 文档和离线关键词对照，hybrid 模式会为本次输入构建索引；批量法规研究应使用持久化流程。旧输出中的 confidence 现在为 unrated 或 none，检索分数不能推出法律置信度。
 
-Postgres适配器使用独立evidence_kb schema、参数化SQL和模型/语料隔离。关键词通道使用ts_rank_cd，不称BM25；本地文件索引才使用BM25。当前未连接运行中的Postgres，未声称数据库集成已验收。混合检索通过RRF融合排名，不相加不同尺度的原始分数。
+本机 Windows 独立 CPython 3.10、BGE ONNX 和 PostgreSQL/pgvector 真实通过；Conda 3.11 的 DLL 故障保留为环境限制。数据库的关键词通道使用 ts_rank_cd，不称 BM25；本地文件模式使用 BM25。HTTP 接口与浏览器直接连接同一服务，详见本轮验收。
 
-发布前先暂存本轮变更，再运行 `scripts/portfolio_audit.ps1 -PreCommit`，它仍检查来源、隐私、文件大小和仓库公开性，同时要求没有未暂存文件。提交后再运行不带参数的严格审计；推送后核对远端提交。该模式解决提交前要求工作区已提交的循环条件，不豁免内容检查。
+插件宿主可以基于 evidence 撰写综述，每项陈述附 source_id/chunk_id。review_candidates 是待核对线索，不得当作支持证据。引用源为原始公报，必须保留版本范围。无法验证当前适用性时列出待核对项，不用模型记忆补足。
+
+发布前暂存变更并运行 `scripts/portfolio_audit.ps1 -PreCommit`，提交后运行 `-BeforePush` 审计，推送后运行不带参数的严格审计并核对同一提交的 GitHub 检查。未验证所有插件宿主安装环境。

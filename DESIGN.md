@@ -10,6 +10,11 @@ colors:
   surface: "#ffffff"
   secondary: "#e9edf9"
   primary-hover: "#334aab"
+  focus-surface: "#dce2fa"
+  control-border: "#aeb9d8"
+  error: "#a52c35"
+  violet-glow: "#e7e7fa"
+  query-shadow: "#3a467312"
 typography:
   display:
     fontFamily: 'EvidenceDisplay, "Microsoft YaHei", sans-serif'
@@ -20,6 +25,9 @@ typography:
   body:
     fontFamily: '"Segoe UI", "Microsoft YaHei", sans-serif'
     fontSize: "16px"
+    lineHeight: 1.65
+  metadata:
+    fontSize: "14px"
     lineHeight: 1.65
   title:
     fontSize: "20px"
@@ -54,7 +62,7 @@ components:
 
 冷灰背景、淡紫光影与白色工作面将注意力留给检索问题、摘录和原文。蓝色只强调行动与来源链接。用户先看依据，再形成自己的判断。
 
-规范从 knowledge/workbench.html 的实际样式与状态处理提取。界面是本地证据检索入口，示例资料为虚构；设计不能暗示检索相关性等于条款适用或法律结论。
+规范从 knowledge/workbench.html 的实际样式与状态处理提取。界面是本地证据检索入口；官方模式覆盖 30 条原始公报条文，测试样例仍为虚构；设计不能暗示检索相关性等于条款适用或法律结论。
 
 ## Colors
 
@@ -72,7 +80,7 @@ Blue 是主动作和来源链接色，secondary 承载核对出处与导出。In
 
 页头与主区最大宽度 1180px，内边距 28px。查询栏独占一行，结果与来源区按 1.2:1 分栏，栏距 40px；720px 以下变为单列，外边距 20px、面板内边距 22px，查询按钮占满一行。
 
-来源原文区域最大高 680px 后滚动。空状态直接说明输入或选择来源的下一步，不填造示例命中数。
+来源原文区域在桌面随阅读保持可见；移动端转为正常文档流，提供返回检索结果按钮并恢复原按钮焦点。空状态直接说明输入或选择来源的下一步，不填造示例命中数。
 
 ## Elevation & Depth
 
@@ -86,11 +94,11 @@ Blue 是主动作和来源链接色，secondary 承载核对出处与导出。In
 
 ## Components
 
-- 查询字段必填、最多 1000 字；请求期间只读，提交和导出禁用，结束后恢复编辑。请求超时或失败保留问题。
+- 查询使用 textarea，Enter 提交、Shift+Enter 换行，输入法组合期间不提交。字段必填、最多 1000 字；请求期间只读，提交和导出禁用，结束后恢复编辑。请求超时或失败保留问题。
 - 主按钮最小高 44px；次按钮使用浅蓝底。hover 加深主色，focus-visible 使用 2px 蓝轮廓、4px 偏移，禁用降低透明度。
 - 状态区域区分正在检索、找到摘录、资料不足及失败；页面 aria-busy 与真实请求同步。
 - 结果中的“核对出处”更新右侧原文并移动焦点，保留标题、采集日期与可用页码。原始链接仅接受 HTTP(S)。
-- 导出使用已有结果数据；编辑问题后先禁用导出，避免将旧结果误作新查询结果。
+- 导出使用已有结果数据；编辑问题或改变法规范围后清除旧结果并禁用导出，避免将旧结果误作新查询结果。
 
 ## Do's and Don'ts
 

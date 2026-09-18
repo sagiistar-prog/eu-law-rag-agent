@@ -1,7 +1,7 @@
 {
   "name": "eu-law-rag-agent",
-  "version": "0.2.0",
-  "description": "本地BGE混合检索与可追溯法律研究证据",
+  "version": "0.3.0",
+  "description": "官方公报条文导入、本地混合检索与版本可追溯核对单",
   "author": {
     "name": "Oscar Qi",
     "url": "https://github.com/sagiistar-prog"
@@ -11,8 +11,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "EU Law Evidence Lab",
-    "shortDescription": "本地BGE混合检索与可追溯法律研究证据",
-    "longDescription": "使用英文BGE、BM25和RRF检索授权来源，核对出处并导出证据。默认原文摘录，宿主模型可在证据约束下形成综述。需要人工审核。",
+    "shortDescription": "官方公报条文导入、本地混合检索与版本可追溯核对单",
+    "longDescription": "从欧盟出版局导入选定原始公报条文，使用英文 BGE 与混合检索定位出处、查看完整条文、导出版本可追溯的核对单。不自动判断现行法规适用性。",
     "developerName": "Oscar Qi",
     "category": "Productivity",
     "capabilities": [
@@ -20,7 +20,7 @@
       "Write"
     ],
     "defaultPrompt": [
-      "用短来源文本演示可追溯检索与无依据拒答，先使用仓库内的虚构样例。"
+      "帮我建立官方原始公报资料索引，检索并核对与问题相关的条文，记录版本及仍需人工确认的事项。"
     ]
   }
 }

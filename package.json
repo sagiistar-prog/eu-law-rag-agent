@@ -1,0 +1,6 @@
+{
+  "name": "eu-law-evidence-review-tests",
+  "private": true,
+  "scripts": {"test:browser": "node tests/browser-review.mjs"},
+  "devDependencies": {"playwright": "1.63.0", "@axe-core/playwright": "4.13.0"}
+}

@@ -1,58 +1,34 @@
 ---
 name: eu-law-rag-agent
-description: Retrieve and synthesize source-grounded legal research evidence using local BGE embeddings, BM25 and hybrid retrieval. Use to prepare citation-linked evidence for human review, not legal advice.
+description: Import selected official EU publication articles and prepare citation-linked source reviews using local BGE, hybrid retrieval and full-article verification. Use for evidence gathering, not current-law verdicts or legal advice.
 ---
 
-# EU Law RAG Agent Skill
+# EU law source review
 
-Use this skill to prepare a source-linked evidence brief for a legal researcher who needs to verify a question against an authorized document collection.
+Resolve this plugin root two directories above this file. Work only inside it; never scan personal folders. The user supplies the question and authorizes the source collection. Bundled examples remain short and fictional; the official importer downloads selected public articles to local ignored output only.
 
-## Purpose
+## User task
 
-Maintain a public, source-grounded RAG demo for European legal, tariff, product compliance, and public policy materials.
+Help a researcher locate an original provision, inspect its conditions, and hand a reviewer an evidence packet with explicit unresolved questions. A fluent answer alone does not complete this task.
 
-## Required Behavior
+## Workflow
 
-- Work only inside this repository.
-- Use only short, fictional, sanitized examples.
-- Preserve source metadata through all stages.
-- Refuse unsupported answers.
-- Label AI inference.
-- Include confidence and manual-review fields in every answer.
-- State that outputs are legal information only and not legal advice.
+1. Record the question, instrument, relevant date and scope. The official collection contains 30 selected original Official Journal articles across GDPR, DSA, DMA and AI Act. It does not establish current law or cover tariffs, case law or national implementation.
+2. Read `../knowledge-indexing/SKILL.md` and the root `knowledge/README.md`. Build a versioned index once; reuse it for subsequent research. Never claim invented or keyword-only vectors are embeddings.
+3. Read `schemas/research-input.schema.json`. Save the query as JSON under a fresh local output directory, or use the bundled `examples/research-request.json`. Do not interpolate user text into a shell command.
+4. Run `python knowledge/research.py --index output/<snapshot>/index.json --request output/<request>/request.json --output output/<new-review> --cache-dir .cache/models` from the plugin root. The destination must be new. Parse `evidence.json` using `schemas/evidence-review.schema.json`; `review.md` is the human handoff. A nonzero exit means failure, never a completed review.
+5. Inspect the complete selected article through the local web workbench or the official source URL. `source_verified` confirms origin/extraction only. It does not imply expert review, current applicability or that every returned passage answers the question.
+6. Present supported extracts, version scope and unresolved points. Preserve source_id, source_title, source_url, retrieved_at, chunk_id, corpus_sha256, confidence and manual_review_required. Confidence is `unrated`. A score is not a probability of legal correctness.
+7. Treat `review_candidates` as leads for manual review, never supporting evidence. When `insufficient_evidence` is returned, explain the next verification step. If the host writes a synthesis, attach a supporting chunk ID to every factual claim and label inference. Never fill gaps from model memory or issue a legal verdict.
 
-## Primary workflow
+## Failure and privacy
 
-1. Confirm the research question, jurisdiction, relevant date and authorized source set. Record missing context instead of inventing it. This repository's bundled fixtures are fictional and cannot answer real legal questions.
-2. Read `../knowledge-indexing/SKILL.md` and the repository's `knowledge/README.md`. Clean and structure the selected sources as JSONL, retaining source URLs, collection dates, section/page and review status.
-3. Install both `requirements-plugin.txt` and `knowledge/requirements.txt` in an isolated environment. The primary mode executes the pretrained English BGE encoder, BM25 and RRF locally. Token and positional representations are internal model steps, not hand-written vectors.
-4. Pass the JSON contract to `scripts/plugin_run.py`. Use `examples/hybrid-input.json` for a real embedding smoke run. The result includes evidence excerpts, source identifiers, warnings and review status. If the model is unavailable, report that failure; do not silently substitute keyword retrieval.
-5. Present the question, supported evidence, unresolved points and next verification step. If drafting a synthesis with the host model, cite each supported claim by chunk ID and distinguish inference from source text. Do not turn similarity into a calibrated confidence percentage.
-6. Evaluate against labeled questions and no-answer cases before expanding scope. Preserve the corpus/model manifest for reproducibility. Run the portfolio audit before publication.
+Preserve the question on model, network or database failure. Report the failure without silently switching retrieval mode. Indexes, complete article text, queries and exported reviews stay local and untracked. The plugin does not grant permission to read accounts or publish user material.
 
-## Legacy keyword baseline
+## Other interfaces
 
-These commands remain available for comparison and do not execute embeddings. The explicit keyword plugin fixture is `examples/plugin-input.json`.
+The workbench starts with `python knowledge/server.py --language en --index output/<snapshot>/index.json --cache-dir .cache/models --port 8892`. Default storage is local JSON; the optional database contract is documented in the knowledge README.
 
-```powershell
-py -3 scripts\ingest_documents.py --input examples\docs --output examples\index\chunks.json
-py -3 scripts\build_index.py --chunks examples\index\chunks.json --output examples\index\index.json
-py -3 scripts\query_rag.py --query examples\sample_query.md --index examples\index\index.json --output examples\sample_answer.md --rules configs\rag_rules.yaml --dry-run
-powershell -ExecutionPolicy Bypass -File scripts\portfolio_audit.ps1
-```
+`scripts/plugin_run.py` and `schemas/input.schema.json` retain the short-document interface. `examples/plugin-input.json` is an explicit keyword baseline; `examples/hybrid-input.json` executes real BGE but rebuilds for each call. Use the persistent workflow above for repeated research.
 
-## Publication Rule
-
-Do not commit or push when the portfolio audit fails.
-
-## Versioned plugin interface
-
-Use the repository root as the working directory. For an installed plugin, resolve the root as two directories above this SKILL.md; never assume the user's project contains the bundled scripts.
-
-1. Read `schemas/input.schema.json` before constructing input. Use `examples/plugin-input.json` for an offline demonstration.
-2. Install `requirements-plugin.txt` into the user's chosen Python environment when needed.
-3. Run `python scripts/plugin_run.py --input examples/plugin-input.json` from the plugin root. For user text, pass a JSON object through stdin; do not interpolate it into a shell command.
-4. Parse stdout as one JSON object; exit 0 means success, exit 2 means an input/output/dependency error. Show the error and preserve the input rather than retrying indefinitely.
-5. Present the Markdown result and material warnings. When the user asks to save artifacts, add `--output-dir output/<new-run-name>`. This creates files; an existing directory is never overwritten.
-
-The plugin does not grant permission to read unrelated files, publish content, run rendering or access accounts. The original CLI remains available. See `docs/plugin.md` for the capability boundary and the structured error contract.
+Run tests and the repository portfolio audit before publication. A failed audit blocks commit and push. Outputs are legal information for human review, not legal advice.

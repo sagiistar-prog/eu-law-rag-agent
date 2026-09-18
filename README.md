@@ -1,133 +1,51 @@
 # EU Law Evidence Lab
 
-[检索评测与实际边界](docs/retrieval-evaluation.md)
+为研究助理与数据产品团队准备可追溯的法规核对单：选定资料范围，找出相关摘录，打开完整条文，记录版本和仍需确认的问题。
 
-[本轮技术验收](docs/technical-audit-2026-09-18.md)
+当前支持从欧盟出版局 Cellar 导入 GDPR、DSA、DMA、AI Act 的 **30 条选定原始公报条文**。查询在本机运行，输出原文摘录，不调用付费生成 API。原始公报不是最新合并法规；当前适用性必须另行核验。
 
-[产品案例与指标](docs/product-case.md) | [能力证据](docs/capability-evidence.json) | [验收与边界](docs/validation.md)
+![来源核对界面](docs/screenshots/official-review.png)
 
-## 面试官 30 秒版
+## 开始使用
 
-用短来源文本演示可追溯检索与无依据拒答。把来源标识、引用预算与拒答作为可执行约束。资料不足时不以模型记忆补足，也不把相关性分数当作法律结论置信度。
+建议独立 CPython 3.10。Windows Conda 3.11 在本机发生 ONNX DLL 初始化失败；不要修改系统 DLL，改用独立 Python 环境。首次下载模型和官方资料需要网络，后续检索离线运行。
 
-当前能力：本地 BGE 英文向量编码、BM25、RRF 混合检索、来源核对和原文摘录。保留关键词基线便于对照。生成综述由插件宿主模型完成，必须引用证据；不把检索得分当法律判断。
+```sh
+python -m pip install -r knowledge/requirements.txt
+python knowledge/import_official.py --output output/official-v1
+python knowledge/pipeline.py build --language en --documents output/official-v1/documents.jsonl --index output/official-v1/index.json --cache-dir .cache/models
+python knowledge/server.py --language en --index output/official-v1/index.json --cache-dir .cache/models --port 8892
+```
 
-[知识库运行与架构](knowledge/README.md) | [实际检索记录](docs/retrieval-smoke.json) | [插件使用与产品取舍](docs/plugin.md) | [输入示例](examples/plugin-input.json) | [输入契约](schemas/input.schema.json) | [维护记录](CHANGELOG.md)
+打开 `http://127.0.0.1:8892`，选择 GDPR，输入：
 
-```bash
+> What information must a controller provide when personal data are collected from the data subject?
+
+点击“核对完整条文”查看条件与上下文，然后“导出核对单”。用英文查询；修改问题或范围会清除旧结果。端口只监听本机。数据库可选，默认使用本地文件索引，无需 Docker 或登录。
+
+## 从插件生成核对单
+
+插件包含 `eu-law-rag-agent` 和 `knowledge-indexing` 两个 Skill。前者负责研究问题、证据核对与有引用的宿主综述；后者执行清洗、JSONL、BGE 编码和三路评测。
+
+```sh
+python knowledge/research.py --index output/official-v1/index.json --request examples/research-request.json --output output/review-v1 --cache-dir .cache/models
+```
+
+输出 `evidence.json` 和 `review.md`。请求与结果的 JSON Schema 见 [schemas](schemas/)。完整原文、模型、向量和运行产物留在本地，不提交 Git。历史关键词演示仍可运行：
+
+```sh
 python -m pip install -r requirements-plugin.txt
 python scripts/plugin_run.py --input examples/plugin-input.json
 ```
 
-## 运行真实向量检索
+## 能力与边界
 
-```sh
-python -m pip install -r knowledge/requirements.txt
-python scripts/plugin_run.py --input examples/hybrid-input.json
-```
+- 官方下载、法规身份核验、条文结构提取、清洗及字符覆盖检查，保留 CELEX、出版日期、采集时间和哈希。
+- 本地 BGE small English 384 维向量、BM25 和 RRF；可选 PostgreSQL 全文排名加 pgvector。不同模型或语料隔离。
+- 先按法规过滤，再检索；条文去重，完整原文复核；资料不足与版本问题有明确下一步。
+- 与原文匹配不足的候选另行折叠，不能冒充支持证据。置信度保留 `unrated`。
+- 仅覆盖选定条文，不包含完整法规、判例、国家实施法、关税库、后续修订或自动适用性判断。
 
-首次下载模型后在本机推理。持久化索引与可视化证据工作台见knowledge/README.md。默认英文模型，跨语言检索不在验收范围内。内置资料都是虚构片段，不是实际法规库。
+[架构与运行手册](knowledge/README.md) | [本轮验收与失败记录](docs/official-source-acceptance.md) | [产品判断与指标](docs/product-case.md) | [开源取舍](docs/open-source.md) | [维护记录](CHANGELOG.md)
 
-## 兼容的关键词基线工作流
-
-
-EU Law RAG Agent is a portfolio-safe Retrieval-Augmented Generation prototype for source-grounded research over European legal, tariff, product compliance, and public policy materials. It imports short Markdown sources, chunks them, builds a lightweight local keyword index, retrieves evidence, and produces a citation-first summary with confidence and manual-review flags.
-
-This repository is a public demonstration. It contains no private company materials, no client materials, no partner materials, and no internal project documents.
-
-## Interviewer 30-Second Version
-
-EU Law RAG Agent shows how I would design a compliance-focused RAG assistant where every answer must be traceable to a source. The demo covers ingestion, chunking, indexing, retrieval, answer formatting, refusal when no source is found, confidence scoring, and manual review for legal or commercial decisions. It is intentionally lightweight: no vector database is required, so the workflow can be reviewed and run locally on Windows.
-
-## What Problem It Solves
-
-Legal and compliance research often fails when notes, public guidance, tariff explanations, and policy excerpts are scattered across documents. This project demonstrates a controlled retrieval layer that:
-
-- keeps each answer tied to source metadata
-- refuses unsupported answers
-- separates source text from AI inference
-- flags legal, compliance, tariff, and commercial decision points for human review
-- avoids mixing portfolio examples with private or confidential material
-
-## Why RAG Fits Regulation And Compliance Materials
-
-RAG is useful for regulatory and compliance work because the answer should be grounded in retrieved evidence, not model memory. In this project, the agent stores source metadata at chunk level, retrieves only relevant chunks, and includes `source_id`, `source_title`, `source_url`, `retrieved_at`, `confidence`, and `manual_review_required` in the output.
-
-## Inputs And Outputs
-
-Inputs:
-
-- short Markdown documents under `examples\docs`
-- source metadata in front matter
-- a user question in `examples\sample_query.md`
-- rules in `configs\rag_rules.yaml` and `configs\source_policy.yaml`
-
-Outputs:
-
-- `examples\index\chunks.json` from ingestion
-- `examples\index\index.json` from index building
-- `examples\sample_answer.md` from retrieval and answer formatting
-
-Each answer must include:
-
-- `answer`
-- `sources`
-- `confidence`
-- `manual_review_required`
-- `limitations`
-- `not_legal_advice`
-
-## Workflow Stages
-
-1. Ingest Markdown demo documents.
-2. Parse source metadata.
-3. Split documents into source-linked chunks.
-4. Build a simple local keyword index.
-5. Retrieve relevant chunks for the query.
-6. Generate a source-grounded summary.
-7. Attach source metadata, confidence, limitations, and manual-review flags.
-8. Refuse to answer if no source is found.
-
-## Safe Demo
-
-Standard commands:
-
-```powershell
-python scripts\ingest_documents.py --input examples\docs --output examples\index\chunks.json
-python scripts\build_index.py --chunks examples\index\chunks.json --output examples\index\index.json
-python scripts\query_rag.py --query examples\sample_query.md --index examples\index\index.json --output examples\sample_answer.md --rules configs\rag_rules.yaml --dry-run
-```
-
-Windows launcher fallback:
-
-```powershell
-py -3 scripts\ingest_documents.py --input examples\docs --output examples\index\chunks.json
-py -3 scripts\build_index.py --chunks examples\index\chunks.json --output examples\index\index.json
-py -3 scripts\query_rag.py --query examples\sample_query.md --index examples\index\index.json --output examples\sample_answer.md --rules configs\rag_rules.yaml --dry-run
-```
-
-Portfolio audit:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts\portfolio_audit.ps1
-```
-
-## Legal Boundary
-
-This project provides legal information retrieval and source-grounded summaries only. It does not provide legal advice, legal opinions, or professional services. Any legal, tariff, product compliance, import, export, or commercial decision must be reviewed by a qualified human professional.
-
-## Public Repository Privacy Statement
-
-This repository is designed for public portfolio use. It does not contain real commercial documents, client records, partner records, internal paths, private policies, private datasets, or non-public operating details. The examples are short, fictional, and intentionally safe.
-
-## Repository Layout
-
-```text
-README.md
-AGENTS.md
-configs/
-docs/
-examples/
-scripts/
-skills/
-```
+本项目不提供法律意见。技术回归与真实用户价值分开记录；目前没有律师标注或真实团队效果数据。

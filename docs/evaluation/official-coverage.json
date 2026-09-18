@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-09-18T10:59:27.850301+00:00",
+  "status": "complete",
+  "scope": "Original Official Journal text; amendments, corrigenda and current applicability have not been checked.",
+  "articles": 30,
+  "characters": 94188,
+  "documents_sha256": "86dad7f3ddca62e15881d660bd830f0f516ce8b0fc8877e13679c4fb3372372a",
+  "sources": [
+    {
+      "instrument_id": "gdpr",
+      "celex": "32016R0679",
+      "download_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "resolved_url": "https://publications.europa.eu/resource/cellar/3e485e15-11bd-11e6-ba9a-01aa75ed71a1.0006.03/DOC_1",
+      "download_sha256": "962539af03738bf552319ff4ce42d69e5f95a576307c4dfed7bf87e81b646b9d",
+      "download_bytes": 806864,
+      "selected_articles": [
+        5,
+        6,
+        12,
+        13,
+        15,
+        17,
+        20,
+        22,
+        25,
+        32,
+        33,
+        35
+      ],
+      "selected_characters": 30077,
+      "extracted_nonwhitespace_coverage": 1.0,
+      "document_version": "original_oj"
+    },
+    {
+      "instrument_id": "dsa",
+      "celex": "32022R2065",
+      "download_url": "https://publications.europa.eu/resource/celex/32022R2065",
+      "resolved_url": "https://publications.europa.eu/resource/cellar/3ff67256-55c4-11ed-92ed-01aa75ed71a1.0006.03/DOC_1",
+      "download_sha256": "11b119a7d45f3a10cd41714061f9d907839ef5d1634e41774490f00b95856bbf",
+      "download_bytes": 838166,
+      "selected_articles": [
+        14,
+        16,
+        17,
+        20,
+        25,
+        26,
+        27,
+        28
+      ],
+      "selected_characters": 16163,
+      "extracted_nonwhitespace_coverage": 1.0,
+      "document_version": "original_oj"
+    },
+    {
+      "instrument_id": "dma",
+      "celex": "32022R1925",
+      "download_url": "https://publications.europa.eu/resource/celex/32022R1925",
+      "resolved_url": "https://publications.europa.eu/resource/cellar/b4326c28-49cd-11ed-92ed-01aa75ed71a1.0006.03/DOC_1",
+      "download_sha256": "d6af21a4f11c2b001b0486391fbd0813deba32305fb0d3865fbceccd45b827eb",
+      "download_bytes": 518017,
+      "selected_articles": [
+        3,
+        5,
+        6,
+        7
+      ],
+      "selected_characters": 27794,
+      "extracted_nonwhitespace_coverage": 1.0,
+      "document_version": "original_oj"
+    },
+    {
+      "instrument_id": "ai-act",
+      "celex": "32024R1689",
+      "download_url": "https://publications.europa.eu/resource/celex/32024R1689",
+      "resolved_url": "https://publications.europa.eu/resource/cellar/dc8116a1-3fe6-11ef-865a-01aa75ed71a1.0006.03/DOC_1",
+      "download_sha256": "8f0b656302f9864cc87e040c371f209a9d65ae1a6cecc25ca5eb737e872d721a",
+      "download_bytes": 1262391,
+      "selected_articles": [
+        4,
+        9,
+        10,
+        13,
+        14,
+        50
+      ],
+      "selected_characters": 20154,
+      "extracted_nonwhitespace_coverage": 1.0,
+      "document_version": "original_oj"
+    }
+  ]
+}

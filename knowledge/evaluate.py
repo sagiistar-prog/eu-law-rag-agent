@@ -92,8 +92,11 @@ def evaluate(index, cases, encoder, top_k=3):
         rows = []
         for case in cases:
             filtered = index
+            if case.get('instrument'):
+                from research import select_index
+                filtered = select_index(filtered, case['instrument'])
             if case.get('jurisdiction'):
-                pairs = [(c, v) for c, v in zip(index['chunks'], index['vectors']) if c.get('jurisdiction') in ('全国', case['jurisdiction'])]
+                pairs = [(c, v) for c, v in zip(filtered['chunks'], filtered['vectors']) if c.get('jurisdiction') in ('全国', case['jurisdiction'])]
                 filtered = {**index, 'chunks': [c for c, _ in pairs], 'vectors': [v for _, v in pairs]}
             started = time.perf_counter()
             hits = search(filtered, case['query'], encoder, top_k, mode)

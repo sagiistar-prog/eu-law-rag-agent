@@ -37,7 +37,8 @@
               "enum": [
                 "none",
                 "low",
-                "medium"
+                "medium",
+                "unrated"
               ]
             },
             "manual_review_required": {

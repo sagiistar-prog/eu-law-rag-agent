@@ -16,7 +16,7 @@ MODELS = {
     'en': ('BAAI/bge-small-en-v1.5', 384, 'Represent this sentence for searching relevant passages: '),
 }
 REQUIRED = ('source_id', 'source_title', 'source_url', 'retrieved_at', 'text')
-STOP = set('the a an is are of to for and in what does do this that with be on'.split())
+STOP = set('the a an is are of to for and in what does do this that with be on i we you it its they their them he she our your from at by or as into out over under can could should would must may might shall which who whose whom when where why how has have had been being was were will if then than also any all such some these those not no only about through within without before after between each other more most further according relevant required needed following include includes including provided provide requirements original text says say'.split())
 
 def clean(text):
     """Preserve numbers, negation, paragraphs, tables, and meaningful indentation."""
@@ -33,7 +33,9 @@ def prepare(documents):
         if not re.fullmatch(r'[a-zA-Z0-9_-]{1,100}', doc['source_id']): raise ValueError('Invalid source_id')
         if not re.match(r'^(https?://|urn:local:sha256:)', doc['source_url']): raise ValueError('Invalid source locator')
         datetime.fromisoformat(doc['retrieved_at'])
-        if doc.get('review_status', 'pending') not in ('pending','reviewed','fictional'): raise ValueError('Invalid review_status')
+        if doc.get('review_status', 'pending') not in ('pending','reviewed','fictional','source_verified'): raise ValueError('Invalid review_status')
+        if doc.get('review_status') == 'source_verified' and (doc.get('source_kind') != 'official_legal_text' or doc.get('document_version') != 'original_oj' or not doc.get('celex')):
+            raise ValueError('Source verification requires explicit official publication provenance')
         ids.add(doc['source_id'])
         text = clean(doc['text'])
         # A short character bound is conservative for the 512-token BGE encoders.
@@ -53,7 +55,8 @@ def prepare(documents):
                 'language': doc.get('language', 'unknown'),
                 'jurisdiction':doc.get('jurisdiction',''),
                 'source_kind':doc.get('source_kind','document'),
-                'source_sha256':doc.get('source_sha256','')})
+                'source_sha256':doc.get('source_sha256',''),
+                **{key:doc[key] for key in ('instrument_id','celex','publication_date','document_version','version_notice') if key in doc}})
     return chunks
 
 def tokens(text):
@@ -135,7 +138,8 @@ def build(documents,encoder):
         'created_at':datetime.now(timezone.utc).isoformat(),
         'tokenizer_sha256':encoder.tokenizer_sha256,'max_tokens':encoder.max_tokens,
         'corpus_sha256':sha256(json.dumps(chunks,sort_keys=True,ensure_ascii=False).encode()).hexdigest()},
-        'chunks':chunks,'vectors':encoder.encode([c['text'] for c in chunks])}
+        'chunks':chunks,'vectors':encoder.encode([c['text'] for c in chunks]),
+        'sources':{d['source_id']:{**d,'text':clean(d['text'])} for d in documents}}
 
 def search(index,query,encoder,top_k=5,mode='hybrid'):
     if not query.strip() or len(query)>1000: raise ValueError('Query must contain 1 to 1000 characters')
@@ -161,7 +165,17 @@ def search(index,query,encoder,top_k=5,mode='hybrid'):
 
 def evidence_answer(query,hits,max_words=80):
     # A nearest vector always exists. Do not convert that fact into an answer.
-    supported=[h for h in hits if h['keyword_score']>0 and h['review_status'] in ('reviewed','fictional')]
+    def supported_hit(hit):
+        if hit['keyword_score'] <= 0 or hit['review_status'] not in ('reviewed','fictional','source_verified'):
+            return False
+        if hit['review_status'] != 'source_verified':return True
+        terms=set(tokens(query));overlap=terms & set(tokens(hit['text']))
+        # Public-source excerpts need two distinct content terms for a longer query.
+        # This is an inspectable heuristic, not legal entailment or calibrated confidence.
+        required=2 if len(terms)>=3 else 1
+        cosine=hit.get('cosine_similarity')
+        return len(overlap)>=required and (cosine is None or cosine>=.6)
+    supported=[h for h in hits if supported_hit(h)]
     used={}; evidence=[]
     for h in supported:
         remaining=max_words-used.get(h['source_id'],0)

@@ -1,0 +1,26 @@
+[
+  {
+    "width": 1440,
+    "axe_violations": 0,
+    "page_errors": [],
+    "overflow": false,
+    "storage": "postgres-pgvector",
+    "full_article": true,
+    "markdown_export": true,
+    "version_refusal": true,
+    "missing_source_refusal": true,
+    "simulated_503_recovery": true
+  },
+  {
+    "width": 390,
+    "axe_violations": 0,
+    "page_errors": [],
+    "overflow": false,
+    "storage": "postgres-pgvector",
+    "full_article": true,
+    "markdown_export": true,
+    "version_refusal": true,
+    "missing_source_refusal": true,
+    "simulated_503_recovery": true
+  }
+]
