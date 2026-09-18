@@ -1,4 +1,4 @@
-param([switch]$PreCommit)
+param([switch]$PreCommit, [switch]$BeforePush)
 $ErrorActionPreference = "Stop"
 
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
@@ -183,6 +183,13 @@ function Check-GitHubState {
     $remoteHead = (& git -C $RepoRoot rev-parse $upstream)
     if ($LASTEXITCODE -eq 0 -and $localHead -eq $remoteHead) {
         Add-Pass "Local branch and upstream are synchronized."
+    } elseif ($BeforePush) {
+        & git -C $RepoRoot merge-base --is-ancestor $upstream HEAD
+        if ($LASTEXITCODE -eq 0) {
+            Add-Pass "Upstream is an ancestor; local commits are ready for a fast-forward push."
+        } else {
+            Add-Fail "Upstream changed or diverged; resolve before publishing."
+        }
     } else {
         Add-Fail "Local branch and upstream are not synchronized."
     }
