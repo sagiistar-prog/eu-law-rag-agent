@@ -1,0 +1,25 @@
+name: Knowledge PostgreSQL integration
+on: [push, pull_request]
+jobs:
+  postgres:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: pgvector/pgvector:0.8.1-pg16@sha256:33198da2828a14c30348d2ccb4750833d5ed9a44c88d840a0e523d7417120337
+        env:
+          POSTGRES_PASSWORD: ci-disposable-only
+          POSTGRES_DB: evidence
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d evidence"
+          --health-interval 5s --health-timeout 3s --health-retries 10
+    env:
+      KB_TEST_DATABASE_URL: postgresql://postgres:ci-disposable-only@localhost:5432/evidence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install "psycopg[binary]>=3.2,<4" "jsonschema>=4.23,<5"
+      - run: python -m unittest discover -s knowledge -v

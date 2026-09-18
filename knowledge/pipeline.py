@@ -31,7 +31,7 @@ def prepare(documents):
             raise ValueError('Every source needs nonempty id, title, URL, retrieval date and text')
         if doc['source_id'] in ids: raise ValueError('Duplicate source_id')
         if not re.fullmatch(r'[a-zA-Z0-9_-]{1,100}', doc['source_id']): raise ValueError('Invalid source_id')
-        if not re.match(r'^https?://', doc['source_url']): raise ValueError('Source URL must be HTTP(S)')
+        if not re.match(r'^(https?://|urn:local:sha256:)', doc['source_url']): raise ValueError('Invalid source locator')
         datetime.fromisoformat(doc['retrieved_at'])
         if doc.get('review_status', 'pending') not in ('pending','reviewed','fictional'): raise ValueError('Invalid review_status')
         ids.add(doc['source_id'])
@@ -43,14 +43,17 @@ def prepare(documents):
             digest = sha256(fragment.encode()).hexdigest()
             # Preserve duplicate text from different sources for attribution.
             key = (doc['source_id'], digest)
-            if key in seen: continue
+            if key in seen and doc.get('source_kind') != 'private_book': continue
             seen.add(key)
             chunks.append({**{k:doc[k] for k in REQUIRED if k != 'text'},
                 'schema_version': 1, 'chunk_id': f"{doc['source_id']}:{offset}:{digest[:12]}",
                 'text': fragment, 'content_sha256': digest, 'char_start': offset,
                 'section': doc.get('section', ''), 'page': doc.get('page'),
                 'review_status': doc.get('review_status', 'pending'),
-                'language': doc.get('language', 'unknown')})
+                'language': doc.get('language', 'unknown'),
+                'jurisdiction':doc.get('jurisdiction',''),
+                'source_kind':doc.get('source_kind','document'),
+                'source_sha256':doc.get('source_sha256','')})
     return chunks
 
 def tokens(text):
@@ -101,6 +104,9 @@ class Encoder:
 def build(documents,encoder):
     chunks=prepare(documents)
     if not chunks: raise ValueError('No chunks to index')
+    from jsonschema import Draft202012Validator
+    validator=Draft202012Validator(json.loads(Path(__file__).with_name('chunk.schema.json').read_text(encoding='utf-8')))
+    for chunk in chunks:validator.validate(chunk)
     return {'manifest': {'schema_version':1,'model_id':encoder.model_id,
         'dimension':encoder.dimension,'query_prefix':encoder.prefix,'normalized':True,
         'chunker':'characters-320-overlap-40-v1','fastembed_version':importlib.metadata.version('fastembed'),

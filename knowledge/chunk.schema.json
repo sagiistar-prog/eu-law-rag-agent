@@ -26,7 +26,7 @@
     },
     "source_url": {
       "type": "string",
-      "pattern": "^https?://"
+      "pattern": "^(https?://|urn:local:sha256:)"
     },
     "retrieved_at": {
       "type": "string"
@@ -64,6 +64,15 @@
       "minimum": 0
     },
     "language": {
+      "type": "string"
+    },
+    "jurisdiction": {
+      "type": "string"
+    },
+    "source_kind": {
+      "type": "string"
+    },
+    "source_sha256": {
       "type": "string"
     }
   },
